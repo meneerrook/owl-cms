@@ -57,3 +57,19 @@ button.btn-loader {
         to {@include transform(rotate(360deg))}
     }
 }
+
+
+.loaded-content {
+    position:fixed;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    overflow: auto;
+    @include opacity(0);
+    @include transition(opacity 150ms ease-in 200ms);
+
+    &.show {
+        @include opacity(1);
+    }
+}

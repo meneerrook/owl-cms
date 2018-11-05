@@ -40,19 +40,37 @@ class LandingController extends Controller
         
         if (Auth::attempt(array('email' => $email, 'password' => $password ))){
 
-            //return Redirect::to('/owl/dashboard');
-
-            $view = view('backend.dashboard.index')->render();
+            $navigation = view('backend.navigation.template')->render();
+            $page = view('backend.dashboard.template')->render();
             
-            return Response::json(['html' => $view, 'authenticated' => true]);
+            $html = $navigation . $page;
+
+            return Response::json([
+                'type' => 'page',
+                'content' => [
+                    'html' => $html,
+                    'email' => 'simro@test.nl',
+                ],
+                'config' => [
+                    'activePage' => 'dashboard'
+                ]
+            ]);
 
         }
         else{
             //return Redirect::back()->with('message', 'Username/Password was incorrect!');
 
-            $view = view('backend.dashboard.index')->render();
+            // $navigation = view('backend.navigation.template')->render();
+            // $page = view('backend.dashboard.template')->render();
             
-            return Response::json(array('html' => $view, 'authenticated' => true));
+            // $html = $navigation . $page;
+
+            return Response::json([
+                'type' => 'message',
+                'content' => [
+                    'html' => "wrong email or pass",
+                ]
+            ]);
         }
     }
 }

@@ -7,9 +7,7 @@
 @endsection
 
 @section('content')
-
-    <div id="login-container" class="container-custom">
-
+    <div id="login-container" class="login-container">
         <div id="login-wrapper" class="login-wrapper">
             <div class="heading">
                 <div class="logo">
@@ -19,7 +17,6 @@
                     <h1>Owl CMS</h1>
                 </div>
             </div>
-
             <div class="login-pane">
                 <h4>Log in to continue</h2>
                 <form action="/owl/authenticate" method="post">
@@ -40,21 +37,12 @@
                     </div>
 
                     <button id="loginButton" class="btn btn-primary btn-loader">Log in </button>
-                    
                 </form>
-
-            </div>
-
-            <div class="forgot-password">
-                <a href="#">Can't log in?</a>
             </div>
         </div>
-
-        
     </div>
 @endsection
 
 @section('javascript')
-    <script src="{{ asset('js/login.js') }}"></script>
-    
+    <script src="{{ asset('js/owl/login.owl.js') }}" name="loginScript"></script>
 @endsection
