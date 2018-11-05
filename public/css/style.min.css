@@ -1,0 +1,226 @@
+/*
+    Created by: Simon Rook
+*/
+/* border-radius */
+/* box-shadow */
+/* opacity */
+/* transform */
+/* transition animations */
+/* Keyframe animations */
+h1, h2, h3, h4, h5, h6, p, label, span, div, section, article, form {
+  font-family: "Open Sans", sans-serif !important;
+  color: #000000;
+}
+
+h1 {
+  font-size: 32px;
+  line-height: 38px;
+  font-weight: 400;
+}
+
+h2 {
+  font-size: 28px;
+  line-height: 34px;
+  font-weight: 400;
+}
+
+h3 {
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 400;
+}
+
+h4 {
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 400;
+}
+
+p {
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 400;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  min-width: 768px;
+}
+
+button.btn-loader {
+  position: relative;
+  overflow: hidden;
+}
+
+button.btn-loader:before {
+  content: "";
+  position: absolute;
+  right: 10px;
+  margin-top: -10px;
+  top: 50%;
+  width: 20px;
+  height: 20px;
+  border-top: solid 2px #ffffff;
+  border-right: solid 2px #ffffff;
+  border-bottom: solid 2px transparent;
+  border-left: solid 2px transparent;
+  z-index: 2;
+  border-radius: 100%;
+  background-clip: padding-box;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -webkit-transition: opacity 150ms ease-in-out;
+  transition: opacity 150ms ease-in-out;
+  -webkit-animation: spin 300ms infinite linear;
+  animation: spin 300ms infinite linear;
+}
+
+button.btn-loader:after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 50px;
+  z-index: 1;
+  background-color: #007bff;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -webkit-transition: opacity 150ms ease-in-out;
+  transition: opacity 150ms ease-in-out;
+  -webkit-box-shadow: -10px 0 15px #007bff;
+  box-shadow: -10px 0 15px #007bff;
+}
+
+button.btn-loader.loading:before, button.btn-loader.loading:after {
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.login .container-custom {
+  background-color: #007bff;
+  padding-top: 60px;
+  width: 100%;
+  height: 100vh;
+  -webkit-transition: width 600ms cubic-bezier(0.2, 0.11, 0.09, 1) 700ms;
+  transition: width 600ms cubic-bezier(0.2, 0.11, 0.09, 1) 700ms;
+}
+
+.login .container-custom.sizeDown {
+  width: 320px;
+}
+
+.login .login-wrapper {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: all 150ms ease;
+  transition: all 150ms ease;
+}
+
+.login .login-wrapper.fadeOut {
+  -webkit-transform: scale(0.9);
+  transform: scale(0.9);
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+
+.login .heading {
+  display: block;
+  width: 320px;
+  margin: 0 auto 50px auto;
+}
+
+.login .heading .logo {
+  display: block;
+  width: 100px;
+  margin: 0 auto;
+}
+
+.login .heading .title {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.login .heading .title h1 {
+  color: #ffffff;
+}
+
+.login .login-pane {
+  display: block;
+  width: 400px;
+  padding: 50px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  border-radius: 5px;
+  background-clip: padding-box;
+  -webkit-box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+.login .login-pane h4 {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.login .login-pane form {
+  margin: 0;
+  text-align: center;
+}
+
+.login .login-pane .input-group .input-group-text {
+  background: #ffffff;
+}
+
+.login .login-pane button {
+  width: 100%;
+  margin-top: 15px;
+}
+
+.login .login-pane a {
+  display: inline-block;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.login .forgot-password {
+  display: block;
+  width: 400px;
+  margin: 50px auto 0 auto;
+  text-align: center;
+}
+
+.login .forgot-password a {
+  color: #ffffff;
+}
+/*# sourceMappingURL=style.min.css.map */
