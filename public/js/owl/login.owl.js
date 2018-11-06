@@ -53,23 +53,23 @@
                     window.owl.login._giveMessage(loginWrapper, loginContainer, wrapper, body);
                 break;
                 default:
-                    alert("Something went wrong, please contact your system administrator.");
+                    alert("Something went wrong, please contact your system administrator or retry again in a few minutes.");
+                    var button = document.querySelector("#loginButton");
+                    window.owl.buttonLoader.undo(button);
             }
         },
         _pageTransition: function(loginWrapper, loginContainer, wrapper, body) {
-            loginWrapper.classList.add("fadeOut");
+            
             loginWrapper.addEventListener('transitionend', function(e) {
                 if(e.propertyName == "opacity") {
                     loginContainer.classList.add("sizeDown");
                 }
             });
-    
             loginContainer.addEventListener('transitionend', function(e) {
                 if(e.propertyName == "width") {
                     wrapper.classList.add("show");
                 }
             });
-    
             wrapper.addEventListener('transitionend', function(e) {
                 if(e.propertyName == "opacity") {
                     loginContainer.parentNode.removeChild(loginContainer);
@@ -77,12 +77,13 @@
                     body.classList.add("dashboard");
                 }
             });
+            loginWrapper.classList.add("fadeOut");
         },
         _giveMessage: function(loginWrapper, loginContainer, wrapper, body) {
             var button = document.querySelector("#loginButton");
             window.owl.buttonLoader.undo(button);
 
-            alert("wrong info");
+            console.log("username/password wrong");
 
         }
     }

@@ -42,6 +42,21 @@ p {
   font-weight: 400;
 }
 
+.btn {
+  border-radius: 0;
+  background-clip: padding-box;
+}
+
+.form-control {
+  border-radius: 0;
+  background-clip: padding-box;
+}
+
+.input-group-text {
+  border-radius: 0;
+  background-clip: padding-box;
+}
+
 * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -143,6 +158,90 @@ button.btn-loader.loading:before, button.btn-loader.loading:after {
   filter: alpha(opacity=100);
 }
 
+nav.main-menu {
+  float: left;
+  width: 300px;
+  height: 100vh;
+  background-color: #007bff;
+}
+
+nav.main-menu .left {
+  float: left;
+  width: 70px;
+  height: 100vh;
+  padding: 30px 15px;
+}
+
+nav.main-menu .left .logo {
+  float: left;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+nav.main-menu .left .logo .menu-link {
+  margin: 0;
+}
+
+nav.main-menu .left .logo img {
+  display: block;
+  margin: 0 auto;
+}
+
+nav.main-menu .left a.menu-link {
+  float: left;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 7.5px;
+  border-radius: 100%;
+  background-clip: padding-box;
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
+
+nav.main-menu .left a.menu-link.text {
+  font-size: 32px;
+}
+
+nav.main-menu .left a.menu-link.icon {
+  font-size: 20px;
+}
+
+nav.main-menu .left a.menu-link.icon i {
+  line-height: 40px;
+}
+
+nav.main-menu .left a.menu-link:hover {
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+nav.main-menu .right {
+  float: left;
+  width: calc(100% - 70px);
+  height: 100vh;
+  padding: 30px;
+}
+
+nav.main-menu .right .heading {
+  float: left;
+  width: 100%;
+}
+
+nav.main-menu .right .heading h1 {
+  color: #ffffff;
+  font-size: 24px;
+  line-height: 40px;
+}
+
+.content {
+  height: 100vh;
+  overflow: hidden;
+  padding: 15px;
+}
+
 .login .login-container {
   background-color: #007bff;
   padding-top: 60px;
@@ -153,7 +252,7 @@ button.btn-loader.loading:before, button.btn-loader.loading:after {
 }
 
 .login .login-container.sizeDown {
-  width: 320px;
+  width: 300px;
 }
 
 .login .login-wrapper {
@@ -161,8 +260,8 @@ button.btn-loader.loading:before, button.btn-loader.loading:after {
   filter: alpha(opacity=100);
   -webkit-transform: scale(1);
   transform: scale(1);
-  -webkit-transition: all 150ms ease;
-  transition: all 150ms ease;
+  -webkit-transition: all 250ms cubic-bezier(0.98, 0.01, 0.15, 1.32);
+  transition: all 250ms cubic-bezier(0.98, 0.01, 0.15, 1.32);
 }
 
 .login .login-wrapper.fadeOut {
@@ -200,7 +299,7 @@ button.btn-loader.loading:before, button.btn-loader.loading:after {
   padding: 50px;
   margin: 0 auto;
   background-color: #ffffff;
-  border-radius: 5px;
+  border-radius: 0;
   background-clip: padding-box;
   -webkit-box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);

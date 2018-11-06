@@ -15,7 +15,7 @@
     .login-wrapper {  
         @include opacity(1);
         @include transform(scale(1));
-        @include transition(all 150ms ease);
+        @include transition(all 250ms cubic-bezier(.98,.01,.15,1.32));
 
         &.fadeOut {
             @include transform(scale(.9));
@@ -50,7 +50,7 @@
         padding: 50px;
         margin: 0 auto;
         background-color: $color--white;
-        @include border-radius(5px);
+        @include border-radius(0);
         @include box-shadow( 0px 10px 10px rgba(0, 0, 0, 0.1));
 
         h4 {

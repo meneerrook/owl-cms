@@ -1,5 +1,5 @@
-<div class="wrapper" style="float:left; width:calc(100% - 320px); height:100vh;">
+<div class="content">
 
-    <h1>this is dashboard</h1>
+    <h1>Dashboard</h1>
 
 </div>

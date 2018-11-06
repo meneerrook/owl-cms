@@ -40,7 +40,7 @@ class LandingController extends Controller
         
         if (Auth::attempt(array('email' => $email, 'password' => $password ))){
 
-            $navigation = view('backend.navigation.template')->render();
+            $navigation = view('backend.navigation.index')->render();
             $page = view('backend.dashboard.template')->render();
             
             $html = $navigation . $page;
@@ -68,7 +68,8 @@ class LandingController extends Controller
             return Response::json([
                 'type' => 'message',
                 'content' => [
-                    'html' => "wrong email or pass",
+                    'message-type' => 'warning',
+                    'text' => "wrong email or pass",
                 ]
             ]);
         }
