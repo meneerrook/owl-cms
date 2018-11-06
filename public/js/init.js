@@ -1,6 +1,12 @@
 function init() {
+    
 
     if(window.owl)  {
+
+        // register button loader
+        if(window.owl.placeholder && typeof window.owl.placeholder.register == "function") {
+            window.owl.placeholder.register();
+        }
 
         // register button loader
         if(window.owl.buttonLoader && typeof window.owl.buttonLoader.register == "function") {
@@ -14,6 +20,7 @@ function init() {
     }
 
 }
+
 
 
 init();
