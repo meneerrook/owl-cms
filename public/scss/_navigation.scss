@@ -55,19 +55,67 @@ nav.main-menu {
         float: left;
         width: calc(100% - 70px);
         height: 100vh;
-        padding: $margin*2;
+        padding: $margin*2 $margin $margin*2 $margin*2;
 
         .heading {
             float: left;
             width: 100%;
 
-            h1 {
+            h3 {
                 color: $color--white;
-                font-size: 24px;
-                line-height: 40px;
+                line-height: 40px; 
             }
         }
-        
+        ul {
+            float:left;
+            width:100%;
+            padding:0;
+            margin-top:$margin;
+            margin-bottom: 0;
+
+            li {
+                float:left;
+                width:100%;
+                list-style-type: none;
+
+                .menu-item {
+                    position: relative;
+                    float: left;
+                    width: 100%;
+                    padding-left: 45px;
+                    color: $color--white;
+                    height: 40px;
+                    line-height: 40px;
+                    font-size: 14px;
+                    @include border-radius(3px);
+
+                    i{
+                        position: absolute;
+                        left:10px;
+                        font-size:18px;
+                        top:10px;
+                        width:20px;
+                        text-align: center;
+                    }
+
+                    &:hover {
+                        text-decoration: none;
+                        background-color: rgba(0,0,0, 0.2);
+                    }
+                }
+
+                &.active {
+                    a{
+                        background-color: rgba(0,0,0, 0.1);
+                    }
+                }
+            }
+        }
+        hr {
+            float: left;
+            width: 100%;
+            margin: $margin*2 0;
+        }
     }
 }
 

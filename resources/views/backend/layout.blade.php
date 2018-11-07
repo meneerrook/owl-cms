@@ -22,16 +22,15 @@
 	</head>
 
 	<body class="@yield('bodyClass')">
-
-		@include('backend/partials/placeholder')
-
 		@if (Auth::check())
+			@include('backend/partials/placeholder')
 			@include('backend/navigation/index')
 		@endif
 
 		@yield('content')
+
         @yield('javascript')
+
         <script src="{{ asset('js/init.js') }}"></script>
-		
     </body>
 </html>

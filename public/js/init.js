@@ -1,6 +1,5 @@
 function init() {
     
-
     if(window.owl)  {
 
         // register button loader
@@ -18,9 +17,6 @@ function init() {
             window.owl.login.register();
         }
     }
-
 }
-
-
 
 init();

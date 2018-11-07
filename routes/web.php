@@ -27,7 +27,8 @@ Route::group(['middleware' => ['auth']], function() {
 
 	Route::prefix('owl')->group(function () {
 		
-		Route::get('/dashboard', 'Backend\LandingController@index');
+		//Route::get('/dashboard', 'Backend\LandingController@index');
+		Route::get('/dashboard', ['as' => 'owl/dashboard', 'uses' => 'Backend\LandingController@index']);
 
 		// main
 		Route::get('/logout', 'Backend\LandingController@logout');

@@ -11,8 +11,10 @@
             <div class="item"></div>
             <div class="item"></div>
             <div class="item"></div>
+            <div class="item"></div>
         </div>
     </div>
     <div class="content-placeholder">
+        <div class="item"></div>
     </div>
 </div>
