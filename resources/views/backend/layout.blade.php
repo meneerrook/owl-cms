@@ -16,21 +16,22 @@
 		<script src="{{ asset('js/plugins/popper.min.js') }}"></script>
 		<script src="{{ asset('js/plugins/bootstrap.min.js') }}"></script>
 		<!-- JS Owl -->
-		<script src="{{ asset('js/owl/placeholder.owl.js') }}"></script>
+		<script src="{{ asset('js/owl/pageLoader.owl.js') }}"></script>
 		<script src="{{ asset('js/owl/buttonLoader.owl.js') }}"></script>
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+		<script src="{{ asset('js/owl/placeholder.owl.js') }}"></script>
+
+		<link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600,700" rel="stylesheet">
 	</head>
 
 	<body class="@yield('bodyClass')">
 		@if (Auth::check())
-			@include('backend/partials/placeholder')
+			@include('backend/partials/pageLoader')
 			@include('backend/navigation/index')
 		@endif
 
 		@yield('content')
 
         @yield('javascript')
-
         <script src="{{ asset('js/init.js') }}"></script>
     </body>
 </html>

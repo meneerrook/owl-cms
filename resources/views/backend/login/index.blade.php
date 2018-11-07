@@ -17,26 +17,22 @@
                     <h1>Owl CMS</h1>
                 </div>
             </div>
-            <div class="login-pane">
+            <div id="login-pane" class="login-pane">
                 <h4>Log in to continue</h2>
                 <form action="/owl/authenticate" method="post">
                     @csrf
 
-                    <div class="input-group mb-4">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="email-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
-                        </div>
-                        <input rquired name="email" type="email" class="form-control" placeholder="E-mail" aria-label="E-mail" aria-describedby="email-addon">
+                    <div class="grouped-input">
+                        <input required name="email" type="email" class="form-control">
+                        <span>@&nbsp;&nbsp;E-mail</span>
                     </div>
 
-                    <div class="input-group mb-4">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="password-addon"><i class="fa fa-lock" aria-hidden="true"></i></span>
-                        </div>
-                        <input rquired name="password" type="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="password-addon">
+                    <div class="grouped-input">
+                        <input required name="password" type="password" class="form-control">
+                        <span><i class="fa fa-lock" aria-hidden="true"></i>&nbsp;&nbsp;Password</span>
                     </div>
 
-                    <button id="loginButton" class="btn btn-primary btn-loader">Log in </button>
+                    <button id="loginButton" class="btn btn-primary btn-loader">Log in</button>
                 </form>
             </div>
         </div>

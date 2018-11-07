@@ -30,7 +30,7 @@
                     window.owl.login._renderTemplate(response);
                 },
                 error: function (xhr, ajaxOptions, thrownError) {
-                    alert(thrownError);
+                    alert(xhr + " - " + ajaxOptions + " - " + thrownError);
                 }
             });
         },
@@ -39,7 +39,6 @@
                 case "page":
                     var loginWrapper = document.querySelector("#login-wrapper");
                     var loginContainer = document.querySelector("#login-container");
-            
                     var wrapper = document.createElement("div");
                     wrapper.classList.add("loaded-content");
                     wrapper.innerHTML += response.content.html;
@@ -59,7 +58,6 @@
             }
         },
         _pageTransition: function(loginWrapper, loginContainer, wrapper, body) {
-            
             loginWrapper.addEventListener('transitionend', function(e) {
                 if(e.propertyName == "opacity") {
                     loginContainer.classList.add("sizeDown");
@@ -79,11 +77,14 @@
             });
             loginWrapper.classList.add("fadeOut");
         },
-        _giveMessage: function(loginWrapper, loginContainer, wrapper, body) {
+        _giveMessage: function(loginPane, loginWrapper, loginContainer, wrapper, body) {
             var button = document.querySelector("#loginButton");
             window.owl.buttonLoader.undo(button);
-
-            console.log("username/password wrong");
+            var loginPane = document.querySelector("#login-pane");
+            loginPane.addEventListener("animationend", function(){
+                loginPane.classList.remove("wrong-input");
+            });
+            loginPane.classList.add("wrong-input");
 
         }
     }

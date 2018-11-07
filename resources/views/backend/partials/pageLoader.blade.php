@@ -1,5 +1,5 @@
-<div id="placeholder" class="placeholder">
-    <div class="nav-placeholder">
+<div id="pageLoader" class="pageLoader">
+    <div class="nav-pageLoader">
         <div class="left">
             <div class="item head"></div>
             <div class="item"></div>
@@ -14,7 +14,7 @@
             <div class="item"></div>
         </div>
     </div>
-    <div class="content-placeholder">
+    <div class="content-pageLoader">
         <div class="item"></div>
     </div>
 </div>

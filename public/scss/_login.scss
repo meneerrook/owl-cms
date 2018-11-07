@@ -50,8 +50,33 @@
         padding: 50px;
         margin: 0 auto;
         background-color: $color--white;
-        @include border-radius(0);
+        @include border-radius(3px);
         @include box-shadow( 0px 10px 10px rgba(0, 0, 0, 0.1));
+
+        &.wrong-input {
+            backface-visibility: hidden;
+            perspective: 1000px;
+            @include animation('shake 600ms linear both');
+            @include transform(translate3d(0, 0, 0));
+            @include keyframes(shake) {
+                10%, 90% {
+                    transform: translate3d(-1px, 0, 0);
+                }
+                20%, 80% {
+                    transform: translate3d(2px, 0, 0);
+                }
+                30%, 50%, 70% {
+                    transform: translate3d(-4px, 0, 0);
+                }
+                40%, 60% {
+                    transform: translate3d(4px, 0, 0);
+                }
+            }
+
+            input {
+                border-color: $color--danger;
+            }
+        }
 
         h4 {
             margin-bottom: 50px;
@@ -63,15 +88,11 @@
             text-align: center;
         }
 
-        .input-group {
-            .input-group-text {
-                background: $color--white;
-            }
-        }
+        
 
         button {
             width:100%;
-            margin-top: 15px;
+            margin-top: $margin*2;
         }
 
         a {

@@ -11,6 +11,7 @@ body {
     min-width: 768px;
 }
 
+// button loader styling
 button.btn-loader {
     position: relative;
     overflow: hidden;
@@ -74,7 +75,9 @@ button.btn-loader {
     }
 }
 
-.placeholder {
+
+// page loader styling
+.pageLoader {
     position: fixed;
     top: 0;
     left: 0;
@@ -88,7 +91,7 @@ button.btn-loader {
     &.fade {
         @include opacity(0);
     }
-    .nav-placeholder {
+    .nav-pageLoader {
         position: absolute;
         top: 0;
         bottom: 0;
@@ -166,7 +169,7 @@ button.btn-loader {
         }   
         
     }
-    .content-placeholder {
+    .content-pageLoader {
         position: absolute;
         top: 0;
         right: 0;
@@ -183,4 +186,52 @@ button.btn-loader {
             @include border-radius(2px);
         }
     }
+}
+
+// placeholder styling
+.grouped-input {
+    float:left;
+    width: 100%;
+    position: relative;
+    height:60px;
+    margin-bottom:$margin;
+    background-color: $color--white;
+
+    span {
+        position: absolute;
+        left:0;
+        right:0;
+        width:100%;
+        padding-left:15px;
+        top:18px;
+        text-align: left;
+        z-index:10;
+        color:grey;
+        font-size:16px;
+        @include transition(all 0.1s ease);
+    }
+
+    input {
+        float:left;
+        width:100%;
+        padding-top:20px;
+        padding-bottom:10px;
+        height:60px;
+        background-color: transparent;
+        position: relative;
+        z-index:20;
+
+        &:focus, 
+        &.val-exists{
+            background-color: transparent;
+
+            + span {
+                top:5px;
+                padding-left:13px;
+                font-size:10px;
+                z-index:30;
+            }
+        } 
+    }
+    
 }

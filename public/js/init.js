@@ -2,14 +2,19 @@ function init() {
     
     if(window.owl)  {
 
-        // register button loader
-        if(window.owl.placeholder && typeof window.owl.placeholder.register == "function") {
-            window.owl.placeholder.register();
+        // register page loader
+        if(window.owl.pageLoader && typeof window.owl.pageLoader.register == "function") {
+            window.owl.pageLoader.register();
         }
 
         // register button loader
         if(window.owl.buttonLoader && typeof window.owl.buttonLoader.register == "function") {
             window.owl.buttonLoader.register();
+        }
+
+        // register placeholder
+        if(window.owl.placeholder && typeof window.owl.placeholder.register == "function") {
+            window.owl.placeholder.register();
         }
 
         // register login
