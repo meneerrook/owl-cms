@@ -7,7 +7,7 @@
                     <img src="{{ asset('images/owl_logo.svg') }}" alt="Owl" />
                 </a>
             </div>
-            <a href="#" class="menu-link text">&plus;</a>
+            <a href="#" class="toggle-create-menu menu-link text">&plus;</a>
             <a href="#" class="menu-link icon"><i class="fa fa-question-circle" aria-hidden="true"></i></a>
 
             <div class="menu-links-bottom">
@@ -20,7 +20,6 @@
                         </ul>
                     </div>
                 </div>
-                
             </div>
 
         </div>

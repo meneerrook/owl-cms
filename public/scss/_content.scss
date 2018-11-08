@@ -2,8 +2,14 @@
     height: 100vh;
     overflow: hidden;
     padding: $margin*2;
-    
+    @include filter(blur, 0);
+    @include transition(filter 200ms ease);
+
     h3 {
         line-height: 40px;
+    }
+
+    &.blur {
+        @include filter(blur, 1.5px);
     }
 }
