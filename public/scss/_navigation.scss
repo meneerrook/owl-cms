@@ -26,7 +26,7 @@ nav.main-menu {
             }
         }
 
-        a.menu-link {
+        .menu-link {
             float: left;
             width: 100%;
             height: 40px;
@@ -34,8 +34,10 @@ nav.main-menu {
             color: $color--white;
             text-align:center;
             margin-bottom: $margin/2;
+            cursor:pointer;
             @include border-radius(100%);
             @include transition(all .1s ease);
+
             &.text {
                 font-size: 32px;
             } 
@@ -49,6 +51,9 @@ nav.main-menu {
             &:hover {
                 text-decoration: none;
                 background-color: rgba(0, 0, 0, 0.2);
+            }
+            &.active {
+                background-color: rgba(0, 0, 0, 0.1);
             }
         }
         .menu-links-bottom {
@@ -74,16 +79,19 @@ nav.main-menu {
 
                     .popover-title{
                         float: left;
-                        width:100%;
+                        width:100%; 
                         font-size:16px;
-                        text-transform: uppercase;
                         margin-bottom: $margin;
-                        margin-right:$margin;
+                        margin-right: $margin*2;
                     }
                     ul{
+                        float: left;
+                        width: 100%;
                         padding: 0;
                         margin: 0;
                         li{
+                            float: left;
+                            width: 100%;
                             list-style-type: none;
                             margin-bottom: 5px;
 
@@ -92,7 +100,8 @@ nav.main-menu {
                             }
 
                             a{
-                                width:100%;
+                                float: left;
+                                width: 100%;
                             }
                         }
                     }
@@ -106,7 +115,7 @@ nav.main-menu {
         height: 100vh;
         padding: $margin*2 $margin $margin*2 $margin*2;
 
-        .heading {
+        .menu-heading {
             float: left;
             width: 100%;
 

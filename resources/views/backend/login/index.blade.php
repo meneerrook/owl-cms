@@ -40,5 +40,5 @@
 @endsection
 
 @section('javascript')
-    <script src="{{ asset('js/owl/login.owl.js') }}" name="loginScript"></script>
+    <script src="{{ asset('js/owl/login.owl.js') }}" id="login-script"></script>
 @endsection

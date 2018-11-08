@@ -31,8 +31,8 @@ Route::group(['middleware' => ['auth']], function() {
 		Route::get('/dashboard', ['as' => 'owl/dashboard', 'uses' => 'Backend\LandingController@index']);
 
 		// main
-		Route::get('/logout', 'Backend\LandingController@logout');
-		
+		//Route::get('/logout', 'Backend\LandingController@logout');
+		Route::get('/logout', ['as' => 'owl/logout', 'uses' => 'Backend\LandingController@logout']);
 
 	});
 });

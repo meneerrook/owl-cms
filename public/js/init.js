@@ -21,6 +21,11 @@ function init() {
         if(window.owl.login && typeof window.owl.login.register == "function") {
             window.owl.login.register();
         }
+
+         // register common
+         if(window.owl.common && typeof window.owl.common.register == "function") {
+            window.owl.common.register();
+        }
     }
 }
 

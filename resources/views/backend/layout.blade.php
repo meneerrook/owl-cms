@@ -19,6 +19,7 @@
 		<script src="{{ asset('js/owl/pageLoader.owl.js') }}"></script>
 		<script src="{{ asset('js/owl/buttonLoader.owl.js') }}"></script>
 		<script src="{{ asset('js/owl/placeholder.owl.js') }}"></script>
+		<script src="{{ asset('js/owl/common.owl.js') }}"></script>
 
 		<link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600,700" rel="stylesheet">
 	</head>

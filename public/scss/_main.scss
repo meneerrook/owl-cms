@@ -11,6 +11,10 @@ body {
     min-width: 768px;
 }
 
+.hidden {
+    display: none;
+}
+
 // button loader styling
 button.btn-loader {
     position: relative;

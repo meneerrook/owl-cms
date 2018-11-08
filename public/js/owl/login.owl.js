@@ -9,6 +9,7 @@
             loginButton.addEventListener('click', function(e) {
                 e.preventDefault();
                 window.owl.login._authenticateUser();
+                
             });
         },
         _authenticateUser: function() {
@@ -27,6 +28,7 @@
                     password: password.value
                 },
                 success: function(response) {
+                    window.history.pushState({"html":"","pageTitle":"Owl"},"", "/owl/dashboard");
                     window.owl.login._renderTemplate(response);
                 },
                 error: function (xhr, ajaxOptions, thrownError) {
@@ -42,10 +44,11 @@
                     var wrapper = document.createElement("div");
                     wrapper.classList.add("loaded-content");
                     wrapper.innerHTML += response.content.html;
-            
+                    wrapper.querySelector(".menu-item_dashboard").classList.add("active");
+
                     var body = document.querySelector("body");
                     body.insertBefore(wrapper, body.firstChild);
-            
+
                     window.owl.login._pageTransition(loginWrapper, loginContainer, wrapper, body);
                 break;
                 case "message":
@@ -73,6 +76,13 @@
                     loginContainer.parentNode.removeChild(loginContainer);
                     body.classList.remove("login");
                     body.classList.add("dashboard");
+                    var loginScript = document.querySelector("#login-script");
+                    loginScript.parentNode.removeChild(loginScript);
+
+
+                    if (window.owl.common && typeof window.owl.common.register == "function") {
+                        window.owl.common.register();
+                    }
                 }
             });
             loginWrapper.classList.add("fadeOut");

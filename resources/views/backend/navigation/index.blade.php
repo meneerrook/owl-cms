@@ -12,14 +12,11 @@
 
             <div class="menu-links-bottom">
                 <div class="menu-link-wrapper">
-                    <a href="#" class="menu-link icon"><i class="fa fa-user"></i></a>
-                    <div class="menu-link-popover">
+                    <span class="menu-link icon" data-toggle="#user-menu"><i class="fa fa-user"></i></span>
+                    <div id="user-menu" class="menu-link-popover hidden">
                         <span class="popover-title">{{ Auth::user()->email }}</span>
                         <ul>
-                            <li><a href="" class="popover-link">Test</a></li>
-                            <li><a href="" class="popover-link">Test</a></li>
-                            <li><a href="" class="popover-link">Test</a></li>
-                            <li><a href="" class="popover-link">Test</a></li>
+                            <li><a href="{{ route('owl/logout') }}" class="popover-link">Logout</a></li>
                         </ul>
                     </div>
                 </div>
@@ -28,11 +25,11 @@
 
         </div>
         <div class="right">
-            <div class="heading">
+            <div class="menu-heading">
                 <h3>Owl CMS</h3>
             </div>
             <ul>
-                <li class="dashboard {{ Request::path() == 'owl/dashboard' ? 'active' : '' }}">
+                <li class="menu-item_dashboard {{ Request::path() == 'owl/dashboard' ? 'active' : '' }}">
                     <a href="{{ route('owl/dashboard') }}" class="menu-item">
                         <i class="fa fa-bar-chart"></i>Dashboard
                     </a>
