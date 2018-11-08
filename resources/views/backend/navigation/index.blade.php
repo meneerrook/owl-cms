@@ -9,6 +9,23 @@
             </div>
             <a href="#" class="menu-link text">&plus;</a>
             <a href="#" class="menu-link icon"><i class="fa fa-question-circle" aria-hidden="true"></i></a>
+
+            <div class="menu-links-bottom">
+                <div class="menu-link-wrapper">
+                    <a href="#" class="menu-link icon"><i class="fa fa-user"></i></a>
+                    <div class="menu-link-popover">
+                        <span class="popover-title">{{ Auth::user()->email }}</span>
+                        <ul>
+                            <li><a href="" class="popover-link">Test</a></li>
+                            <li><a href="" class="popover-link">Test</a></li>
+                            <li><a href="" class="popover-link">Test</a></li>
+                            <li><a href="" class="popover-link">Test</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
+
         </div>
         <div class="right">
             <div class="heading">

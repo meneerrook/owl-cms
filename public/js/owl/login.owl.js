@@ -49,7 +49,7 @@
                     window.owl.login._pageTransition(loginWrapper, loginContainer, wrapper, body);
                 break;
                 case "message":
-                    window.owl.login._giveMessage(loginWrapper, loginContainer, wrapper, body);
+                    window.owl.login._giveMessage();
                 break;
                 default:
                     alert("Something went wrong, please contact your system administrator or retry again in a few minutes.");
@@ -77,7 +77,7 @@
             });
             loginWrapper.classList.add("fadeOut");
         },
-        _giveMessage: function(loginPane, loginWrapper, loginContainer, wrapper, body) {
+        _giveMessage: function() {
             var button = document.querySelector("#loginButton");
             window.owl.buttonLoader.undo(button);
             var loginPane = document.querySelector("#login-pane");

@@ -9,6 +9,7 @@ nav.main-menu {
         width: 70px;
         height: 100vh;
         padding: $margin*2 $margin;
+        position: relative;
 
         .logo {
             float:left;
@@ -37,7 +38,7 @@ nav.main-menu {
             @include transition(all .1s ease);
             &.text {
                 font-size: 32px;
-            }
+            } 
             &.icon {
                 font-size: 20px;
 
@@ -48,6 +49,54 @@ nav.main-menu {
             &:hover {
                 text-decoration: none;
                 background-color: rgba(0, 0, 0, 0.2);
+            }
+        }
+        .menu-links-bottom {
+            position: absolute;
+            right: $margin;
+            bottom: $margin;
+            left: $margin;
+
+            .menu-link-wrapper {
+                float:left;
+                width:100%;
+                position:relative;
+
+                .menu-link-popover {
+                    position: absolute;
+                    left: 45px;
+                    bottom: 50%;
+                    width:auto;
+                    height:auto;
+                    background-color:$color--lightBG;
+                    padding:$margin;
+                    @include border-radius(3px);
+
+                    .popover-title{
+                        float: left;
+                        width:100%;
+                        font-size:16px;
+                        text-transform: uppercase;
+                        margin-bottom: $margin;
+                        margin-right:$margin;
+                    }
+                    ul{
+                        padding: 0;
+                        margin: 0;
+                        li{
+                            list-style-type: none;
+                            margin-bottom: 5px;
+
+                            &:last-child {
+                                margin-bottom: 0;
+                            }
+
+                            a{
+                                width:100%;
+                            }
+                        }
+                    }
+                }
             }
         }
     }
