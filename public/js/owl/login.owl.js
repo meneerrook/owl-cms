@@ -32,7 +32,7 @@
                     window.owl.login._renderTemplate(response);
                 },
                 error: function (xhr, ajaxOptions, thrownError) {
-                    alert(xhr + " - " + ajaxOptions + " - " + thrownError);
+                    alert(thrownError);
                 }
             });
         },

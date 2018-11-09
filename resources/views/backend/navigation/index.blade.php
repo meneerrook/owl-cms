@@ -33,18 +33,18 @@
                         <i class="fa fa-bar-chart"></i>Dashboard
                     </a>
                 </li>
-                <li>
-                    <a href="" class="menu-item">
+                <li class="menu-item_posts {{ Request::path() == 'owl/posts' ? 'active' : '' }}">
+                    <a href="{{ route('owl/posts') }}" class="menu-item">
                         <i class="fa fa-thumb-tack"></i>Posts
                     </a>
                 </li>
-                <li>
-                    <a href="" class="menu-item">
+                <li class="menu-item_pages {{ Request::path() == 'owl/pages' ? 'active' : '' }}">
+                    <a href="{{ route('owl/pages') }}" class="menu-item">
                         <i class="fa fa-files-o"></i>Pages
                     </a>
                 </li>
-                <li>
-                    <a href="" class="menu-item">
+                <li class="menu-item_media {{ Request::path() == 'owl/media' ? 'active' : '' }}">
+                    <a href="{{ route('owl/media') }}" class="menu-item">
                         <i class="fa fa-film"></i>Media
                     </a>
                 </li>

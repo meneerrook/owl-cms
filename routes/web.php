@@ -27,13 +27,14 @@ Route::group(['middleware' => ['auth']], function() {
 
 	Route::prefix('owl')->group(function () {
 		
-		//Route::get('/dashboard', 'Backend\LandingController@index');
-		Route::get('/dashboard', ['as' => 'owl/dashboard', 'uses' => 'Backend\LandingController@index']);
-
-		// main
-		//Route::get('/logout', 'Backend\LandingController@logout');
+		// get:
 		Route::get('/logout', ['as' => 'owl/logout', 'uses' => 'Backend\LandingController@logout']);
+		Route::get('/dashboard', ['as' => 'owl/dashboard', 'uses' => 'Backend\LandingController@index']);
+		Route::get('/posts', ['as' => 'owl/posts', 'uses' => 'Backend\PostsController@index']);
+		Route::get('/pages', ['as' => 'owl/pages', 'uses' => 'Backend\PagesController@index']);
+		Route::get('/media', ['as' => 'owl/media', 'uses' => 'Backend\MediaController@index']);
 
+		// post:
 	});
 });
 

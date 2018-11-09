@@ -9,6 +9,18 @@ body {
     padding: 0;
     margin: 0;
     min-width: 768px;
+    position: relative;
+
+    &:before {
+        content:"";
+        position: fixed;
+        z-index:-1;
+        left:0;
+        top:0;
+        bottom:0;
+        width:$navbar-width;
+        background-color:$color--primary;
+    }
 }
 
 .hidden {
@@ -237,5 +249,34 @@ button.btn-loader {
             }
         } 
     }
-    
 }
+
+// tooltips
+// IMPORTANT: do not use on elements that have custom before and after styling
+// .owl-tooltip {
+//     &:before {
+//         content: attr(data-tooltip-text);
+//         position: absolute;
+//         left: calc(100% + 5px);
+//         top:50%;
+//         height: 24px;
+//         line-height: 15px;
+//         padding:5px;
+//         background-color:rgba(0,0,0, 0.8);
+//         color:$color--white;
+//         z-index:100;
+//         font-size:12px;
+//         //display: none;
+//         @include border-radius(3px);
+//         @include transform(translateY(-50%));
+//         @include opacity(0);
+//         @include transition(opacity 200ms ease 300ms);
+//     }
+
+//     &:hover {
+//         &:before {
+//             //display:block;
+//             @include opacity(1);
+//         }
+//     }
+// }
