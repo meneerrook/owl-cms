@@ -29,7 +29,7 @@
 			@include('backend/partials/pageLoader')
 			@include('backend/navigation/index')
 		@endif
-
+	
 		@yield('content')
 
         @yield('javascript')

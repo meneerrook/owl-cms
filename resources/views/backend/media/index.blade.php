@@ -1,9 +1,9 @@
 @extends('backend/layout')
 
-@section('bodyClass', 'media')
+@section('bodyClass', 'posts')
 
 @section('content')
     <div id="content" class="content">
-        <h3>Media</h3>
+        <h3>Posts</h3>
     </div>
 @endsection

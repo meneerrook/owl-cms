@@ -9,18 +9,6 @@ body {
     padding: 0;
     margin: 0;
     min-width: 768px;
-    position: relative;
-
-    &:before {
-        content:"";
-        position: fixed;
-        z-index:-1;
-        left:0;
-        top:0;
-        bottom:0;
-        width:$navbar-width;
-        background-color:$color--primary;
-    }
 }
 
 .hidden {
