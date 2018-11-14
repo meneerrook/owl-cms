@@ -1,16 +1,27 @@
-$color--primary: #007bff;
-$color--white: #ffffff;
-$color--black: #000000;
+/* Colors */
+$color--primary:    #007bff;
+$color--white:      #ffffff;
+$color--black:      #000000;
 
-$color--success: #7bff00;
-$color--warning: #ff8400;
-$color--danger: #ff0500;
+$color--success:    #7bff00;
+$color--warning:    #ff8400;
+$color--danger:     #ff0500;
 
-$color--lightBG: #f1f1f1;
-$color--darkBG: #444444;
+$color--lightBG:    #fafafa;
+$color--darkBG:     #444444;
 
-$navbar-width: 320px;
-$margin: 15px;
+/* Font family */
+$font-family:   'Raleway', sans-serif;
 
-$font-family: 'Raleway', sans-serif;
+/* Pixel values */
+$navbar-width-s:        280px;
+$navbar-width-l:        320px;
+$navbar-mobile-height:  60px;
+$margin:                15px;
 
+/* Media queries (phone portrait is not need since this is the default) */
+$mq-xs: "(min-width: 578px)"; // phone landscape
+$mq-s:  "(min-width: 768px)"; // tablet portrait
+$mq-m:  "(min-width: 992px)"; // desktop small
+$mq-l:  "(min-width: 1200px)"; // desktop large
+$mq-xl: "(min-width: 1600px)"; // desktop extra large

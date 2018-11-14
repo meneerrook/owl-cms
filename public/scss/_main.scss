@@ -8,7 +8,7 @@
 body {
     padding: 0;
     margin: 0;
-    min-width: 768px;
+    min-width: 320px;
 }
 
 .hidden {
@@ -100,8 +100,12 @@ button.btn-loader {
         top: 0;
         bottom: 0;
         left: 0;
-        width: $navbar-width;
+        width: $navbar-width-s;
         background-color: $color--primary;
+
+        @media #{$mq-s} {
+            width: $navbar-width-l;
+        }
 
         .left {
             float: left;
@@ -178,9 +182,13 @@ button.btn-loader {
         top: 0;
         right: 0;
         bottom: 0;
-        left: $navbar-width;
+        left: $navbar-width-s;
         background-color: $color--white;
         padding:$margin*2;
+
+        @media #{$mq-s} {
+            left: $navbar-width-l;
+        }
         
         .item {
             float:left;

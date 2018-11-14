@@ -32,7 +32,7 @@ class LandingController extends Controller
     }
 
     // post:
-
+    
     public function authenticate(Request $request)
     {
         $email = Input::get('email');
@@ -55,16 +55,8 @@ class LandingController extends Controller
                     'activePage' => 'dashboard'
                 ]
             ]);
-
         }
         else{
-            //return Redirect::back()->with('message', 'Username/Password was incorrect!');
-
-            // $navigation = view('backend.navigation.template')->render();
-            // $page = view('backend.dashboard.template')->render();
-            
-            // $html = $navigation . $page;
-
             return Response::json([
                 'type' => 'message',
                 'content' => [
@@ -74,4 +66,40 @@ class LandingController extends Controller
             ]);
         }
     }
+
+    /*public function getDashboardData() {
+
+        $content = [];
+
+        $posts_active = Post::all()->where('active', 1)->count();
+        $posts_inactive = Post::all()->where('active', 0)->count();
+        $posts_total = Post::all()->count();
+        
+        $dataTypes = ['posts', 'pages', 'media', 'comments'];
+
+        for ($i=0; $i < $dataTypes->count(); $i++) { 
+            
+            $type = $dataTypes[$i];
+
+            if($type == "posts") {
+                $active = Post::all()->where('status', 'active')->count();
+                $inactive = Post::all()->where('status', 'inactive')->count();
+                $total = Post::all()->count();
+            } elseif($type == "pages") {
+                $active = Post::all()->where('status', 'active')->count();
+                $inactive = Post::all()->where('status', 'inactive')->count();
+                $total = Post::all()->count();
+            } elseif($type == "media") {
+                $active = Post::all()->where('status', 'active')->count();
+                $inactive = Post::all()->where('status', 'inactive')->count();
+                $total = Post::all()->count();
+            } elseif($type == "comments") {
+                $active = Post::all()->where('status', 'active')->count();
+                $inactive = Post::all()->where('status', 'inactive')->count();
+                $total = Post::all()->count();
+            } else {
+                return false;
+            }
+        }
+    }*/
 }

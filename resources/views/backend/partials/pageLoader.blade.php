@@ -15,6 +15,6 @@
         </div>
     </div>
     <div class="content-pageLoader">
-        <div class="item"></div>
+        <!-- <div class="item"></div> -->
     </div>
 </div>

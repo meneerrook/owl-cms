@@ -38,4 +38,4 @@
         </ul>
     </div>
 </nav>
-<div id="create-menu-overlay" class="create-menu-overlay"></div>
+<div id="menu-overlay" class="menu-overlay"></div>

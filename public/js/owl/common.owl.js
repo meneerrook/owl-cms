@@ -5,7 +5,7 @@
     window.owl.common = {
         register: function() {
             window.owl.common._toggler();
-            window.owl.common._createMenuToggler();
+            window.owl.common._setMenuToggler();
         },
         _toggler: function() {
             var toggleButton = document.querySelectorAll("[data-toggle]");
@@ -28,36 +28,45 @@
                 
             }
         },
-        _createMenuToggler: function() {
+        _setMenuToggler: function() {
             var toggleCreateMenu = document.querySelectorAll(".toggle-create-menu");
             var createMenu = document.querySelector("#create-menu");
-            var createMenuOverlay = document.querySelector("#create-menu-overlay");
+
+            var toggleMobileMenu = document.querySelectorAll(".toggle-main-menu");
+            var mainMenu = document.querySelector("#main-menu");
+            
+            var menuOverlay = document.querySelector("#menu-overlay");
             var content = document.querySelector("#content");
 
             for (var i = 0; i < toggleCreateMenu.length; i++) {
-                toggleCreateMenu[i].addEventListener("click", function(e) {
-                    e.preventDefault();
-                    
-                    if(createMenu.classList.contains("open")) {
+                window.owl.common._runMenuToggle(toggleCreateMenu[i], createMenu, menuOverlay, content);
+            }
+            for (var i = 0; i < toggleMobileMenu.length; i++) {
+                window.owl.common._runMenuToggle(toggleMobileMenu[i], mainMenu, menuOverlay, content);
+            }
+        },
+        _runMenuToggle: function(button, menu, menuOverlay, content) {
+            button.addEventListener("click", function(e) {
+                e.preventDefault();
+                if(menu.classList.contains("open")) {
+                    menu.classList.remove("open");
 
-                        createMenu.classList.remove("open");
-                        createMenuOverlay.classList.remove("fadeIn");
+                    if(!(menu.classList.contains("create-menu") && document.querySelector("#main-menu").classList.contains("open"))) {
+                        menuOverlay.classList.remove("fadeIn");
                         content.classList.remove("blur");
                         setTimeout(function(){ 
-                            createMenuOverlay.classList.remove("show")
+                            menuOverlay.classList.remove("show")
                         }, 200);
-
-                    } else {
-                        createMenu.classList.add("open");
-                        createMenuOverlay.classList.add("show");
-                        content.classList.add("blur");
-                        setTimeout(function(){ 
-                            createMenuOverlay.classList.add("fadeIn");
-                        }, 1);
                     }
-                    
-                });
-            }
+                } else {
+                    menu.classList.add("open");
+                    menuOverlay.classList.add("show");
+                    content.classList.add("blur");
+                    setTimeout(function(){ 
+                        menuOverlay.classList.add("fadeIn");
+                    }, 1);
+                }
+            });
         }
     }
 

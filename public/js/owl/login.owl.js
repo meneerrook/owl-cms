@@ -67,7 +67,7 @@
                 }
             });
             loginContainer.addEventListener('transitionend', function(e) {
-                if(e.propertyName == "width") {
+                if(e.propertyName == "width" || e.propertyName == "height") {
                     wrapper.classList.add("show");
                 }
             });
