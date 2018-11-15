@@ -81,20 +81,34 @@ button.btn-loader {
 
 
 // page loader styling
-.pageLoader {
+.page-loader-wrapper {
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    z-index: 9999;
+    @include opacity(1);
+    @include transition(opacity 100ms ease); 
+
+    &.fade {
+        @include opacity(0);
+    }
+}
+.page-loader-large {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     background-color: $color--white;
-    z-index: 9999;
-    @include opacity(1);
-    @include transition(opacity 100ms ease);
+    display: none;
 
-    &.fade {
-        @include opacity(0);
+    @media #{$mq-m} {
+        display: block;
     }
+
+    
     .nav-pageLoader {
         position: absolute;
         top: 0;
@@ -197,6 +211,47 @@ button.btn-loader {
             background-color: rgba(0,0,0, 0.15);
             @include border-radius(2px);
         }
+    }
+}
+.page-loader-small {
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom: 0;
+
+    .nav-pageLoader{
+        position:fixed;
+        top:0;
+        left:0;
+        right:0;    
+        height:$navbar-mobile-height;
+        background-color:$color--primary;
+
+        .item {
+            position: absolute;
+            left:$margin;
+            top:50%;
+            width: 40px;
+            height:40px;
+            padding: 9px;
+            cursor:pointer;
+            background-color: rgba(255,255,255, 0.1);
+            @include border-radius(100%);
+            @include transform(translateY(-50%));
+        }
+    }
+    .content-pageLoader {
+        width:100%;
+        height:100vh;
+        padding-top:$navbar-mobile-height+($margin*2);
+        background-color:$color--white;
+    }
+
+
+
+    @media #{$mq-m} {
+        display: none;
     }
 }
 

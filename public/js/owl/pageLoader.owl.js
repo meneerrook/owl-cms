@@ -7,7 +7,7 @@
             window.addEventListener('load', window.owl.pageLoader._deactivatePageLoader);
         },
         _deactivatePageLoader: function() {
-            var loadContainer = document.querySelector("#pageLoader");
+            var loadContainer = document.querySelector("#page-loader-wrapper");
             if(loadContainer) {
                 loadContainer.addEventListener("transitionend", function(e){
                     if(e.propertyName == "opacity") {
