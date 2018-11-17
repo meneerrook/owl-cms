@@ -22,7 +22,7 @@
                 <div class="menu-link-wrapper">
                     <span class="menu-link icon" data-toggle="#user-menu"><i class="fa fa-user"></i></span>
                     <div id="user-menu" class="menu-link-popover hidden">
-                        <span class="popover-title">{{ Auth::user()->email }}</span>
+                        <span class="popover-title">{{ Auth::user()->firstname . ' ' . Auth::user()->lastname }}</span>
                         <ul>
                             <li><a href="{{ route('owl/logout') }}" class="popover-link">Logout</a></li>
                         </ul>
