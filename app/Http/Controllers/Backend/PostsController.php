@@ -19,6 +19,6 @@ class PostsController extends Controller
 
     public function  index() 
     {
-        return view('backend.posts.index');
+        return view('backend.posts.index')->with('menuItems', 'menuitems.posts');
     }
 }

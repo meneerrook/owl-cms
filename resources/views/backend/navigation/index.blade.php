@@ -1,4 +1,17 @@
 @if(Auth::check())
+
+    @php
+
+        if($menuItems == 'menuitems.default') {
+            $menuClass = '';
+        } else {
+            $menuClass = 'submenu';
+        }
+
+        $menuItems = config($menuItems);
+        
+    @endphp
+
     <nav class="mobile-menu">
         <div class="hamburger toggle-main-menu">
             <span></span>
@@ -11,7 +24,7 @@
         
         <div class="left">
             <div class="logo">
-                <a href="" class="menu-link">
+                <a href="{{ route('owl/dashboard') }}" class="menu-link">
                     <img src="{{ asset('images/owl_logo.svg') }}" alt="Owl" />
                 </a>
             </div>
@@ -29,53 +42,36 @@
                     </div>
                 </div>
             </div>
-
         </div>
-        <div class="right">
+
+        <div class="right {{ $menuClass }}">
             <div class="menu-heading">
                 <h3>Owl CMS</h3>
             </div>
             <ul>
-                <li class="menu-item_dashboard {{ Request::path() == 'owl/dashboard' ? 'active' : '' }}">
-                    <a href="{{ route('owl/dashboard') }}" class="menu-item">
-                        <i class="fa fa-bar-chart"></i>Dashboard
-                    </a>
-                </li>
-                <li class="menu-item_posts {{ Request::path() == 'owl/posts' ? 'active' : '' }}">
-                    <a href="{{ route('owl/posts') }}" class="menu-item">
-                        <i class="fa fa-thumb-tack"></i>Posts
-                    </a>
-                </li>
-                <li class="menu-item_pages {{ Request::path() == 'owl/pages' ? 'active' : '' }}">
-                    <a href="{{ route('owl/pages') }}" class="menu-item">
-                        <i class="fa fa-files-o"></i>Pages
-                    </a>
-                </li>
-                <li class="menu-item_media {{ Request::path() == 'owl/media' ? 'active' : '' }}">
-                    <a href="{{ route('owl/media') }}" class="menu-item">
-                        <i class="fa fa-film"></i>Media
-                    </a>
-                </li>
-                <li>
-                    <a href="" class="menu-item">
-                        <i class="fa fa-comment-o"></i>Comments
-                    </a>
-                </li>
+                @foreach($menuItems['top'] as $menuItem)
+                    <li class="menu-item_{{ strtolower($menuItem['page']) }} {{ Request::path() == $menuItem['route'] ? 'active' : '' }}">
+                        <a href="{{ route($menuItem['route']) }}" class="menu-item">
+                            <i class="{{ $menuItem['icon'] }}"></i>{{ $menuItem['page'] }}
+                        </a>
+                    </li>
+                @endforeach
             </ul>
-            <hr>
-            <ul class="m-0">
-                <li class="dashboard">
-                    <a href="" class="menu-item">
-                        <i class="fa fa-users"></i>Users
-                    </a>
-                </li>
-                <li>
-                    <a href="" class="menu-item">
-                        <i class="fa fa-sliders"></i>Settings
-                    </a>
-                </li>
-            </ul>
+
+            @if (count($menuItems['bottom']) > 0)
+                <hr>
+                <ul class="m-0">
+                    @foreach($menuItems['bottom'] as $menuItem)
+                        <li class="menu-item_{{ strtolower($menuItem['page']) }} {{ Request::path() == $menuItem['route'] ? 'active' : '' }}">
+                            <a href="{{ route($menuItem['route']) }}" class="menu-item">
+                                <i class="{{ $menuItem['icon'] }}"></i>{{ $menuItem['page'] }}
+                            </a>
+                        </li>
+                    @endforeach
+                </ul>
+            @endif
         </div>
+        
     </nav>
 
     @include('backend/navigation/create-menu')

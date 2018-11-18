@@ -17,6 +17,6 @@ class MediaController extends Controller
 
     public function  index() 
     {
-        return view('backend.media.index');
+        return view('backend.media.index')->with('menuItems', 'menuitems.default');
     }
 }

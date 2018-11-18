@@ -25,6 +25,7 @@
 	</head>
 
 	<body class="@yield('bodyClass')">
+
 		@if (Auth::check())
 			@include('backend/partials/pageLoader')
 			@include('backend/navigation/index')

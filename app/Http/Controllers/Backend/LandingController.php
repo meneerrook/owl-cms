@@ -17,7 +17,7 @@ class LandingController extends Controller
 
     public function  index() 
     {
-        return view('backend.dashboard.index');
+        return view('backend.dashboard.index')->with('menuItems', 'menuitems.default');
     }
 
     public function login()
@@ -40,7 +40,7 @@ class LandingController extends Controller
         
         if (Auth::attempt(array('email' => $email, 'password' => $password ))){
 
-            $navigation = view('backend.navigation.index')->render();
+            $navigation = view('backend.navigation.index')->with('menuItems', 'menuitems.default')->render();
             $page = view('backend.dashboard.template')->render();
             
             $html = $navigation . $page;

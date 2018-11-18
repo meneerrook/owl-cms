@@ -17,6 +17,6 @@ class PagesController extends Controller
 
     public function  index() 
     {
-        return view('backend.pages.index');
+        return view('backend.pages.index')->with('menuItems', 'menuitems.default');
     }
 }
