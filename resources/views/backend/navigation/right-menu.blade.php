@@ -8,7 +8,7 @@
 <ul>
     @foreach($menuItems['top'] as $menuItem)
         <li class="menu-item_{{ strtolower($menuItem['page']) }} {{ Request::path() == $menuItem['route'] ? 'active' : '' }}">
-            <a href="{{ route($menuItem['route']) }}" class="menu-item {{ $menuItem['class'] }}">
+            <a href="{{ route($menuItem['route']) }}" class="menu-item {{ $menuItem['class'] }}" data-xhr-page>
                 <i class="{{ $menuItem['icon'] }}"></i>{{ $menuItem['page'] }}
             </a>
         </li>
@@ -20,7 +20,7 @@
     <ul class="m-0">
         @foreach($menuItems['bottom'] as $menuItem)
             <li class="menu-item_{{ strtolower($menuItem['page']) }} {{ Request::path() == $menuItem['route'] ? 'active' : '' }}">
-                <a href="{{ route($menuItem['route']) }}" class="menu-item {{ $menuItem['class'] }}">
+                <a href="{{ route($menuItem['route']) }}" class="menu-item {{ $menuItem['class'] }}" data-xhr-page>
                     <i class="{{ $menuItem['icon'] }}"></i>{{ $menuItem['page'] }}
                 </a>
             </li>

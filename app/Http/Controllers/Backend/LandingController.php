@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Redirect;
-use Illuminate\Http\Request;
+use Request;
 use App\User;
 use Auth;
 use Input;
@@ -15,9 +15,16 @@ class LandingController extends Controller
 {
     // get:
 
-    public function  index() 
+    public function index() 
     {
-        return view('backend.dashboard.index')->with('menuItems', 'menuitems.default');
+    
+        if (Request::ajax()) {
+            $navigation = view('backend.navigation.right-menu')->with('menuItems', 'menuitems.default')->render();
+            $content = view('backend.dashboard.index-template')->render();
+            return Response::json(['html' => [ 'navigation' => $navigation, 'content' => $content,]]);
+        } else {
+            return view('backend.dashboard.index')->with('menuItems', 'menuitems.default');
+        }
     }
 
     public function login()
@@ -41,7 +48,7 @@ class LandingController extends Controller
         if (Auth::attempt(array('email' => $email, 'password' => $password ))){
 
             $navigation = view('backend.navigation.index')->with('menuItems', 'menuitems.default')->render();
-            $content = view('backend.dashboard.template')->render();
+            $content = view('backend.dashboard.index-template')->render();
             
 
             return Response::json([

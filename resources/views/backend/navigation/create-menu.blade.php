@@ -1,7 +1,7 @@
 <nav id="create-menu" class="create-menu">
     <div class="left">
         <div class="logo">
-            <a href="" class="menu-link">
+            <a href="" class="menu-link" data-xhr-page>
                 <img src="{{ asset('images/owl_logo_black.svg') }}" alt="Owl" />
             </a>
         </div>
@@ -16,22 +16,22 @@
         </div>
         <ul>
             <li>
-                <a href="" class="menu-item">
+                <a href="" class="menu-item" data-xhr-page>
                     <i class="fa fa-thumb-tack"></i>Post
                 </a>
             </li>
             <li>
-                <a href="" class="menu-item">
+                <a href="" class="menu-item" data-xhr-page>
                     <i class="fa fa-files-o"></i>Page
                 </a>
             </li>
             <li>
-                <a href="" class="menu-item">
+                <a href="" class="menu-item" data-xhr-page>
                     <i class="fa fa-film"></i>Media
                 </a>
             </li>
             <li>
-                <a href="" class="menu-item">
+                <a href="" class="menu-item" data-xhr-page>
                     <i class="fa fa-user-o"></i>User
                 </a>
             </li>

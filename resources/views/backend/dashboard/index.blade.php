@@ -3,6 +3,6 @@
 @section('bodyClass', 'dashboard')
 
 @section('content')
-    @include('backend/dashboard/template')
+    @include('backend/dashboard/index-template')
 @endsection
 

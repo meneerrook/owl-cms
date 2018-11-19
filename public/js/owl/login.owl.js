@@ -84,7 +84,9 @@
                     var loginScript = document.querySelector("#login-script");
                     loginScript.parentNode.removeChild(loginScript);
 
-                    
+                    if (window.owl.getPage && typeof window.owl.getPage.register == "function") {
+                        window.owl.getPage.register();
+                    }
                     if (window.owl.common && typeof window.owl.common.register == "function") {
                         window.owl.common.register();
                     }

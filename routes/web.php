@@ -25,17 +25,20 @@ Route::group(['middleware' => ['guest']], function() {
 
 Route::group(['middleware' => ['auth']], function() {
 
-	Route::prefix('owl')->group(function () {
+	//Route::middleware(['ajax'])->group(function (){
+		Route::prefix('owl')->group(function () {
 		
-		// get:
-		Route::get('/logout', ['as' => 'owl/logout', 'uses' => 'Backend\LandingController@logout']);
-		Route::get('/dashboard', ['as' => 'owl/dashboard', 'uses' => 'Backend\LandingController@index']);
-		Route::get('/posts', ['as' => 'owl/posts', 'uses' => 'Backend\PostsController@index']);
-		Route::get('/pages', ['as' => 'owl/pages', 'uses' => 'Backend\PagesController@index']);
-		Route::get('/media', ['as' => 'owl/media', 'uses' => 'Backend\MediaController@index']);
-
-		// post:
-	});
+			// get:
+			Route::get('/logout', ['as' => 'owl/logout', 'uses' => 'Backend\LandingController@logout']);
+			Route::get('/dashboard', ['as' => 'owl/dashboard', 'uses' => 'Backend\LandingController@index']);
+			Route::get('/posts', ['as' => 'owl/posts', 'uses' => 'Backend\PostsController@index']);
+			Route::get('/pages', ['as' => 'owl/pages', 'uses' => 'Backend\PagesController@index']);
+			Route::get('/media', ['as' => 'owl/media', 'uses' => 'Backend\MediaController@index']);
+	
+			// post:
+		});
+	//});
+	
 });
 
 // front routes, FrontController is the main controller for the front end of the application
