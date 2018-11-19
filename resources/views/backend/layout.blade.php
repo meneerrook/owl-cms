@@ -16,7 +16,7 @@
 		<script src="{{ asset('js/plugins/popper.min.js') }}"></script>
 		<script src="{{ asset('js/plugins/bootstrap.min.js') }}"></script>
 		<!-- JS Owl -->
-		<script src="{{ asset('js/owl/pageLoader.owl.js') }}"></script>
+		<script src="{{ asset('js/owl/skeleton.owl.js') }}"></script>
 		<script src="{{ asset('js/owl/buttonLoader.owl.js') }}"></script>
 		<script src="{{ asset('js/owl/placeholder.owl.js') }}"></script>
 		<script src="{{ asset('js/owl/common.owl.js') }}"></script>
@@ -27,7 +27,7 @@
 	<body class="@yield('bodyClass')">
 
 		@if (Auth::check())
-			@include('backend/partials/pageLoader')
+			@include('backend/partials/skeleton')
 			@include('backend/navigation/index')
 		@endif
 	

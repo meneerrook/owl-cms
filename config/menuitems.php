@@ -5,18 +5,25 @@
                 [
                     'page' => 'Dashboard',
                     'route' => 'owl/dashboard',
+                    'class' => '',
                     'icon' => 'fa fa-bar-chart'
-                ], [
+                ], 
+                [
                     'page' => 'Posts',
                     'route' => 'owl/posts',
+                    'class' => 'has-sub-menu',
                     'icon' => 'fa fa-thumb-tack'
-                ], [
+                ], 
+                [
                     'page' => 'Pages',
                     'route' => 'owl/pages',
-                    'icon' => 'fa fa-files-o'
-                ], [
+                    'class' => '',
+                    'icon' => 'fa fa-files-o',
+                ], 
+                [
                     'page' => 'Media',
                     'route' => 'owl/media',
+                    'class' => '',
                     'icon' => 'fa fa-film'
                 ], 
                 // [

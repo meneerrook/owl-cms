@@ -1,8 +1,8 @@
 
 
-<div id="page-loader-wrapper" class="page-loader-wrapper">
-    <div class="page-loader-large">
-        <div class="nav-pageLoader">
+<div id="skeleton-wrapper" class="skeleton-wrapper">
+    <div class="skeleton-large">
+        <div class="nav-skeleton">
             <div class="left">
                 <div class="item head"></div>
                 <div class="item"></div>
@@ -17,18 +17,18 @@
                 <div class="item"></div>
             </div>
         </div>
-        <div class="content-pageLoader">
+        <div class="content-skeleton">
             <div class="loader">
                 <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
             </div>
         </div>
     </div>
 
-    <div class="page-loader-small">
-        <div class="nav-pageLoader">
+    <div class="skeleton-small">
+        <div class="nav-skeleton">
             <div class="item"></div>
         </div> 
-        <div class="content-pageLoader">
+        <div class="content-skeleton">
             <div class="loader">
                 <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
             </div>

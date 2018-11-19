@@ -3,8 +3,8 @@ function init() {
     if(window.owl)  {
 
         // register page loader
-        if(window.owl.pageLoader && typeof window.owl.pageLoader.register == "function") {
-            window.owl.pageLoader.register();
+        if(window.owl.skeleton && typeof window.owl.skeleton.register == "function") {
+            window.owl.skeleton.register();
         }
 
         // register button loader
