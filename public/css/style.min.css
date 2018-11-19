@@ -302,6 +302,40 @@ button.btn-loader.loading:before, button.btn-loader.loading:after {
   z-index: 30;
 }
 
+.content {
+  height: 100vh;
+  overflow: hidden;
+  padding: 90px 30px 30px;
+  -webkit-filter: blur(0);
+  -moz-filter: blur(0);
+  -ms-filter: blur(0);
+  -o-filter: blur(0);
+  filter: blur(0);
+  -webkit-transition: filter 200ms ease;
+  -webkit-transition: -webkit-filter 200ms ease;
+  transition: -webkit-filter 200ms ease;
+  transition: filter 200ms ease;
+  transition: filter 200ms ease, -webkit-filter 200ms ease;
+}
+
+@media (min-width: 992px) {
+  .content {
+    padding: 30px;
+  }
+}
+
+.content h3 {
+  line-height: 40px;
+}
+
+.content.blur {
+  -webkit-filter: blur(1.5px);
+  -moz-filter: blur(1.5px);
+  -ms-filter: blur(1.5px);
+  -o-filter: blur(1.5px);
+  filter: blur(1.5px);
+}
+
 .skeleton {
   opacity: 1;
   filter: alpha(opacity=100);
@@ -1042,7 +1076,7 @@ nav.main-menu .right.submenu * {
   left: 0;
   background-color: rgba(0, 0, 0, 0.2);
   display: none;
-  z-index: 20;
+  z-index: 30;
   opacity: 0;
   filter: alpha(opacity=0);
   -webkit-transition: opacity 200ms ease;
@@ -1056,40 +1090,6 @@ nav.main-menu .right.submenu * {
 .menu-overlay.fadeIn {
   opacity: 1;
   filter: alpha(opacity=100);
-}
-
-.content {
-  height: 100vh;
-  overflow: hidden;
-  padding: 90px 30px 30px;
-  -webkit-filter: blur(0);
-  -moz-filter: blur(0);
-  -ms-filter: blur(0);
-  -o-filter: blur(0);
-  filter: blur(0);
-  -webkit-transition: filter 200ms ease;
-  -webkit-transition: -webkit-filter 200ms ease;
-  transition: -webkit-filter 200ms ease;
-  transition: filter 200ms ease;
-  transition: filter 200ms ease, -webkit-filter 200ms ease;
-}
-
-@media (min-width: 992px) {
-  .content {
-    padding: 30px;
-  }
-}
-
-.content h3 {
-  line-height: 40px;
-}
-
-.content.blur {
-  -webkit-filter: blur(1.5px);
-  -moz-filter: blur(1.5px);
-  -ms-filter: blur(1.5px);
-  -o-filter: blur(1.5px);
-  filter: blur(1.5px);
 }
 
 .login .login-container {

@@ -17,6 +17,14 @@ class PagesController extends Controller
 
     public function  index() 
     {
-        return view('backend.pages.index')->with('menuItems', 'menuitems.default');
+        $navigation = view('backend.navigation.right-menu')->with('menuItems', 'menuitems.default')->render();
+        $content = view('backend.pages.index')->render();
+        
+        return Response::json([
+            'html' => [
+                'navigation' => $navigation,
+                'content' => $content,
+            ],
+        ]);
     }
 }

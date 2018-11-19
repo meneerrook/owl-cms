@@ -1,6 +1,7 @@
 <?php
     return [
         'default' => [
+            'title' => 'Owl CMS',
             'top' => [
                 [
                     'page' => 'Dashboard',
@@ -11,7 +12,7 @@
                 [
                     'page' => 'Posts',
                     'route' => 'owl/posts',
-                    'class' => 'has-sub-menu',
+                    'class' => '', // has-sub-menu
                     'icon' => 'fa fa-thumb-tack'
                 ], 
                 [
@@ -45,6 +46,7 @@
             ]
         ],
         'posts' => [
+            'title' => 'Posts',
             'top' => [],
             'bottom' => [],
         ]

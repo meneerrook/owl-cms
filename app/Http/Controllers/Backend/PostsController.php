@@ -19,6 +19,14 @@ class PostsController extends Controller
 
     public function  index() 
     {
-        return view('backend.posts.index')->with('menuItems', 'menuitems.posts');
+        $navigation = view('backend.navigation.right-menu')->with('menuItems', 'menuitems.default')->render();
+        $content = view('backend.posts.index')->render();
+        
+        return Response::json([
+            'html' => [
+                'navigation' => $navigation,
+                'content' => $content,
+            ],
+        ]);
     }
 }

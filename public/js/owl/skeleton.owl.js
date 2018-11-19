@@ -20,7 +20,6 @@
                 });
                 skeletons[i].classList.add("fade");
             }
-            
         }
     }
 

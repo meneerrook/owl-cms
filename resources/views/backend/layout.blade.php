@@ -15,17 +15,20 @@
         <script src="{{ asset('js/plugins/jquery.min.js') }}"></script>
 		<script src="{{ asset('js/plugins/popper.min.js') }}"></script>
 		<script src="{{ asset('js/plugins/bootstrap.min.js') }}"></script>
+
 		<!-- JS Owl -->
+		<script src="{{ asset('js/owl/getPage.owl.js') }}"></script>
 		<script src="{{ asset('js/owl/skeleton.owl.js') }}"></script>
 		<script src="{{ asset('js/owl/buttonLoader.owl.js') }}"></script>
 		<script src="{{ asset('js/owl/placeholder.owl.js') }}"></script>
 		<script src="{{ asset('js/owl/common.owl.js') }}"></script>
+		
 
 		<link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600,700" rel="stylesheet">
 	</head>
 
 	<body class="@yield('bodyClass')">
-		<div class="loader-wrapper">
+		<div id="loader-wrapper" class="loader-wrapper">
 			<div class="spinner-loader">
                 <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
             </div>

@@ -17,6 +17,14 @@ class MediaController extends Controller
 
     public function  index() 
     {
-        return view('backend.media.index')->with('menuItems', 'menuitems.default');
+        $navigation = view('backend.navigation.right-menu')->with('menuItems', 'menuitems.default')->render();
+        $content = view('backend.media.index')->render();
+        
+        return Response::json([
+            'html' => [
+                'navigation' => $navigation,
+                'content' => $content,
+            ],
+        ]);
     }
 }
