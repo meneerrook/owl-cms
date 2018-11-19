@@ -5,6 +5,8 @@
 
     window.owl.login = {
         register: function() {
+            document.querySelector("#page-wrapper").classList.add("hide");
+
             var loginButton = document.querySelector("#loginButton");
             loginButton.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -41,15 +43,14 @@
                 case "page":
                     var loginWrapper = document.querySelector("#login-wrapper");
                     var loginContainer = document.querySelector("#login-container");
-                    var wrapper = document.createElement("div");
-                    wrapper.classList.add("loaded-content");
-                    wrapper.innerHTML += response.content.html;
-                    wrapper.querySelector(".menu-item_dashboard").classList.add("active");
 
-                    var body = document.querySelector("body");
-                    body.insertBefore(wrapper, body.firstChild);
+                    document.querySelector("#navigation").innerHTML = response.html.navigation;
+                    document.querySelector("#content").innerHTML = response.html.content
+                    var pageWrapper = document.querySelector("#page-wrapper");
 
-                    window.owl.login._pageTransition(loginWrapper, loginContainer, wrapper, body);
+                    
+                    
+                    window.owl.login._pageTransition(loginWrapper, loginContainer, pageWrapper);
                 break;
                 case "message":
                     window.owl.login._giveMessage();
@@ -60,7 +61,13 @@
                     window.owl.buttonLoader.undo(button);
             }
         },
-        _pageTransition: function(loginWrapper, loginContainer, wrapper, body) {
+        _pageTransition: function(loginWrapper, loginContainer, pageWrapper) {
+
+            var skeletons = document.querySelectorAll(".skeleton");
+            for (let i = 0; i < skeletons.length; i++) {
+                skeletons[i].parentNode.removeChild(skeletons[i]);
+            }
+
             loginWrapper.addEventListener('transitionend', function(e) {
                 if(e.propertyName == "opacity") {
                     loginContainer.classList.add("sizeDown");
@@ -68,21 +75,20 @@
             });
             loginContainer.addEventListener('transitionend', function(e) {
                 if(e.propertyName == "width" || e.propertyName == "height") {
-                    wrapper.classList.add("show");
+                    pageWrapper.classList.remove("hide");
                 }
             });
-            wrapper.addEventListener('transitionend', function(e) {
+            pageWrapper.addEventListener('transitionend', function(e) {
                 if(e.propertyName == "opacity") {
                     loginContainer.parentNode.removeChild(loginContainer);
-                    body.classList.remove("login");
-                    body.classList.add("dashboard");
                     var loginScript = document.querySelector("#login-script");
                     loginScript.parentNode.removeChild(loginScript);
 
-
+                    
                     if (window.owl.common && typeof window.owl.common.register == "function") {
                         window.owl.common.register();
                     }
+                    
                 }
             });
             loginWrapper.classList.add("fadeOut");

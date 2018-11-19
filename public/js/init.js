@@ -2,7 +2,7 @@ function init() {
     
     if(window.owl)  {
 
-        // register page loader
+        // register skeleton
         if(window.owl.skeleton && typeof window.owl.skeleton.register == "function") {
             window.owl.skeleton.register();
         }

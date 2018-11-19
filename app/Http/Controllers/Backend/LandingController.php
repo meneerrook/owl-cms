@@ -41,15 +41,14 @@ class LandingController extends Controller
         if (Auth::attempt(array('email' => $email, 'password' => $password ))){
 
             $navigation = view('backend.navigation.index')->with('menuItems', 'menuitems.default')->render();
-            $page = view('backend.dashboard.template')->render();
+            $content = view('backend.dashboard.template')->render();
             
-            $html = $navigation . $page;
 
             return Response::json([
                 'type' => 'page',
-                'content' => [
-                    'html' => $html,
-                    'email' => 'simro@test.nl',
+                'html' => [
+                    'navigation' => $navigation,
+                    'content' => $content,
                 ],
                 'config' => [
                     'activePage' => 'dashboard'

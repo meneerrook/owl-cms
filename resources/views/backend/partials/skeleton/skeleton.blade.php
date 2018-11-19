@@ -8,7 +8,7 @@
                 <div class="item"></div>
                 <div class="item"></div>
             </div>
-            <div class="right">
+            <div id="skeleton-right" class="right">
                 <div class="item head"></div>
                 <div class="item"></div>
                 <div class="item"></div>
@@ -18,7 +18,7 @@
             </div>
         </div>
         <div class="content-skeleton">
-            <div class="loader">
+            <div class="spinner-loader">
                 <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
             </div>
         </div>
@@ -29,7 +29,7 @@
             <div class="item"></div>
         </div> 
         <div class="content-skeleton">
-            <div class="loader">
+            <div class="spinner-loader">
                 <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
             </div>
         </div>

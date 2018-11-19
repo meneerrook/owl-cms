@@ -6,7 +6,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 @endsection
 
-@section('content')
+@section('login')
     <div id="login-container" class="login-container">
         <div id="login-wrapper" class="login-wrapper">
             <div class="heading">

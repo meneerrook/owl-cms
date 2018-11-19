@@ -23,6 +23,9 @@
     <nav id="main-menu" class="main-menu">
         
         <div class="left">
+
+            @include('backend/partials/skeleton/left-menu')
+
             <div class="logo">
                 <a href="{{ route('owl/dashboard') }}" class="menu-link">
                     <img src="{{ asset('images/owl_logo.svg') }}" alt="Owl" />
@@ -45,6 +48,13 @@
         </div>
 
         <div id="right-menu" class="right {{ $menuClass }}">
+
+            @if($menuClass == 'submenu')
+                @include('backend/partials/skeleton/sub-menu')
+            @else
+                @include('backend/partials/skeleton/right-menu')
+            @endif
+            
             <div class="menu-heading">
                 <h3>Owl CMS</h3>
             </div>

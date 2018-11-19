@@ -25,14 +25,28 @@
 	</head>
 
 	<body class="@yield('bodyClass')">
+		<div class="loader-wrapper">
+			<div class="spinner-loader">
+                <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+            </div>
+		</div>
+		
+		<div id="page-wrapper" class="page-wrapper">
+			<div id="navigation">
+				@if (Auth::check())
+					
+					@include('backend/navigation/index')
+				@endif
+			</div>
+			
+			<div id="content" class="content">
+				@yield('content')
+			</div>
+		</div>
+		
 
-		@if (Auth::check())
-			@include('backend/partials/skeleton')
-			@include('backend/navigation/index')
-		@endif
-	
-		@yield('content')
-
+		@yield('login')
+		
         @yield('javascript')
         <script src="{{ asset('js/init.js') }}"></script>
     </body>
