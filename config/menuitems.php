@@ -12,7 +12,7 @@
                 [
                     'page' => 'Posts',
                     'route' => 'owl/posts',
-                    'class' => '', // has-sub-menu
+                    'class' => 'has-sub-menu', // has-sub-menu
                     'icon' => 'fa fa-thumb-tack'
                 ], 
                 [
@@ -47,7 +47,26 @@
         ],
         'posts' => [
             'title' => 'Posts',
-            'top' => [],
+            'top' => [
+                [
+                    'page' => 'Add',
+                    'route' => 'owl/posts/add',
+                    'class' => '',
+                    'icon' => 'fa fa-plus'
+                ],
+                [
+                    'page' => 'Add',
+                    'route' => 'owl/posts/edit',
+                    'class' => '',
+                    'icon' => 'fa fa-pencil'
+                ],
+                [
+                    'page' => 'Delete',
+                    'route' => 'owl/posts/delete',
+                    'class' => '',
+                    'icon' => 'fa fa-trash'
+                ]
+            ],
             'bottom' => [],
         ]
     ];    

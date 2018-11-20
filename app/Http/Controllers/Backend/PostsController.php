@@ -21,11 +21,14 @@ class PostsController extends Controller
     {
 
         if (Request::ajax()) {
-            $navigation = view('backend.navigation.right-menu')->with('menuItems', 'menuitems.default')->render();
+            $navigation = view('backend.navigation.right-menu')->with('menuItems', 'menuitems.posts')->render();
             $content = view('backend.posts.index-template')->render();
             return Response::json(['html' => [ 'navigation' => $navigation, 'content' => $content,]]);
         } else {
-            return view('backend.posts.index')->with('menuItems', 'menuitems.default');
+            return view('backend.posts.index')->with('menuItems', 'menuitems.posts');
         }
     }
+    public function add(){}
+    public function edit(){}
+    public function delete(){}
 }

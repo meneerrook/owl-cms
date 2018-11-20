@@ -8,27 +8,38 @@
             for (var i = 0; i < menuItems.length; i++) {
 
                 menuItems[i].addEventListener("click", function(e) {
-                    e.preventDefault();
-
-                    document.querySelector("#loader-wrapper").style.display = "block";
-                    if(e.currentTarget.classList.contains("has-sub-menu")) {
-                        document.querySelector("#right-menu").classList.add("submenu");
-                        document.querySelector("#right-menu").innerHTML = "";
-                    }
-                    
-                    var activeItem = document.querySelector("#right-menu ul li.active");
-                    if(activeItem) {
-                        activeItem.classList.remove("active");
-                    }
-                    e.currentTarget.parentNode.classList.add("active");
-
-                    var method = "GET";
-                    var url = e.currentTarget.getAttribute("href");
-                    window.owl.getPage._getPage(method, url)
-                        .then(response => window.owl.getPage._renderPage(response, url))
-                        .then(window.owl.getPage.register);
+                    window.owl.getPage._preparePage(e).then(function(){
+                        var method = "GET";
+                        var url = e.currentTarget.getAttribute("href");
+                        window.owl.getPage._getPage(method, url)
+                            .then(response => window.owl.getPage._renderPage(response, url))
+                            .then(window.owl.getPage.register);
+                    });
                 });
+
+
+
             }
+        },
+        _preparePage(e) {
+            return new Promise( (resolve, reject) => {
+                e.preventDefault();
+                document.querySelector("#loader-wrapper").style.display = "block";
+                if (document.querySelector("#right-menu").classList.contains("submenu")) {
+                    document.querySelector("#right-menu").innerHTML = "";
+                    document.querySelector("#right-menu").classList.remove("submenu");
+                }
+                if(e.currentTarget.classList.contains("has-sub-menu")) {
+                    document.querySelector("#right-menu").innerHTML = "";
+                    document.querySelector("#right-menu").classList.add("submenu");
+                } 
+                var activeItem = document.querySelector("#right-menu ul li.active");
+                if(activeItem) {
+                    activeItem.classList.remove("active");
+                }
+                e.currentTarget.parentNode.classList.add("active");
+                resolve();
+            });
         },
         _getPage(method, url) {
             return new Promise((resolve, reject) => {
@@ -43,7 +54,8 @@
                 }
         
                 request.onerror = () => {
-                    reject("Error: XHR Request failed");
+                    //reject("Error: XHR Request failed");
+                    alert("Error: XHR failed, please contact the system administrator. You can reload the page to restore the previous state.");
                 }
             });
         },
