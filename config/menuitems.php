@@ -34,15 +34,18 @@
                 // ]
             ],
             'bottom' => [
-                // [
-                //     'page' => 'Users',
-                //     'route' => '',
-                //     'icon' => 'fa fa-users'
-                // ], [
-                //     'page' => 'Settings',
-                //     'route' => '',
-                //     'icon' => 'fa fa-sliders'
-                // ]
+                [
+                    'page' => 'Users',
+                    'route' => 'owl/users',
+                    'class' => '',
+                    'icon' => 'fa fa-users'
+                ], 
+                [
+                    'page' => 'Settings',
+                    'route' => 'owl/settings',
+                    'class' => '',
+                    'icon' => 'fa fa-sliders'
+                ]
             ]
         ],
         'posts' => [

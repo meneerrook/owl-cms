@@ -5,7 +5,7 @@
     window.owl.getPage = {
         register: function() {
             var menuItems = document.querySelectorAll("[data-xhr-page]");
-            for (var i = 0; i < menuItems.length; i++) {
+            for (let i = 0; i < menuItems.length; i++) {
 
                 menuItems[i].addEventListener("click", function(e) {
                     window.owl.getPage._preparePage(e).then(function(){

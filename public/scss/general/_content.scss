@@ -1,13 +1,15 @@
 .content {
+    position: relative;
     height: 100vh;
-    overflow: hidden;
-    
+    width: 100%;
+    overflow: auto;
     padding: ($margin*2)+$navbar-mobile-height $margin*2 $margin*2;
     @include filter(blur, 0);
     @include transition(filter 200ms ease);
 
     @media #{$mq-m} {
         padding: $margin*2;
+        width:calc(100% - #{$navbar-width-l});
     }
 
     h3 {

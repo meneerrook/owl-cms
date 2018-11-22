@@ -23,7 +23,7 @@
             @include('backend/partials/skeleton/left-menu')
 
             <div class="logo">
-                <a href="{{ route('owl/dashboard') }}" class="menu-link" data-xhr-page>
+                <a href="{{ route('owl/dashboard') }}" class="menu-link">
                     <img src="{{ asset('images/owl_logo.svg') }}" alt="Owl" />
                 </a>
             </div>

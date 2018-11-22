@@ -26,7 +26,13 @@ Route::group(['middleware' => ['auth']], function() {
 
 		Route::get('/logout', ['as' => 'owl/logout', 'uses' => 'Backend\LandingController@logout']);
 		Route::get('/dashboard', ['as' => 'owl/dashboard', 'uses' => 'Backend\LandingController@index']);
+		Route::get('/settings', ['as' => 'owl/settings', 'uses' => 'Backend\SettingsController@index']);
 		
+		// pages routes
+		Route::prefix('users')->group(function () {
+			Route::get('/', ['as' => 'owl/users', 'uses' => 'Backend\UsersController@index']);
+		});
+
 		// posts routes
 		Route::prefix('posts')->group(function () {
 			Route::get('/', ['as' => 'owl/posts', 'uses' => 'Backend\PostsController@index']);
@@ -44,6 +50,7 @@ Route::group(['middleware' => ['auth']], function() {
 		Route::prefix('media')->group(function () {
 			Route::get('/', ['as' => 'owl/media', 'uses' => 'Backend\MediaController@index']);
 		});
+		
 	});
 });
 

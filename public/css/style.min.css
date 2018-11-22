@@ -303,8 +303,10 @@ button.btn-loader.loading:before, button.btn-loader.loading:after {
 }
 
 .content {
+  position: relative;
   height: 100vh;
-  overflow: hidden;
+  width: 100%;
+  overflow: auto;
   padding: 90px 30px 30px;
   -webkit-filter: blur(0);
   -moz-filter: blur(0);
@@ -321,6 +323,7 @@ button.btn-loader.loading:before, button.btn-loader.loading:after {
 @media (min-width: 992px) {
   .content {
     padding: 30px;
+    width: calc(100% - 320px);
   }
 }
 
