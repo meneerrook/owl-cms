@@ -7,18 +7,19 @@
             var menuItems = document.querySelectorAll("[data-xhr-page]");
             for (let i = 0; i < menuItems.length; i++) {
 
-                if(menuItems[i].getAttribute("data-has-event")) {
+                if(menuItems[i].getAttribute("data-has-event") && menuItems[i].getAttribute("data-has-event") == "true") {
                     continue
                 }
 
                 menuItems[i].setAttribute("data-has-event", "true");
                 menuItems[i].addEventListener("click", function(e) {
-                    window.owl.getPage._preparePage(e).then(function(){
-                        var method = "GET";
-                        var url = e.currentTarget.getAttribute("href");
-                        window.owl.getPage._getPage(method, url)
-                            .then(response => window.owl.getPage._renderPage(response, url))
-                            .then(window.owl.getPage.register);
+                    window.owl.getPage._preparePage(e)
+                        .then(function(){
+                            var method = "GET";
+                            var url = e.currentTarget.getAttribute("href");
+                            window.owl.getPage._getPage(method, url)
+                                .then(response => window.owl.getPage._renderPage(response, url))
+                                .then(window.owl.getPage.register);
                     });
                 });
             }

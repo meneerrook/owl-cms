@@ -52,6 +52,12 @@
             'title' => 'Posts',
             'top' => [
                 [
+                    'page' => 'Back',
+                    'route' => 'owl/dashboard',
+                    'class' => 'back-link',
+                    'icon' => 'fa fa-long-arrow-left'
+                ],
+                [
                     'page' => 'Add',
                     'route' => 'owl/posts/add',
                     'class' => '',
