@@ -7,6 +7,11 @@
             var menuItems = document.querySelectorAll("[data-xhr-page]");
             for (let i = 0; i < menuItems.length; i++) {
 
+                if(menuItems[i].getAttribute("data-has-event")) {
+                    continue
+                }
+
+                menuItems[i].setAttribute("data-has-event", "true");
                 menuItems[i].addEventListener("click", function(e) {
                     window.owl.getPage._preparePage(e).then(function(){
                         var method = "GET";
@@ -16,9 +21,6 @@
                             .then(window.owl.getPage.register);
                     });
                 });
-
-
-
             }
         },
         _preparePage(e) {
@@ -55,7 +57,7 @@
         
                 request.onerror = () => {
                     //reject("Error: XHR Request failed");
-                    alert("Error: XHR failed, please contact the system administrator. You can reload the page to restore the previous state.");
+                    alert("Error: XMLHTTpRequest failed, please contact the system administrator. You can reload the page to restore the previous state.");
                 }
             });
         },
