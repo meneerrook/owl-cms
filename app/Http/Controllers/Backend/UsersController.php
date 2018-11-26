@@ -14,32 +14,50 @@ use View;
 
 class UsersController extends Controller
 {
-    public function  index() 
+    public function index() 
     {
         $users = User::all();
-        return $this->returnView("menuitems.users", $users);
+        return $this->returnView("backend.users.index", "menuitems.users", $users);
+    }
+
+    public function userProfile($id) {
+        $user = User::find($id);
+        return $this->returnView("backend.users.user-profile.user-profile", "menuitems.user-profile", $user);
+    }
+
+    public function userEdit($id) {
+        $user = User::find($id);
+        return $this->returnView("backend.users.user-edit.user-edit", "menuitems.user-edit", $user);
+    }
+
+    public function userDelete($id) {
+        $user = User::find($id);
+        return $this->returnView("backend.users.user-delete.user-delete", "menuitems.user-delete", $user);
     }
 
     // handles XHR and HTTP requests
-    private function returnView($menu, $data) {
+    private function returnView($viewName, $menu, $data) {
+
+        $template = $viewName.'-template';
+        $view = $viewName;
 
         if (Request::ajax()) {
+            if(isset($data->id)){
+                $navigation = view('backend.navigation.right-menu')->with('id', $data->id)->with('menuItems', $menu)->render();
+            } else {
+                $navigation = view('backend.navigation.right-menu')->with('menuItems', $menu)->render();
+            }
 
-            $navigation = view('backend.navigation.right-menu')
-                ->with('menuItems', $menu)
-                ->render();
-
-            $content = view('backend.users.index-template')
-                ->with('data', $data)
-                ->render();
+            $content = view($template)->with('data', $data)->render();
             
             return Response::json(['html' => [ 'navigation' => $navigation, 'content' => $content]]);
-
         } else {
-
-            return view('backend.users.index')
-                ->with('menuItems', $menu)
-                ->with('data', $data);
+            if(isset($data->id)){
+                return view($view)->with('data', $data)->with('id', $data->id)->with('menuItems', $menu);
+            } else {
+                return view($view)->with('data', $data)->with('menuItems', $menu);
+            }
+                
         }
     }
 }

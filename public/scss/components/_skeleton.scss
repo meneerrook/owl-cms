@@ -86,16 +86,16 @@
     }
 
     &.submenu {
-        background-color: #F4F5F7;
+        background-color: $color--primary-dark;
         .item {
-            background-color: rgba(0,0,0, 0.05);
+            //background-color: rgba(0,0,0, 0.05);
 
             &:before {
-                background-color: rgba(0,0,0, 0.05);
+                //background-color: rgba(0,0,0, 0.05);
             }
     
             &.head {
-                background-color: rgba(0,0,0, 0.075);
+                //background-color: rgba(0,0,0, 0.075);
             }
         }
     }

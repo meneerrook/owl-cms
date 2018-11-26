@@ -31,6 +31,9 @@ Route::group(['middleware' => ['auth']], function() {
 		// pages routes
 		Route::prefix('users')->group(function () {
 			Route::get('/', ['as' => 'owl/users', 'uses' => 'Backend\UsersController@index']);
+			Route::get('/{id}', ['as' => 'owl/users/profile', 'uses' => 'Backend\UsersController@userProfile']);
+			Route::get('/{id}/edit', ['as' => 'owl/users/edit', 'uses' => 'Backend\UsersController@userEdit']);
+			Route::get('/{id}/delete', ['as' => 'owl/users/delete', 'uses' => 'Backend\UsersController@userDelete']);
 		});
 
 		// posts routes

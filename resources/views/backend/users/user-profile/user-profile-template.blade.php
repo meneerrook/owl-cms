@@ -1,0 +1,1 @@
+<h3>User <b>{{$data->firstname}} {{$data->lastname}}</b></h3>

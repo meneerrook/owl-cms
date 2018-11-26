@@ -17,7 +17,11 @@
             }
         }
         tbody {
+            border-bottom: solid 2px $color--border;
             tr{
+                &:hover {
+                    background-color: $color--lightBG;
+                }
                 td{
                     padding: 8px;
                     font-size: 14px;

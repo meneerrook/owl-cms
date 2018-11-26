@@ -432,19 +432,7 @@ button.btn-loader.loading:before, button.btn-loader.loading:after {
 }
 
 .skeleton-right.submenu {
-  background-color: #F4F5F7;
-}
-
-.skeleton-right.submenu .item {
-  background-color: rgba(0, 0, 0, 0.05);
-}
-
-.skeleton-right.submenu .item:before {
-  background-color: rgba(0, 0, 0, 0.05);
-}
-
-.skeleton-right.submenu .item.head {
-  background-color: rgba(0, 0, 0, 0.075);
+  background-color: #006EE5;
 }
 
 .skeleton-wrapper {
@@ -922,15 +910,7 @@ nav.main-menu .right hr {
 }
 
 nav.main-menu .right.submenu {
-  background-color: #F4F5F7;
-}
-
-nav.main-menu .right.submenu * {
-  color: #000000 !important;
-}
-
-nav.main-menu .right.submenu .menu-item:active {
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: #006EE5;
 }
 
 .create-menu {
@@ -1130,6 +1110,14 @@ nav.main-menu .right.submenu .menu-item:active {
   font-size: 14px;
   font-weight: 600;
   padding: 5px;
+}
+
+.table-wrapper table tbody {
+  border-bottom: solid 2px #DFE1E6;
+}
+
+.table-wrapper table tbody tr:hover {
+  background-color: #fafafa;
 }
 
 .table-wrapper table tbody tr td {
