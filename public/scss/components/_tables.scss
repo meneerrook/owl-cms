@@ -1,0 +1,28 @@
+
+.table-wrapper {
+    float: left;
+    width: 100%;
+
+    table {
+        width: 100%;
+
+        thead {
+            border-bottom: solid 2px $color--border;
+            tr {
+                th{
+                    font-size: 14px;
+                    font-weight: 600;
+                    padding: 5px; 
+                }
+            }
+        }
+        tbody {
+            tr{
+                td{
+                    padding: 8px;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}

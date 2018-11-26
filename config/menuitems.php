@@ -37,7 +37,7 @@
                 [
                     'page' => 'Users',
                     'route' => 'owl/users',
-                    'class' => '',
+                    'class' => 'has-sub-menu',
                     'icon' => 'fa fa-users'
                 ], 
                 [
@@ -58,25 +58,43 @@
                     'icon' => 'fa fa-long-arrow-left'
                 ],
                 [
-                    'page' => 'Add',
+                    'page' => 'All posts',
+                    'route' => 'owl/posts',
+                    'class' => 'has-sub-menu',
+                    'icon' => 'fa fa-thumb-tack'
+                ],
+                [
+                    'page' => 'Add new',
                     'route' => 'owl/posts/add',
                     'class' => '',
                     'icon' => 'fa fa-plus'
                 ],
-                [
-                    'page' => 'Add',
-                    'route' => 'owl/posts/edit',
-                    'class' => '',
-                    'icon' => 'fa fa-pencil'
-                ],
-                [
-                    'page' => 'Delete',
-                    'route' => 'owl/posts/delete',
-                    'class' => '',
-                    'icon' => 'fa fa-trash'
-                ]
             ],
             'bottom' => [],
-        ]
+        ],
+        'users' => [
+            'title' => 'Users',
+            'top' => [
+                [
+                    'page' => 'Back',
+                    'route' => 'owl/dashboard',
+                    'class' => 'back-link',
+                    'icon' => 'fa fa-long-arrow-left'
+                ],
+                [
+                    'page' => 'All users',
+                    'route' => 'owl/users',
+                    'class' => 'has-sub-menu',
+                    'icon' => 'fa fa-users'
+                ],
+                // [
+                //     'page' => 'Add new',
+                //     'route' => 'owl/users/add',
+                //     'class' => '',
+                //     'icon' => 'fa fa-plus'
+                // ],
+            ],
+            'bottom' => [],
+        ],
     ];    
 ?>
