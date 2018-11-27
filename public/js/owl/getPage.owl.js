@@ -59,7 +59,7 @@
         
                 request.onerror = () => {
                     //reject("Error: XHR Request failed");
-                    alert("Error: XMLHTTpRequest failed, please contact the system administrator. You can reload the page to restore the previous state.");
+                    alert("Error: XMLHTTPRequest failed, please contact the system administrator. You can reload the page to restore the previous state.");
                 }
             });
         },

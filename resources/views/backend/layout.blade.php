@@ -5,7 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         @yield('meta')
-        <title>Owl</title>
+        <title>{{ config("app.name") }}</title>
 		<!-- CSS -->
 		<link rel="stylesheet" href="{{ asset('css/plugins/bootstrap.min.css') }}"/>
 		<link rel="stylesheet" href="{{ asset('css/plugins/font-awesome.min.css') }}"/>

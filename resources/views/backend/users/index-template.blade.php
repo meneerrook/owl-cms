@@ -17,7 +17,14 @@
             @foreach($data as $user)
             <tr>
                 <td>{{ $user->id }}</td>
-                <td><a href="{{ route('owl/users/profile', ['id' => $user->id]) }}" class="has-sub-menu" data-xhr-page>{{ $user->firstname }} {{ $user->lastname }}</a></td>
+                <td>
+                    <a href="{{ route('owl/users/profile', ['id' => $user->id]) }}" class="has-sub-menu" data-xhr-page>
+                        @if($user->id == Auth::user()->id)
+                            <i class="fa fa-user mr-1"></i>
+                        @endif
+                        {{ $user->firstname }} {{ $user->lastname }}
+                    </a>
+                </td>
                 <td>{{ $user->email }}</td>
                 <td>{{ $user->role }}</td>
                 <td>{{ strlen($user->updated_at) > 0 ? $user->updated_at : '-' }}</td>
