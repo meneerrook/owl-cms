@@ -28,6 +28,7 @@
             return new Promise( (resolve, reject) => {
                 e.preventDefault();
                 document.querySelector("#loader-wrapper").style.display = "block";
+                
                 if (document.querySelector("#right-menu").classList.contains("submenu")) {
                     document.querySelector("#right-menu").innerHTML = "";
                     document.querySelector("#right-menu").classList.remove("submenu");
