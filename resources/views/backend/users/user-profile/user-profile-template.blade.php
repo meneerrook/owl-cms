@@ -28,6 +28,10 @@
                     <div class="col-9 font-weight-bold">{{ $data->role }}</div>
                 </div>
                 <div class="row mb-2">
+                    <div class="col-3 text-right">Status:</div>
+                    <div class="col-9 font-weight-bold">{{ $data->status }}</div>
+                </div>
+                <div class="row mb-2">
                     <div class="col-3 text-right">Updated:</div>
                     <div class="col-9 font-weight-bold">{{ $data->updated_at ? $data->updated_at : '-' }}</div>
                 </div>

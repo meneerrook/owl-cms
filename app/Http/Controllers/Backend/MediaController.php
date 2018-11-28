@@ -19,7 +19,8 @@ class MediaController extends Controller
     {
         if (Request::ajax()) {
             $navigation = view('backend.navigation.right-menu')->with('menuItems', 'menuitems.default')->render();
-            $content = view('backend.media.index-template')->render();
+            //$content = view('backend.media.index-template')->render();
+            $content = view('backend.partials.messages.danger')->render();
             return Response::json(['html' => [ 'navigation' => $navigation, 'content' => $content,]]);
         } else {
             return view('backend.media.index')->with('menuItems', 'menuitems.default');
