@@ -21,6 +21,7 @@
 		<script src="{{ asset('js/owl/skeleton.owl.js') }}"></script>
 		<script src="{{ asset('js/owl/buttonLoader.owl.js') }}"></script>
 		<script src="{{ asset('js/owl/placeholder.owl.js') }}"></script>
+		<script src="{{ asset('js/owl/navigation.owl.js') }}"></script>
 		<script src="{{ asset('js/owl/common.owl.js') }}"></script>
 		
 
@@ -28,7 +29,7 @@
 	</head>
 
 	<body class="@yield('bodyClass')">
-		<div id="loader-wrapper" class="loader-wrapper">
+		<div id="loader-wrapper" class="loader-wrapper content-loader">
 			<div class="spinner-loader">
                 <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
             </div>

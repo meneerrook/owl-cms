@@ -13,12 +13,18 @@
 
                 menuItems[i].setAttribute("data-has-event", "true");
                 menuItems[i].addEventListener("click", function(e) {
-                    window.owl.getPage._preparePage(e)
-                        .then(function(){
+
+                    window.owl.getPage._preparePage(e).then(function(){
+
                             var method = "GET";
                             var url = e.currentTarget.getAttribute("href");
+                            if(!e.currentTarget.classList.contains("back-link")) {
+                                window.owl.navigation._collapseMenus();
+                                document.querySelector(".content-loader").classList.add("toFullWidth");
+                            }
+
                             window.owl.getPage._getPage(method, url)
-                                .then(response => window.owl.getPage._renderPage(response, url))
+                                .then(response => window.owl.getPage._renderPage(response, url, e))
                                 .then(window.owl.getPage.register);
                     });
                 });
@@ -27,16 +33,41 @@
         _preparePage(e) {
             return new Promise( (resolve, reject) => {
                 e.preventDefault();
-                document.querySelector("#loader-wrapper").style.display = "block";
                 
-                if (document.querySelector("#right-menu").classList.contains("submenu")) {
-                    document.querySelector("#right-menu").innerHTML = "";
-                    document.querySelector("#right-menu").classList.remove("submenu");
+                
+                var rightMenu = document.querySelector("#right-menu");
+
+
+                var toSubMenu_Statement = !rightMenu.classList.contains("submenu") && e.currentTarget.classList.contains("has-sub-menu");
+                var toMainMenu_Statement = rightMenu.classList.contains("submenu") && !e.currentTarget.classList.contains("has-sub-menu");
+
+                if(toSubMenu_Statement || toMainMenu_Statement) {
+
+                    if(toSubMenu_Statement) {
+                        rightMenu.classList.add("submenu");
+                        
+                    } else if (toMainMenu_Statement) {
+                        rightMenu.classList.remove("submenu");
+                    }
+                    window.owl.common._showLoaders(true);
+                    rightMenu.innerHTML = "";
+                } else {
+                    window.owl.common._showLoaders(false);
                 }
-                if(e.currentTarget.classList.contains("has-sub-menu")) {
-                    document.querySelector("#right-menu").innerHTML = "";
-                    document.querySelector("#right-menu").classList.add("submenu");
-                } 
+
+
+                // if (rightMenu.classList.contains("submenu")) {
+                //     rightMenu.classList.remove("submenu");
+                //     rightMenu.innerHTML = "";
+                    
+                // }
+
+                // if(e.currentTarget.classList.contains("has-sub-menu")) {
+
+                //     rightMenu.innerHTML = "";
+                //     rightMenu.classList.add("submenu");
+                // }
+
                 var activeItem = document.querySelector("#right-menu ul li.active");
                 if(activeItem) {
                     activeItem.classList.remove("active");
@@ -63,11 +94,14 @@
                 }
             });
         },
-        _renderPage(response, url) {
+        _renderPage(response, url, e) {
             window.history.pushState({"html":"","pageTitle":"Owl"},"", url);
             document.querySelector("#right-menu").innerHTML = response.html.navigation;
             document.querySelector("#content").innerHTML = response.html.content;
             document.querySelector("#loader-wrapper").style.display = "none";
+
+            window.owl.common._hideLoaders();
+            document.querySelector(".content-loader").classList.remove("toFullWidth");
         }
     }
 

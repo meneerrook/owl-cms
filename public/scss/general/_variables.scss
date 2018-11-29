@@ -1,6 +1,7 @@
 /* Colors */
 $color--primary:        #007bff;
 $color--primary-dark:   #006EE5;
+$color--primary-light:  #00bfff;
 $color--white:          #ffffff;
 $color--black:          #000000;
 
@@ -16,6 +17,8 @@ $color--border:         #DFE1E6;
 
 /* Font family */
 $font-family:           'Raleway', sans-serif;
+
+$menu-transition:       cubic-bezier(0.15, 1, 0.15, 1);
 
 /* Pixel values */
 $navbar-width-s:        280px;

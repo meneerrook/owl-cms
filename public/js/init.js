@@ -27,6 +27,11 @@ function init() {
             window.owl.login.register();
         }
 
+        // register navigation
+        if(window.owl.navigation && typeof window.owl.navigation.register == "function") {
+            window.owl.navigation.register();
+        }
+
          // register common
          if(window.owl.common && typeof window.owl.common.register == "function") {
             window.owl.common.register();

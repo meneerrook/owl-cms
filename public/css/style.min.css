@@ -180,9 +180,19 @@ button.btn-loader.loading:before, button.btn-loader.loading:after {
   bottom: 0;
   background-color: #ffffff;
   top: 60px;
-  z-index: 9999999;
-  left: 0;
+  z-index: 100;
+  left: 280px;
   display: none;
+}
+
+.loader-wrapper.content-loader.toFullWidth {
+  left: 0;
+}
+
+@media (min-width: 992px) {
+  .loader-wrapper.content-loader.toFullWidth {
+    left: 320px;
+  }
 }
 
 @media (min-width: 992px) {
@@ -192,7 +202,7 @@ button.btn-loader.loading:before, button.btn-loader.loading:after {
   }
 }
 
-.spinner-loader {
+.loader-wrapper .spinner-loader {
   position: absolute;
   right: 0;
   left: 0;
@@ -203,14 +213,14 @@ button.btn-loader.loading:before, button.btn-loader.loading:after {
   transform: translateY(-50%);
 }
 
-.lds-ring {
+.loader-wrapper .spinner-loader .lds-ring {
   display: inline-block;
   position: relative;
   width: 64px;
   height: 64px;
 }
 
-.lds-ring div {
+.loader-wrapper .spinner-loader .lds-ring div {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   display: block;
@@ -225,17 +235,17 @@ button.btn-loader.loading:before, button.btn-loader.loading:after {
   border-color: #007bff transparent transparent transparent;
 }
 
-.lds-ring div:nth-child(1) {
+.loader-wrapper .spinner-loader .lds-ring div:nth-child(1) {
   -webkit-animation-delay: -0.225s;
           animation-delay: -0.225s;
 }
 
-.lds-ring div:nth-child(2) {
+.loader-wrapper .spinner-loader .lds-ring div:nth-child(2) {
   -webkit-animation-delay: -0.15s;
           animation-delay: -0.15s;
 }
 
-.lds-ring div:nth-child(3) {
+.loader-wrapper .spinner-loader .lds-ring div:nth-child(3) {
   -webkit-animation-delay: -0.075s;
           animation-delay: -0.075s;
 }
@@ -260,6 +270,17 @@ button.btn-loader.loading:before, button.btn-loader.loading:after {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg);
   }
+}
+
+.loader-wrapper.menu-loader {
+  position: absolute;
+  background-color: transparent;
+  top: 0;
+  left: 70px;
+}
+
+.loader-wrapper.menu-loader .spinner-loader .lds-ring div {
+  border-color: #00bfff transparent transparent transparent;
 }
 
 .grouped-input {
@@ -687,9 +708,9 @@ nav.main-menu {
   width: 280px;
   height: 100vh;
   background-color: #007bff;
-  z-index: 30;
-  -webkit-transition: left 220ms cubic-bezier(0.15, 1, 0.3, 1);
-  transition: left 220ms cubic-bezier(0.15, 1, 0.3, 1);
+  z-index: 400;
+  -webkit-transition: left 220ms cubic-bezier(0.15, 1, 0.15, 1);
+  transition: left 220ms cubic-bezier(0.15, 1, 0.15, 1);
 }
 
 nav.main-menu.open {
@@ -768,7 +789,7 @@ nav.main-menu .left .menu-link:hover {
 }
 
 nav.main-menu .left .menu-link:active {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: #00bfff;
 }
 
 nav.main-menu .left .menu-link.active {
@@ -896,7 +917,7 @@ nav.main-menu .right ul li .menu-item:hover {
 }
 
 nav.main-menu .right ul li .menu-item:active {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: #00bfff;
 }
 
 nav.main-menu .right ul li.active a {
@@ -926,7 +947,7 @@ nav.main-menu .right.submenu {
   width: 280px;
   bottom: 0;
   background-color: #fafafa;
-  z-index: 40;
+  z-index: 500;
   -webkit-transition: left 220ms cubic-bezier(0.15, 1, 0.3, 1);
   transition: left 220ms cubic-bezier(0.15, 1, 0.3, 1);
 }
@@ -1083,7 +1104,7 @@ nav.main-menu .right.submenu {
   left: 0;
   background-color: rgba(0, 0, 0, 0.2);
   display: none;
-  z-index: 30;
+  z-index: 300;
   opacity: 0;
   filter: alpha(opacity=0);
   -webkit-transition: opacity 200ms ease;

@@ -43,8 +43,13 @@
             </div>
         </div>
 
-        <div id="right-menu" class="right {{ $menuClass }}">
 
+        <div class="loader-wrapper menu-loader">
+            <div class="spinner-loader">
+                <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+            </div>
+        </div>
+        <div id="right-menu" class="right {{ $menuClass }}">
             @if($menuClass == 'submenu')
                 @include('backend/partials/skeleton/sub-menu')
             @else
@@ -52,7 +57,6 @@
             @endif
             
             @include('backend/navigation/right-menu')
-            
         </div>
         
     </nav>

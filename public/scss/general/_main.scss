@@ -98,59 +98,96 @@ button.btn-loader {
     bottom:0;
     background-color:$color--white;
     top:$navbar-mobile-height;
-    z-index:9999999;
-    left:0;
+    z-index:100; 
+    left:$navbar-width-s;
     display: none;
+
+
+    &.content-loader {
+        //@include transition(left 220ms $menu-transition 50ms);
+        &.toFullWidth {
+            left: 0;
+
+            @media #{$mq-m} {
+                left:$navbar-width-l;
+            }
+        }
+    }
     
-    @media #{$mq-m} {
+    @media #{$mq-m} {  
         top:0;
         left:$navbar-width-l;
     }
-}
-.spinner-loader {
-    position: absolute;
-    right:0;
-    left:0;
-    margin:0 auto;
-    width:64px;
-    top:50%;
-    @include transform(translateY(-50%));
-}
-.lds-ring {
-    display: inline-block;
-    position: relative;
-    width: 64px;
-    height: 64px;
-  }
-  .lds-ring div {
-    box-sizing: border-box;
-    display: block;
-    position: absolute;
-    width: 51px;
-    height: 51px;
-    margin: 6px;
-    border: 3px solid $color--primary;
-    border-radius: 50%;
-    animation: lds-ring .6s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-    border-color: $color--primary transparent transparent transparent;
-  }
-  .lds-ring div:nth-child(1) {
-    animation-delay: -0.225s;
-  }
-  .lds-ring div:nth-child(2) {
-    animation-delay: -0.15s;
-  }
-  .lds-ring div:nth-child(3) {
-    animation-delay: -0.075s;
-  }
-  @keyframes lds-ring {
-    0% {
-      transform: rotate(0deg);
+
+    .spinner-loader {
+        position: absolute;
+        right:0;
+        left:0;
+        margin:0 auto;
+        width:64px;
+        top:50%;
+        @include transform(translateY(-50%));
+        
+        .lds-ring {
+            display: inline-block;
+            position: relative;
+            width: 64px;
+            height: 64px;
+
+            div {
+                box-sizing: border-box;
+                display: block;
+                position: absolute;
+                width: 51px;
+                height: 51px;
+                margin: 6px;
+                border: 3px solid $color--primary;
+                border-radius: 50%;
+                animation: lds-ring .6s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+                border-color: $color--primary transparent transparent transparent;
+
+                &:nth-child(1) {
+                    animation-delay: -0.225s;
+                }
+                &:nth-child(2) {
+                    animation-delay: -0.15s;
+                }
+                &:nth-child(3) {
+                    animation-delay: -0.075s;
+                }
+            }
+
+            @keyframes lds-ring {
+                0% {
+                    transform: rotate(0deg);
+                }
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+        }
     }
-    100% {
-      transform: rotate(360deg);
+
+    &.menu-loader {
+        position: absolute;
+        background-color: transparent;
+        top:0;
+        left: 70px;
+
+        .spinner-loader {
+            .lds-ring {
+                div{
+                    border-color: $color--primary-light transparent transparent transparent;
+                }
+            }
+        }
     }
-  }
+}
+
+
+  
+  
+
 
 
   
