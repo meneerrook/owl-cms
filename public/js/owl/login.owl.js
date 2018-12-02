@@ -90,6 +90,9 @@
                     if (window.owl.common && typeof window.owl.common.register == "function") {
                         window.owl.common.register();
                     }
+                    if (window.owl.navigation && typeof window.owl.navigation.register == "function") {
+                        window.owl.navigation.register();
+                    }
                     
                 }
             });

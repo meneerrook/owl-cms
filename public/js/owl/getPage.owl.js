@@ -55,19 +55,6 @@
                     window.owl.common._showLoaders(false);
                 }
 
-
-                // if (rightMenu.classList.contains("submenu")) {
-                //     rightMenu.classList.remove("submenu");
-                //     rightMenu.innerHTML = "";
-                    
-                // }
-
-                // if(e.currentTarget.classList.contains("has-sub-menu")) {
-
-                //     rightMenu.innerHTML = "";
-                //     rightMenu.classList.add("submenu");
-                // }
-
                 var activeItem = document.querySelector("#right-menu ul li.active");
                 if(activeItem) {
                     activeItem.classList.remove("active");

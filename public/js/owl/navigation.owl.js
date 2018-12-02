@@ -58,8 +58,6 @@
             menuOverlay.classList.remove("fadeIn");
             menuOverlay.classList.remove("show");
             content.classList.remove("blur");
-
-            
         }
     }
 
