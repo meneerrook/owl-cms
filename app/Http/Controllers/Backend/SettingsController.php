@@ -19,12 +19,12 @@ class SettingsController extends Controller
     {
 
         if (Request::ajax()) {
-            $navigation = view('backend.navigation.right-menu')->with('menuItems', 'menuitems.default')->render();
+            $navigation = view('backend.navigation.right-menu')->with('menuItems', 'navigation.main.default')->render();
             $content = view('backend.settings.index-template')->render();
             
             return Response::json(['html' => [ 'navigation' => $navigation, 'content' => $content]]);
         } else {
-            return view('backend.settings.index')->with('menuItems', 'menuitems.default');
+            return view('backend.settings.index')->with('menuItems', 'navigation.main.default');
         }
     }
 }

@@ -17,22 +17,22 @@ class UsersController extends Controller
     public function index() 
     {
         $users = User::all();
-        return $this->returnView("backend.users.index", "menuitems.users", $users);
+        return $this->returnView("backend.users.index", "navigation.users.users", $users);
     }
 
     public function userProfile($id) {
         $user = User::find($id);
-        return $this->returnView("backend.users.user-profile.user-profile", "menuitems.user-profile", $user);
+        return $this->returnView("backend.users.user-profile.user-profile", "navigation.users.user-profile", $user);
     }
 
     public function userEdit($id) {
         $user = User::find($id);
-        return $this->returnView("backend.users.user-edit.user-edit", "menuitems.user-edit", $user);
+        return $this->returnView("backend.users.user-edit.user-edit", "navigation.users.user-edit", $user);
     }
 
     public function userDelete($id) {
         $user = User::find($id);
-        return $this->returnView("backend.users.user-delete.user-delete", "menuitems.user-delete", $user);
+        return $this->returnView("backend.users.user-delete.user-delete", "navigation.users.user-delete", $user);
     }
 
     // handles XHR and HTTP requests

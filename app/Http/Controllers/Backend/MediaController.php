@@ -18,12 +18,12 @@ class MediaController extends Controller
     public function  index() 
     {
         if (Request::ajax()) {
-            $navigation = view('backend.navigation.right-menu')->with('menuItems', 'menuitems.default')->render();
+            $navigation = view('backend.navigation.right-menu')->with('menuItems', 'navigation.main.default')->render();
             //$content = view('backend.media.index-template')->render();
             $content = view('backend.partials.messages.danger')->render();
             return Response::json(['html' => [ 'navigation' => $navigation, 'content' => $content,]]);
         } else {
-            return view('backend.media.index')->with('menuItems', 'menuitems.default');
+            return view('backend.media.index')->with('menuItems', 'navigation.main.default');
         }
     }
 }

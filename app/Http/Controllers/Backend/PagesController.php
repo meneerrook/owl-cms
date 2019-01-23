@@ -18,11 +18,11 @@ class PagesController extends Controller
     public function  index() 
     {
         if (Request::ajax()) {
-            $navigation = view('backend.navigation.right-menu')->with('menuItems', 'menuitems.default')->render();
+            $navigation = view('backend.navigation.right-menu')->with('menuItems', 'navigation.main.default')->render();
             $content = view('backend.pages.index-template')->render();
             return Response::json(['html' => [ 'navigation' => $navigation, 'content' => $content,]]);
         } else {
-            return view('backend.pages.index')->with('menuItems', 'menuitems.default');
+            return view('backend.pages.index')->with('menuItems', 'navigation.main.default');
         }
     }
 }

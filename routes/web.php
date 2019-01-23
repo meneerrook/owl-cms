@@ -39,7 +39,7 @@ Route::group(['middleware' => ['auth']], function() {
 		// posts routes
 		Route::prefix('posts')->group(function () {
 			Route::get('/', ['as' => 'owl/posts', 'uses' => 'Backend\PostsController@index']);
-			Route::get('/add', ['as' => 'owl/posts/add', 'uses' => 'Backend\PostsController@add']);
+			// Route::get('/add', ['as' => 'owl/posts/add', 'uses' => 'Backend\PostsController@add']);
 			Route::get('/edit', ['as' => 'owl/posts/edit', 'uses' => 'Backend\PostsController@edit']);
 			Route::get('/delete', ['as' => 'owl/posts/delete', 'uses' => 'Backend\PostsController@delete']);
 		});
