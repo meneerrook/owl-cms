@@ -1,7 +1,7 @@
 @if(Auth::check())
 
     @php
-        if($menuItems == 'menuitems.default') {
+        if($menuItems == 'navigation.main.default') {
             $menuClass = '';
         } else {
             $menuClass = 'submenu';

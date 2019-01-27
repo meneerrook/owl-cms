@@ -83,6 +83,9 @@
         },
         _renderPage(response, url, e) {
             window.history.pushState({"html":"","pageTitle":"Owl"},"", url);
+
+            console.log(response);
+
             document.querySelector("#right-menu").innerHTML = response.html.navigation;
             document.querySelector("#content").innerHTML = response.html.content;
             document.querySelector("#loader-wrapper").style.display = "none";

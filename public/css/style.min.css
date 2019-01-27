@@ -84,6 +84,13 @@ body {
   z-index: 0;
 }
 
+.small-form {
+  display: block;
+  max-width: 768px;
+  width: 100%;
+  margin: 0 auto;
+}
+
 button.btn-loader {
   position: relative;
   overflow: hidden;
@@ -658,6 +665,43 @@ button.btn-loader.loading:before, button.btn-loader.loading:after {
 @media (min-width: 992px) {
   .skeleton-small {
     display: none;
+  }
+}
+
+.shine {
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(5%, rgba(255, 255, 255, 0.03)), color-stop(10%, rgba(255, 255, 255, 0.06)), color-stop(15%, rgba(255, 255, 255, 0.09)), color-stop(20%, rgba(255, 255, 255, 0.12)), color-stop(25%, rgba(255, 255, 255, 0.15)), color-stop(75%, rgba(255, 255, 255, 0.15)), color-stop(80%, rgba(255, 255, 255, 0.12)), color-stop(85%, rgba(255, 255, 255, 0.09)), color-stop(90%, rgba(255, 255, 255, 0.06)), color-stop(95%, rgba(255, 255, 255, 0.03)), to(rgba(255, 255, 255, 0)));
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 5%, rgba(255, 255, 255, 0.06) 10%, rgba(255, 255, 255, 0.09) 15%, rgba(255, 255, 255, 0.12) 20%, rgba(255, 255, 255, 0.15) 25%, rgba(255, 255, 255, 0.15) 75%, rgba(255, 255, 255, 0.12) 80%, rgba(255, 255, 255, 0.09) 85%, rgba(255, 255, 255, 0.06) 90%, rgba(255, 255, 255, 0.03) 95%, rgba(255, 255, 255, 0) 100%);
+  background-repeat: no-repeat;
+  background-size: 40px 40px;
+  display: inline-block;
+  position: relative;
+  -webkit-animation-duration: .7s;
+          animation-duration: .7s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-name: placeholderShimmer;
+          animation-name: placeholderShimmer;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+
+@-webkit-keyframes placeholderShimmer {
+  0% {
+    background-position: -468px 0;
+  }
+  100% {
+    background-position: 468px 0;
+  }
+}
+
+@keyframes placeholderShimmer {
+  0% {
+    background-position: -468px 0;
+  }
+  100% {
+    background-position: 468px 0;
   }
 }
 

@@ -31,15 +31,16 @@ Route::group(['middleware' => ['auth']], function() {
 		// pages routes
 		Route::prefix('users')->group(function () {
 			Route::get('/', ['as' => 'owl/users', 'uses' => 'Backend\UsersController@index']);
-			Route::get('/{id}', ['as' => 'owl/users/profile', 'uses' => 'Backend\UsersController@userProfile']);
-			Route::get('/{id}/edit', ['as' => 'owl/users/edit', 'uses' => 'Backend\UsersController@userEdit']);
-			Route::get('/{id}/delete', ['as' => 'owl/users/delete', 'uses' => 'Backend\UsersController@userDelete']);
+			Route::get('/profile/{id}', ['as' => 'owl/users/profile', 'uses' => 'Backend\UsersController@userProfile']);
+			Route::get('/add', ['as' => 'owl/users/add', 'uses' => 'Backend\UsersController@userAdd']);
+			Route::get('/edit/{id}', ['as' => 'owl/users/edit', 'uses' => 'Backend\UsersController@userEdit']);
+			Route::get('/delete/{id}', ['as' => 'owl/users/delete', 'uses' => 'Backend\UsersController@userDelete']);
 		});
 
 		// posts routes
 		Route::prefix('posts')->group(function () {
 			Route::get('/', ['as' => 'owl/posts', 'uses' => 'Backend\PostsController@index']);
-			// Route::get('/add', ['as' => 'owl/posts/add', 'uses' => 'Backend\PostsController@add']);
+			Route::get('/add', ['as' => 'owl/posts/add', 'uses' => 'Backend\PostsController@add']);
 			Route::get('/edit', ['as' => 'owl/posts/edit', 'uses' => 'Backend\PostsController@edit']);
 			Route::get('/delete', ['as' => 'owl/posts/delete', 'uses' => 'Backend\PostsController@delete']);
 		});

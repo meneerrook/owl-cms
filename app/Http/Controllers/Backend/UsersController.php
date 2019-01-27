@@ -25,6 +25,10 @@ class UsersController extends Controller
         return $this->returnView("backend.users.user-profile.user-profile", "navigation.users.user-profile", $user);
     }
 
+    public function userAdd() {
+        return $this->returnView("backend.users.user-add.user-add", "navigation.users.user-add");
+    }
+
     public function userEdit($id) {
         $user = User::find($id);
         return $this->returnView("backend.users.user-edit.user-edit", "navigation.users.user-edit", $user);
@@ -36,7 +40,7 @@ class UsersController extends Controller
     }
 
     // handles XHR and HTTP requests
-    private function returnView($viewName, $menu, $data) {
+    private function returnView($viewName, $menu, $data = []) {
 
         $template = $viewName.'-template';
         $view = $viewName;

@@ -49,7 +49,6 @@
     z-index:999999;
     background-color:$color--primary;
     padding: $margin*2; 
-
     .item {
         position:relative;
         float:left;
@@ -281,5 +280,38 @@
 
     @media #{$mq-m} {
         display: none;
+    }
+}
+
+.shine {
+    background-image: linear-gradient(to right, 
+    rgba(255, 255, 255, 0.03) 5%,
+    rgba(255, 255, 255, 0.06) 10%,
+    rgba(255, 255, 255, 0.09) 15%,
+    rgba(255, 255, 255, 0.12) 20%,
+    rgba(255, 255, 255, 0.15) 25%,
+    rgba(255, 255, 255, 0.15) 75%,
+    rgba(255, 255, 255, 0.12) 80%,
+    rgba(255, 255, 255, 0.09) 85%,
+    rgba(255, 255, 255, 0.06) 90%,
+    rgba(255, 255, 255, 0.03) 95%,
+    rgba(255, 255, 255, 0.0) 100%);
+    background-repeat: no-repeat;
+    background-size: 40px 40px; 
+    display: inline-block;
+    position: relative; 
+    animation-duration: .7s;
+    animation-fill-mode: forwards; 
+    animation-iteration-count: infinite;
+    animation-name: placeholderShimmer;
+    animation-timing-function: linear;
+}
+@keyframes placeholderShimmer {
+    0% {
+        background-position: -468px 0;
+    }
+    
+    100% {
+        background-position: 468px 0; 
     }
 }

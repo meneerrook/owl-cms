@@ -46,6 +46,19 @@
                 ],
             ],
             'bottom' => []
+        ],
+        'post-add' => [
+            'title' => 'Posts',
+            'top' => [
+                [
+                    'page' => 'Back',
+                    'route' => 'owl/posts',
+                    'hasid' => false,
+                    'class' => 'back-link',
+                    'icon' => 'fa fa-long-arrow-left'
+                ]
+            ],
+            'bottom' => []
         ]
     ]
 ?>

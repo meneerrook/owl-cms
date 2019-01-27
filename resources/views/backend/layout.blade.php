@@ -15,6 +15,7 @@
         <script src="{{ asset('js/plugins/jquery.min.js') }}"></script>
 		<script src="{{ asset('js/plugins/popper.min.js') }}"></script>
 		<script src="{{ asset('js/plugins/bootstrap.min.js') }}"></script>
+		<script src="{{ asset('js/plugins/trader.js') }}"></script>
 
 		<!-- JS Owl -->
 		<script src="{{ asset('js/owl/getPage.owl.js') }}"></script>
@@ -35,7 +36,7 @@
             </div>
 		</div>
 		
-		<div id="page-wrapper" class="page-wrapper">
+		<div id="page-wrapper" class="page-wrapper" data-trdr="login" data-trdr-order="3" data-trdr-class="hide">
 			<div id="navigation">
 				@if (Auth::check())
 					

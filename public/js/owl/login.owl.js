@@ -43,16 +43,10 @@
         _renderTemplate: function(response) {
             switch(response.type) {
                 case "page":
-                    var loginWrapper = document.querySelector("#login-wrapper");
-                    var loginContainer = document.querySelector("#login-container");
-
                     document.querySelector("#navigation").innerHTML = response.html.navigation;
                     document.querySelector("#content").innerHTML = response.html.content
-                    var pageWrapper = document.querySelector("#page-wrapper");
 
-                    
-                    
-                    window.owl.login._pageTransition(loginWrapper, loginContainer, pageWrapper);
+                    window.owl.login._pageTransition();
                 break;
                 case "message":
                     window.owl.login._giveMessage();
@@ -63,42 +57,39 @@
                     window.owl.buttonLoader.undo(button);
             }
         },
-        _pageTransition: function(loginWrapper, loginContainer, pageWrapper) {
+        _pageTransition: function() {
 
             var skeletons = document.querySelectorAll(".skeleton");
             for (let i = 0; i < skeletons.length; i++) {
                 skeletons[i].parentNode.removeChild(skeletons[i]);
             }
 
-            loginWrapper.addEventListener('transitionend', function(e) {
-                if(e.propertyName == "opacity") {
-                    loginContainer.classList.add("sizeDown");
-                }
+            var trader = new Trader({
+                id: "login",
             });
-            loginContainer.addEventListener('transitionend', function(e) {
-                if(e.propertyName == "width" || e.propertyName == "height") {
-                    pageWrapper.classList.remove("hide");
-                }
-            });
-            pageWrapper.addEventListener('transitionend', function(e) {
-                if(e.propertyName == "opacity") {
-                    loginContainer.parentNode.removeChild(loginContainer);
-                    var loginScript = document.querySelector("#login-script");
-                    loginScript.parentNode.removeChild(loginScript);
+            
+            trader.toggleTransition();
 
-                    if (window.owl.getPage && typeof window.owl.getPage.register == "function") {
-                        window.owl.getPage.register();
-                    }
-                    if (window.owl.common && typeof window.owl.common.register == "function") {
-                        window.owl.common.register();
-                    }
-                    if (window.owl.navigation && typeof window.owl.navigation.register == "function") {
-                        window.owl.navigation.register();
-                    }
-                    
-                }
+            document.addEventListener("traderend", function() {
+                window.owl.login._reinitPage();
             });
-            loginWrapper.classList.add("fadeOut");
+        },
+        _reinitPage: function() {
+            var loginContainer = document.querySelector("#login-container"),
+                loginScript = document.querySelector("#login-script");
+
+                loginContainer.parentNode.removeChild(loginContainer);
+                loginScript.parentNode.removeChild(loginScript);
+
+            if (window.owl.getPage && typeof window.owl.getPage.register == "function") {
+                window.owl.getPage.register();
+            }
+            if (window.owl.common && typeof window.owl.common.register == "function") {
+                window.owl.common.register();
+            }
+            if (window.owl.navigation && typeof window.owl.navigation.register == "function") {
+                window.owl.navigation.register();
+            }
         },
         _giveMessage: function() {
             var button = document.querySelector("#loginButton");

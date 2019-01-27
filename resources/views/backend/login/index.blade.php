@@ -7,8 +7,8 @@
 @endsection
 
 @section('login')
-    <div id="login-container" class="login-container">
-        <div id="login-wrapper" class="login-wrapper">
+    <div id="login-container" class="login-container" data-trdr="login" data-trdr-order="2" data-trdr-class="sizeDown">
+        <div id="login-wrapper" class="login-wrapper" data-trdr="login" data-trdr-order="1" data-trdr-class="fadeOut">
             <div class="heading">
                 <div class="logo">
                     <img src="../images/owl_logo.svg" alt="Owl CMS">

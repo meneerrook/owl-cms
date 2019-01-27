@@ -1,6 +1,6 @@
 @extends('backend/layout')
 
-@section('bodyClass', 'dashboard')
+@section('bodyClass', 'pages')
 
 @section('content')
     @include('backend/pages/index-template')

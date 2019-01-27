@@ -16,7 +16,7 @@
         </div>
         <ul>
             <li>
-                <a href="" class="menu-item" data-xhr-page>
+                <a href="{{ route('owl/posts/add') }}" class="menu-item" data-xhr-page>
                     <i class="fa fa-thumb-tack"></i>Post
                 </a>
             </li>
@@ -31,7 +31,7 @@
                 </a>
             </li>
             <li>
-                <a href="" class="menu-item" data-xhr-page>
+                <a href="{{ route('owl/users/add') }}" class="menu-item" data-xhr-page>
                     <i class="fa fa-user-o"></i>User
                 </a>
             </li>

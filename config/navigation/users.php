@@ -37,6 +37,13 @@
                     'class' => 'has-sub-menu',
                     'icon' => 'fa fa-users'
                 ],
+                [
+                    'page' => 'Add users',
+                    'route' => 'owl/users/add',
+                    'hasid' => false,
+                    'class' => 'has-sub-menu',
+                    'icon' => 'fa fa-plus'
+                ],
                 // [
                 //     'page' => 'Add new',
                 //     'route' => 'owl/users/add',
@@ -70,6 +77,19 @@
                     'hasid' => true,
                     'class' => 'has-sub-menu',
                     'icon' => 'fa fa-trash'
+                ]
+            ],
+            'bottom' => [],
+        ],
+        'user-add' => [
+            'title' => 'Add user',
+            'top' => [
+                [
+                    'page' => 'Back',
+                    'route' => 'owl/users',
+                    'hasid' => false,
+                    'class' => 'back-link has-sub-menu',
+                    'icon' => 'fa fa-long-arrow-left'
                 ]
             ],
             'bottom' => [],

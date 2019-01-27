@@ -21,6 +21,7 @@ class LandingController extends Controller
         if (Request::ajax()) {
             $navigation = view('backend.navigation.right-menu')->with('menuItems', 'navigation.main.default')->render();
             $content = view('backend.dashboard.index-template')->render();
+            
             return Response::json(['html' => [ 'navigation' => $navigation, 'content' => $content,]]);
         } else {
             return view('backend.dashboard.index')->with('menuItems', 'navigation.main.default');
@@ -47,7 +48,7 @@ class LandingController extends Controller
         
         if (Auth::attempt(array('email' => $email, 'password' => $password ))){
 
-            $navigation = view('backend.navigation.index')->with('menuItems', 'menuitems.default')->render();
+            $navigation = view('backend.navigation.index')->with('menuItems', 'navigation.main.default')->render();
             $content = view('backend.dashboard.index-template')->render();
             
 
