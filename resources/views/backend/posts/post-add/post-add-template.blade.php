@@ -1,1 +1,1 @@
-<h3>add post</h3>
+<h3>Add post</h3>

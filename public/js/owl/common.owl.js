@@ -5,6 +5,7 @@
     window.owl.common = {
         register: function() {
             window.owl.common._toggler();
+            window.owl.common._userMenuHandler();
         },
         _toggler: function() {
             var toggleButton = document.querySelectorAll("[data-toggle]");
@@ -42,6 +43,15 @@
             var loaders = document.querySelectorAll(".loader-wrapper");
             for (let i = 0; i < loaders.length; i++) {
                 loaders[i].style.display = "none";
+            }
+        },
+        _userMenuHandler: function() {
+            var links = document.querySelectorAll("#user-menu a");
+            for(let i = 0; i < links.length; i++) {
+                links[i].addEventListener("click", function() {
+                    document.querySelector("[data-toggle='#user-menu']").classList.remove("active");
+                    document.querySelector("#user-menu").classList.add("hidden");
+                });
             }
         }
     }

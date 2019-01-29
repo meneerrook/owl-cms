@@ -28,21 +28,35 @@
                     'route' => 'owl/dashboard',
                     'hasid' => false,
                     'class' => 'back-link',
-                    'icon' => 'fa fa-long-arrow-left'
+                    'icon' => 'fa fa-long-arrow-left',
+                    'roles' => [
+                        'admin',
+                        'manager',
+                        'editor'
+                    ]
                 ],
                 [
                     'page' => 'All users',
                     'route' => 'owl/users',
                     'hasid' => false,
                     'class' => 'has-sub-menu',
-                    'icon' => 'fa fa-users'
+                    'icon' => 'fa fa-users',
+                    'roles' => [
+                        'admin',
+                        'manager',
+                        'editor'
+                    ]
                 ],
                 [
                     'page' => 'Add users',
                     'route' => 'owl/users/add',
                     'hasid' => false,
                     'class' => 'has-sub-menu',
-                    'icon' => 'fa fa-plus'
+                    'icon' => 'fa fa-plus',
+                    'roles' => [
+                        'admin',
+                        'manager'
+                    ]
                 ],
                 // [
                 //     'page' => 'Add new',
@@ -62,21 +76,34 @@
                     'route' => 'owl/users',
                     'hasid' => false,
                     'class' => 'back-link has-sub-menu',
-                    'icon' => 'fa fa-long-arrow-left'
+                    'icon' => 'fa fa-long-arrow-left',
+                    'roles' => [
+                        'admin',
+                        'manager',
+                        'editor'
+                    ]
                 ],
                 [
                     'page' => 'Edit user',
                     'route' => 'owl/users/edit',
                     'hasid' => true,
                     'class' => 'has-sub-menu',
-                    'icon' => 'fa fa-pencil'
+                    'icon' => 'fa fa-pencil',
+                    'roles' => [
+                        'admin',
+                        'manager'
+                    ]
                 ],
                 [
                     'page' => 'Delete user',
                     'route' => 'owl/users/delete',
                     'hasid' => true,
                     'class' => 'has-sub-menu',
-                    'icon' => 'fa fa-trash'
+                    'icon' => 'fa fa-trash',
+                    'roles' => [
+                        'admin',
+                        'manager'
+                    ]
                 ]
             ],
             'bottom' => [],
@@ -89,7 +116,11 @@
                     'route' => 'owl/users',
                     'hasid' => false,
                     'class' => 'back-link has-sub-menu',
-                    'icon' => 'fa fa-long-arrow-left'
+                    'icon' => 'fa fa-long-arrow-left',
+                    'roles' => [
+                        'admin',
+                        'manager'
+                    ]
                 ]
             ],
             'bottom' => [],
@@ -102,7 +133,11 @@
                     'route' => 'owl/users/profile',
                     'hasid' => true,
                     'class' => 'back-link has-sub-menu',
-                    'icon' => 'fa fa-long-arrow-left'
+                    'icon' => 'fa fa-long-arrow-left',
+                    'roles' => [
+                        'admin',
+                        'manager'
+                    ]
                 ]
             ],
             'bottom' => [],
@@ -115,7 +150,11 @@
                     'route' => 'owl/users/profile',
                     'hasid' => true,
                     'class' => 'back-link has-sub-menu',
-                    'icon' => 'fa fa-long-arrow-left'
+                    'icon' => 'fa fa-long-arrow-left',
+                    'roles' => [
+                        'admin',
+                        'manager'
+                    ]
                 ]
             ],
             'bottom' => []

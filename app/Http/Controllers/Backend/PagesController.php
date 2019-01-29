@@ -3,26 +3,19 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Redirect;
-use Request;
-use App\User;
-use Auth;
-use Input;
-use Response;
-use View;
+use ViewHelper;
 
 class PagesController extends Controller
 {
     // get:
 
-    public function  index() 
+    public function index() 
     {
-        if (Request::ajax()) {
-            $navigation = view('backend.navigation.right-menu')->with('menuItems', 'navigation.main.default')->render();
-            $content = view('backend.pages.index-template')->render();
-            return Response::json(['html' => [ 'navigation' => $navigation, 'content' => $content,]]);
-        } else {
-            return view('backend.pages.index')->with('menuItems', 'navigation.main.default');
-        }
+        return ViewHelper::resolve("backend.pages.index", "navigation.pages.pages");
+    }
+
+    public function add() 
+    {
+        return ViewHelper::resolve("backend.pages.page-add.page-add", "navigation.pages.page-add");
     }
 }

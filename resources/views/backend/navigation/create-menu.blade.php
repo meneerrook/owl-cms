@@ -8,33 +8,36 @@
         <a href="#" class="toggle-create-menu menu-link icon"><i class="fa fa-long-arrow-left" aria-hidden="true"></i></a>
     </div>
     <div class="right">
+
+        @php
+            $menuItems = config('navigation.main.create-menu');
+        @endphp
+
         <div class="menu-heading">
-            <h3>Owl CMS</h3>
+            <h3>{{ $menuItems['title'] }}</h3>
         </div>
         <div class="menu-sub-heading">
-            <h4>Create/Add</h4>
+            <h4>{{ $menuItems['subtitle'] }}</h4>
         </div>
         <ul>
-            <li>
-                <a href="{{ route('owl/posts/add') }}" class="menu-item" data-xhr-page>
-                    <i class="fa fa-thumb-tack"></i>Post
-                </a>
-            </li>
-            <li>
-                <a href="" class="menu-item" data-xhr-page>
-                    <i class="fa fa-files-o"></i>Page
-                </a>
-            </li>
-            <li>
-                <a href="" class="menu-item" data-xhr-page>
-                    <i class="fa fa-film"></i>Media
-                </a>
-            </li>
-            <li>
-                <a href="{{ route('owl/users/add') }}" class="menu-item" data-xhr-page>
-                    <i class="fa fa-user-o"></i>User
-                </a>
-            </li>
+            @foreach($menuItems['top'] as $menuItem)
+                @php
+                    $hasRights = false;
+                    foreach( $menuItem['roles'] as $key => $value) {
+                        if($value == Auth::user()->role) {
+                            $hasRights = true;
+                        } 
+                    }
+                @endphp
+                @if($hasRights)
+                    <li class="menu-item_{{ str_replace(' ', '-', strtolower($menuItem['page'])) }} {{ Request::path() == $menuItem['route'] ? 'active' : '' }}">
+
+                        <a href="{{ $menuItem['hasid'] === true ? route($menuItem['route'], ['id' => $id]) : route($menuItem['route']) }}" class="menu-item {{ $menuItem['class'] }}" data-xhr-page>
+                            <i class="{{ $menuItem['icon'] }}"></i>{{ $menuItem['page'] }}
+                        </a>
+                    </li>
+                @endif
+            @endforeach
         </ul>
     </div>
 </nav>

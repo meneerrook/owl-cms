@@ -385,6 +385,10 @@ button.btn-loader.loading:before, button.btn-loader.loading:after {
   filter: alpha(opacity=0);
 }
 
+.skeleton.hide {
+  display: none;
+}
+
 .skeleton-left {
   position: absolute;
   top: 0;
@@ -422,7 +426,7 @@ button.btn-loader.loading:before, button.btn-loader.loading:after {
   top: 0;
   right: 0;
   bottom: 0;
-  left: 0;
+  left: 70px;
   z-index: 999999;
   background-color: #007bff;
   padding: 30px;
@@ -465,7 +469,7 @@ button.btn-loader.loading:before, button.btn-loader.loading:after {
   display: none;
 }
 
-.skeleton-right.submenu {
+.submenu + .skeleton {
   background-color: #006EE5;
 }
 
@@ -668,7 +672,7 @@ button.btn-loader.loading:before, button.btn-loader.loading:after {
   }
 }
 
-.shine {
+.shine, .shine:before {
   background-image: -webkit-gradient(linear, left top, right top, color-stop(5%, rgba(255, 255, 255, 0.03)), color-stop(10%, rgba(255, 255, 255, 0.06)), color-stop(15%, rgba(255, 255, 255, 0.09)), color-stop(20%, rgba(255, 255, 255, 0.12)), color-stop(25%, rgba(255, 255, 255, 0.15)), color-stop(75%, rgba(255, 255, 255, 0.15)), color-stop(80%, rgba(255, 255, 255, 0.12)), color-stop(85%, rgba(255, 255, 255, 0.09)), color-stop(90%, rgba(255, 255, 255, 0.06)), color-stop(95%, rgba(255, 255, 255, 0.03)), to(rgba(255, 255, 255, 0)));
   background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 5%, rgba(255, 255, 255, 0.06) 10%, rgba(255, 255, 255, 0.09) 15%, rgba(255, 255, 255, 0.12) 20%, rgba(255, 255, 255, 0.15) 25%, rgba(255, 255, 255, 0.15) 75%, rgba(255, 255, 255, 0.12) 80%, rgba(255, 255, 255, 0.09) 85%, rgba(255, 255, 255, 0.06) 90%, rgba(255, 255, 255, 0.03) 95%, rgba(255, 255, 255, 0) 100%);
   background-repeat: no-repeat;

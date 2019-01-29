@@ -5,11 +5,10 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Redirect;
 use Request;
-use App\User;
+use Response;
 use Auth;
 use Input;
-use Response;
-use View;
+use ViewHelper;
 
 class LandingController extends Controller
 {
@@ -17,15 +16,7 @@ class LandingController extends Controller
 
     public function index() 
     {
-    
-        if (Request::ajax()) {
-            $navigation = view('backend.navigation.right-menu')->with('menuItems', 'navigation.main.default')->render();
-            $content = view('backend.dashboard.index-template')->render();
-            
-            return Response::json(['html' => [ 'navigation' => $navigation, 'content' => $content,]]);
-        } else {
-            return view('backend.dashboard.index')->with('menuItems', 'navigation.main.default');
-        }
+        return ViewHelper::resolve("backend.dashboard.index", "navigation.main.default");
     }
 
     public function login()

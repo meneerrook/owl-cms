@@ -36,29 +36,19 @@
                     <div id="user-menu" class="menu-link-popover hidden">
                         <span class="popover-title">{{ Auth::user()->firstname . ' ' . Auth::user()->lastname }}</span>
                         <ul>
+                            <li><a href="{{ route('owl/profile') }}" class="popover-link has-sub-menu" data-xhr-page>My profile</a></li>
                             <li><a href="{{ route('owl/logout') }}" class="popover-link">Logout</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
-
-
-        <div class="loader-wrapper menu-loader">
-            <div class="spinner-loader">
-                <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
-            </div>
-        </div>
+        
         <div id="right-menu" class="right {{ $menuClass }}">
-            @if($menuClass == 'submenu')
-                @include('backend/partials/skeleton/sub-menu')
-            @else
-                @include('backend/partials/skeleton/right-menu')
-            @endif
-            
             @include('backend/navigation/right-menu')
         </div>
-        
+        @include('backend/partials/skeleton/right-menu')
+
     </nav>
 
     @include('backend/navigation/create-menu')

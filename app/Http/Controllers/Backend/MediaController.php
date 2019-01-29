@@ -3,27 +3,19 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Redirect;
-use Request;
-use App\User;
-use Auth;
-use Input;
-use Response;
-use View;
+use ViewHelper;
 
 class MediaController extends Controller
 {
     // get:
 
-    public function  index() 
+    public function index() 
     {
-        if (Request::ajax()) {
-            $navigation = view('backend.navigation.right-menu')->with('menuItems', 'navigation.main.default')->render();
-            //$content = view('backend.media.index-template')->render();
-            $content = view('backend.partials.messages.danger')->render();
-            return Response::json(['html' => [ 'navigation' => $navigation, 'content' => $content,]]);
-        } else {
-            return view('backend.media.index')->with('menuItems', 'navigation.main.default');
-        }
+        return ViewHelper::resolve("backend.media.index", "navigation.media.media");
+    }
+
+    public function add() 
+    {
+        return ViewHelper::resolve("backend.media.media-add.media-add", "navigation.media.media-add");
     }
 }

@@ -48,11 +48,18 @@ Route::group(['middleware' => ['auth']], function() {
 		// pages routes
 		Route::prefix('pages')->group(function () {
 			Route::get('/', ['as' => 'owl/pages', 'uses' => 'Backend\PagesController@index']);
+			Route::get('/add', ['as' => 'owl/pages/add', 'uses' => 'Backend\PagesController@add']);
 		});
 
 		// media routes
 		Route::prefix('media')->group(function () {
 			Route::get('/', ['as' => 'owl/media', 'uses' => 'Backend\MediaController@index']);
+			Route::get('/add', ['as' => 'owl/media/add', 'uses' => 'Backend\MediaController@add']);
+		});
+
+		// profile routes
+		Route::prefix('profile')->group(function () {
+			Route::get('/', ['as' => 'owl/profile', 'uses' => 'Backend\ProfileController@index']);
 		});
 		
 	});

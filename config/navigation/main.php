@@ -27,35 +27,50 @@
                     'page' => 'Dashboard',
                     'route' => 'owl/dashboard',
                     'hasid' => false,
-                    'class' => '',
-                    'icon' => 'fa fa-bar-chart'
+                    'class' => 'back-link',
+                    'icon' => 'fa fa-bar-chart',
+                    'roles' => [
+                        'admin',
+                        'manager',
+                        'editor'
+                    ]
                 ], 
                 [
                     'page' => 'Posts',
                     'route' => 'owl/posts',
                     'hasid' => false,
                     'class' => 'has-sub-menu', // has-sub-menu
-                    'icon' => 'fa fa-thumb-tack'
+                    'icon' => 'fa fa-thumb-tack',
+                    'roles' => [
+                        'admin',
+                        'manager',
+                        'editor'
+                    ]
                 ], 
                 [
                     'page' => 'Pages',
                     'route' => 'owl/pages',
                     'hasid' => false,
-                    'class' => '',
+                    'class' => 'has-sub-menu',
                     'icon' => 'fa fa-files-o',
+                    'roles' => [
+                        'admin',
+                        'manager',
+                        'editor'
+                    ]
                 ], 
                 [
                     'page' => 'Media',
                     'route' => 'owl/media',
                     'hasid' => false,
-                    'class' => '',
-                    'icon' => 'fa fa-film'
-                ], 
-                // [
-                //     'page' => 'Comments',
-                //     'route' => '',
-                //     'icon' => 'fa fa-comment-o'
-                // ]
+                    'class' => 'has-sub-menu',
+                    'icon' => 'fa fa-film',
+                    'roles' => [
+                        'admin',
+                        'manager',
+                        'editor'
+                    ]
+                ],
             ],
             'bottom' => [
                 [
@@ -63,16 +78,79 @@
                     'route' => 'owl/users',
                     'hasid' => false,
                     'class' => 'has-sub-menu',
-                    'icon' => 'fa fa-users'
+                    'icon' => 'fa fa-users',
+                    'roles' => [
+                        'admin',
+                        'manager',
+                        'editor'
+                    ]
                 ], 
                 [
                     'page' => 'Settings',
                     'route' => 'owl/settings',
                     'hasid' => false,
                     'class' => '',
-                    'icon' => 'fa fa-sliders'
+                    'icon' => 'fa fa-sliders',
+                    'roles' => [
+                        'admin',
+                        'manager',
+                        'editor'
+                    ]
+                ]
+            ]
+        ],
+        'create-menu' => [
+            'title' => 'Owl CMS',
+            'subtitle' => 'Create/Add',
+            'top' => [
+                [
+                    'page' => 'Post',
+                    'route' => 'owl/posts/add',
+                    'hasid' => false,
+                    'class' => 'has-sub-menu',
+                    'icon' => 'fa fa-thumb-tack',
+                    'roles' => [
+                        'admin',
+                        'manager',
+                        'editor'
+                    ]
+                ],
+                [
+                    'page' => 'Page',
+                    'route' => 'owl/pages/add',
+                    'hasid' => false,
+                    'class' => 'has-sub-menu',
+                    'icon' => 'fa fa-files-o',
+                    'roles' => [
+                        'admin',
+                        'manager',
+                        'editor'
+                    ]
+                ],
+                [
+                    'page' => 'Media',
+                    'route' => 'owl/media/add',
+                    'hasid' => false,
+                    'class' => 'has-sub-menu',
+                    'icon' => 'fa fa-film',
+                    'roles' => [
+                        'admin',
+                        'manager',
+                        'editor'
+                    ]
+                ],
+                [
+                    'page' => 'User',
+                    'route' => 'owl/users/add',
+                    'hasid' => false,
+                    'class' => 'has-sub-menu',
+                    'icon' => 'fa fa-user-o',
+                    'roles' => [
+                        'admin',
+                        'manager'
+                    ]
                 ]
             ]
         ]
-    ];    
+     ]; 
 ?>

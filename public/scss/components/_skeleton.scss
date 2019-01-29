@@ -8,6 +8,10 @@
     &.fade {
         @include opacity(0);
     }
+
+    &.hide {
+        display: none;
+    }
 }
 
 .skeleton-left {
@@ -45,7 +49,7 @@
     top:0;
     right:0;
     bottom:0;
-    left:0;
+    left:70px;
     z-index:999999;
     background-color:$color--primary;
     padding: $margin*2; 
@@ -85,7 +89,7 @@
     }
 
     &.submenu {
-        background-color: $color--primary-dark;
+        
         .item {
             //background-color: rgba(0,0,0, 0.05);
 
@@ -100,6 +104,10 @@
     }
 }
 
+
+.submenu + .skeleton {
+    background-color: $color--primary-dark;
+}
 
 
 .skeleton-wrapper {
@@ -283,7 +291,7 @@
     }
 }
 
-.shine {
+.shine, .shine:before {
     background-image: linear-gradient(to right, 
     rgba(255, 255, 255, 0.03) 5%,
     rgba(255, 255, 255, 0.06) 10%,

@@ -20,8 +20,8 @@
 
     $id = '';
     return [
-        'posts' => [
-            'title' => 'Posts',
+        'pages' => [
+            'title' => 'Pages',
             'top' => [
                 [
                     'page' => 'Back',
@@ -32,16 +32,15 @@
                     'roles' => [
                         'admin',
                         'manager',
-                        'editor',
-                        'user'
+                        'editor'
                     ]
                 ],
                 [
-                    'page' => 'All posts',
-                    'route' => 'owl/posts',
+                    'page' => 'All pages',
+                    'route' => 'owl/pages',
                     'hasid' => false,
                     'class' => 'has-sub-menu',
-                    'icon' => 'fa fa-thumb-tack',
+                    'icon' => 'fa fa-files-o',
                     'roles' => [
                         'admin',
                         'manager',
@@ -49,8 +48,8 @@
                     ]
                 ],
                 [
-                    'page' => 'Add new',
-                    'route' => 'owl/posts/add',
+                    'page' => 'Add page',
+                    'route' => 'owl/pages/add',
                     'hasid' => false,
                     'class' => 'has-sub-menu',
                     'icon' => 'fa fa-plus',
@@ -61,14 +60,14 @@
                     ]
                 ],
             ],
-            'bottom' => []
+            'bottom' => [],
         ],
-        'post-add' => [
-            'title' => 'Add post',
+        'page-add' => [
+            'title' => 'Add page',
             'top' => [
                 [
                     'page' => 'Back',
-                    'route' => 'owl/posts',
+                    'route' => 'owl/pages',
                     'hasid' => false,
                     'class' => 'back-link has-sub-menu',
                     'icon' => 'fa fa-long-arrow-left',
@@ -77,9 +76,9 @@
                         'manager',
                         'editor'
                     ]
-                ]
+                ],
             ],
-            'bottom' => []
-        ]
-    ]
+            'bottom' => [],
+        ],
+    ];    
 ?>

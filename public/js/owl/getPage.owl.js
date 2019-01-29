@@ -49,10 +49,12 @@
                     } else if (toMainMenu_Statement) {
                         rightMenu.classList.remove("submenu");
                     }
-                    window.owl.common._showLoaders(true);
+                    window.owl.common._showLoaders();
+                    window.owl.skeleton._activateSkeleton();
                     rightMenu.innerHTML = "";
                 } else {
-                    window.owl.common._showLoaders(false);
+                    window.owl.common._showLoaders();
+                    //window.owl.skeleton._activateSkeleton();
                 }
 
                 var activeItem = document.querySelector("#right-menu ul li.active");
@@ -84,13 +86,12 @@
         _renderPage(response, url, e) {
             window.history.pushState({"html":"","pageTitle":"Owl"},"", url);
 
-            console.log(response);
-
             document.querySelector("#right-menu").innerHTML = response.html.navigation;
             document.querySelector("#content").innerHTML = response.html.content;
             document.querySelector("#loader-wrapper").style.display = "none";
 
             window.owl.common._hideLoaders();
+            window.owl.skeleton._deactivateSkeleton();
             document.querySelector(".content-loader").classList.remove("toFullWidth");
         }
     }

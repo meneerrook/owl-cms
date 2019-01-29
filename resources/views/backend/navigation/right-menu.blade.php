@@ -7,12 +7,24 @@
 </div>
 <ul>
     @foreach($menuItems['top'] as $menuItem)
+
+        @php
+            $hasRights = false;
+            foreach( $menuItem['roles'] as $key => $value) {
+                if($value == Auth::user()->role) {
+                    $hasRights = true;
+                } 
+            }
+        @endphp
+
+        @if($hasRights)
         <li class="menu-item_{{ str_replace(' ', '-', strtolower($menuItem['page'])) }} {{ Request::path() == $menuItem['route'] ? 'active' : '' }}">
 
             <a href="{{ $menuItem['hasid'] === true ? route($menuItem['route'], ['id' => $id]) : route($menuItem['route']) }}" class="menu-item {{ $menuItem['class'] }}" data-xhr-page>
                 <i class="{{ $menuItem['icon'] }}"></i>{{ $menuItem['page'] }}
             </a>
         </li>
+        @endif
     @endforeach
 </ul>
 
