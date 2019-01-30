@@ -17,20 +17,20 @@ class UsersController extends Controller
 
     public function userProfile($id) {
         $user = User::find($id);
-        return ViewHelper::resolve("backend.users.user-profile.user-profile", "navigation.users.user-profile", $user);
+        return ViewHelper::resolve("backend.users.user-profile", "navigation.users.user-profile", $user);
     }
 
     public function userAdd() {
-        return ViewHelper::resolve("backend.users.user-add.user-add", "navigation.users.user-add");
+        return ViewHelper::resolve("backend.users.user-add", "navigation.users.user-add");
     }
 
     public function userEdit($id) {
         $user = User::find($id);
-        return ViewHelper::resolve("backend.users.user-edit.user-edit", "navigation.users.user-edit", $user);
+        return ViewHelper::resolve("backend.users.user-edit", "navigation.users.user-edit", $user);
     }
 
     public function userDelete($id) {
         $user = User::find($id);
-        return ViewHelper::resolve("backend.users.user-delete.user-delete", "navigation.users.user-delete", $user);
+        return ViewHelper::resolve("backend.users.user-delete", "navigation.users.user-delete", $user);
     }
 }

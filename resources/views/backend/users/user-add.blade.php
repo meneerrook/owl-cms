@@ -1,4 +1,9 @@
+@extends($isXhr ? 'backend/content' : 'backend/layout')
 
+@section('bodyClass', 'user-add')
+
+@section('content')
+    
 <div class="small-form">
     <h3 class="mb-4">Add user</h3>
     <form class="mt-4">
@@ -43,3 +48,5 @@
         </div>
     </form>
 </div>
+@endsection
+

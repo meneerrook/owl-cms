@@ -16,6 +16,6 @@ class PagesController extends Controller
 
     public function add() 
     {
-        return ViewHelper::resolve("backend.pages.page-add.page-add", "navigation.pages.page-add");
+        return ViewHelper::resolve("backend.pages.page-add", "navigation.pages.page-add");
     }
 }

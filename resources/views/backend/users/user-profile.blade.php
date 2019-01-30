@@ -1,4 +1,9 @@
-<h6 class="mb-4">User <b>{{ $data->firstname }} {{ $data->lastname }}</b></h6>
+@extends($isXhr ? 'backend/content' : 'backend/layout')
+
+@section('bodyClass', 'user-profile')
+
+@section('content')
+    <h6 class="mb-4">User <b>{{ $data->firstname }} {{ $data->lastname }}</b></h6>
 
 <div class="row">
     <div class="col-12 col-md-6 col-lg-6">
@@ -133,4 +138,7 @@
         </div>
     </div>
 </div>
+
+
+@endsection
 

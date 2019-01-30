@@ -16,6 +16,6 @@ class PostsController extends Controller
     }
     public function add()
     {
-        return ViewHelper::resolve("backend.posts.post-add.post-add", "navigation.posts.post-add");
+        return ViewHelper::resolve("backend.posts.post-add", "navigation.posts.post-add");
     }
 }
