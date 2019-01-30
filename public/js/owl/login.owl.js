@@ -58,10 +58,9 @@
             }
         },
         _pageTransition: function() {
-
             var skeletons = document.querySelectorAll(".skeleton");
             for (let i = 0; i < skeletons.length; i++) {
-                skeletons[i].parentNode.removeChild(skeletons[i]);
+                skeletons[i].classList.add("fade", "hide");
             }
 
             var trader = new Trader({

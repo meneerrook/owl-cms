@@ -35,6 +35,9 @@
             <div class="col-sm-10">
                 <select class="form-control">
                     @foreach($roles as $key => $value)
+                        @if($key == "admin" && Auth::user()->role != "admin")
+                            @php continue; @endphp
+                        @endif
                         <option>{{ $key }}</option>
                     @endforeach
                 </select>

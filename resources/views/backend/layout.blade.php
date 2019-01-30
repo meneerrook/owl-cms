@@ -25,7 +25,6 @@
 		<script src="{{ asset('js/owl/navigation.owl.js') }}"></script>
 		<script src="{{ asset('js/owl/common.owl.js') }}"></script>
 		
-
 		<link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600,700" rel="stylesheet">
 	</head>
 
@@ -39,7 +38,6 @@
 		<div id="page-wrapper" class="page-wrapper" data-trdr="login" data-trdr-order="3" data-trdr-class="hide">
 			<div id="navigation">
 				@if (Auth::check())
-					
 					@include('backend/navigation/index')
 				@endif
 			</div>

@@ -362,6 +362,7 @@ button.btn-loader.loading:before, button.btn-loader.loading:after {
 }
 
 .content h3 {
+  font-weight: 600;
   line-height: 40px;
 }
 
@@ -371,6 +372,43 @@ button.btn-loader.loading:before, button.btn-loader.loading:after {
   -ms-filter: blur(1.5px);
   -o-filter: blur(1.5px);
   filter: blur(1.5px);
+}
+
+.content-header {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.content-header h1, .content-header h2, .content-header h3, .content-header h4, .content-header h5, .content-header h6 {
+  margin: 0;
+}
+
+.search-wrapper {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.search-wrapper > label {
+  display: inline-block;
+  margin: 0 15px 0 0;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.search-wrapper .search-group {
+  display: inline-block;
+}
+
+.search-wrapper .search-group select {
+  display: inline-block;
+  width: auto;
+}
+
+.search-wrapper .search-group input[type="text"] {
+  display: inline-block;
+  width: auto;
 }
 
 .skeleton {
@@ -709,6 +747,7 @@ button.btn-loader.loading:before, button.btn-loader.loading:after {
   }
 }
 
+/* -----------{ Main menu top bar mobile }---------- */
 nav.mobile-menu {
   position: fixed;
   top: 0;
@@ -750,6 +789,7 @@ nav.mobile-menu .hamburger span {
   background-color: #ffffff;
 }
 
+/* -----------{ Main menu }---------- */
 nav.main-menu {
   position: fixed;
   left: -280px;
@@ -988,6 +1028,7 @@ nav.main-menu .right.submenu {
   background-color: #006EE5;
 }
 
+/* -----------{ Create menu }---------- */
 .create-menu {
   position: fixed;
   left: -280px;

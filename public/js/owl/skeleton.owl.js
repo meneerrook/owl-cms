@@ -21,7 +21,6 @@
                 
                 skeletons[i].addEventListener("transitionend", function(e){
                     if(e.propertyName == "opacity") {
-                        //skeletons[i].parentNode.removeChild(skeletons[i]);
                         skeletons[i].classList.add("hide");
                     }
                 });

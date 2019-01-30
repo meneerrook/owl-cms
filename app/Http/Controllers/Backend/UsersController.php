@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\User;
+use View;
+use Auth;
 use ViewHelper;
 
 class UsersController extends Controller
