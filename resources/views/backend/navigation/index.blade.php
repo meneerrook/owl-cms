@@ -1,12 +1,3 @@
-
-@php
-    if($menuItems == 'navigation.main.default') {
-        $menuClass = '';
-    } else {
-        $menuClass = 'submenu';
-    }
-@endphp
-
 <nav class="mobile-menu">
     <div class="hamburger toggle-main-menu">
         <span></span>
@@ -17,11 +8,11 @@
 
 <nav id="main-menu" class="main-menu">
     
-    <div class="left">
+    <div id="left-menu" class="left">
         @include('backend/navigation/left-menu')
     </div>
     
-    <div id="right-menu" class="right {{ $menuClass }}">
+    <div id="right-menu" class="right">
         @include('backend/navigation/right-menu')
     </div>
     
