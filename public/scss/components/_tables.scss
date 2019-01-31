@@ -19,6 +19,9 @@
         tbody {
             border-bottom: solid 2px $color--border;
             tr{
+                &.hide {
+                    display: none;
+                }
                 &:hover {
                     background-color: $color--lightBG;
                 }

@@ -57,14 +57,7 @@
                         'admin',
                         'manager'
                     ]
-                ],
-                // [
-                //     'page' => 'Add new',
-                //     'route' => 'owl/users/add',
-                //     'hasid' => false,
-                //     'class' => '',
-                //     'icon' => 'fa fa-plus'
-                // ],
+                ]
             ],
             'bottom' => [],
         ],

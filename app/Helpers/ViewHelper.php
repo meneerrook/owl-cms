@@ -5,7 +5,21 @@ use Response;
 
 class ViewHelper
 {
-    public static function resolve($view, $menu, $data = []) {
+    /**
+     * Determines wether request was xhr or not, 
+     * based on that returns the correct view based on the parameters given.
+     *
+     * @param string $view
+     * @param string $menu
+     * @param string $module
+     * @param array $data
+     * @return Request json data
+     * @return View blade view
+     */
+    public static function resolve($view, $menu, $module = "", $data = []) {
+        
+        $menu = config($menu);
+        $module = config($module);
 
         if (Request::ajax()) {
 
@@ -25,10 +39,17 @@ class ViewHelper
                             ->with('isXhr', true)
                             ->render();
             
+            isset($module['id']) ? $module_id = $module['id'] : $module_id = '';
+            isset($module['src']) ? $module_src = asset($module['src']) : $module_src = '';
+
             return Response::json([
                 'html' => [ 
                     'navigation' => $navigation, 
                     'content' => $content
+                ], 
+                'module' => [
+                    'id' => $module_id,
+                    'src' => $module_src
                 ]]);
             
         } else {

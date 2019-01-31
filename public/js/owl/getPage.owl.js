@@ -93,6 +93,26 @@
             window.owl.common._hideLoaders();
             window.owl.skeleton._deactivateSkeleton();
             document.querySelector(".content-loader").classList.remove("toFullWidth");
+
+            window.owl.getPage._loadModule(response.module);
+        },
+        _loadModule(response) {
+            
+            var moduleScripts = document.querySelectorAll("[data-module]");
+            for (let i = 0; i < moduleScripts.length; i++) {
+                moduleScripts[i].parentNode.removeChild(moduleScripts[i]);
+            }
+
+            if (!response.id.length > 0) return false;
+            if (!response.src.length > 0) return false;
+
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.id = response.id;
+            script.src = response.src;
+            script.dataset.module = true;
+            
+            document.body.appendChild(script);
         }
     }
 

@@ -47,10 +47,10 @@
 			</div>
 		</div>
 		
-
 		@yield('login')
-		
-        @yield('javascript')
+		@yield('javascript')
         <script src="{{ asset('js/init.js') }}"></script>
+
+		
     </body>
 </html>

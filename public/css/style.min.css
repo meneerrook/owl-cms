@@ -1232,6 +1232,10 @@ nav.main-menu .right.submenu {
   border-bottom: solid 2px #DFE1E6;
 }
 
+.table-wrapper table tbody tr.hide {
+  display: none;
+}
+
 .table-wrapper table tbody tr:hover {
   background-color: #fafafa;
 }

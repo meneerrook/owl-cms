@@ -1,6 +1,3 @@
-@php
-    $menuItems = config($menuItems);
-@endphp
 
 <div class="menu-heading">
     <h3>{{ $menuItems['title'] }}</h3>
