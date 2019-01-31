@@ -4,8 +4,6 @@
     width: 100%;
     overflow: auto;
     padding: ($margin*2)+$navbar-mobile-height $margin*2 $margin*2;
-    @include filter(blur, 0);
-    @include transition(filter 200ms ease);
 
     @media #{$mq-m} {
         padding: $margin*2;
@@ -15,10 +13,6 @@
     h3 {
         font-weight: 600;
         line-height: 40px;
-    }
-
-    &.blur {
-        @include filter(blur, 1.5px);
     }
 }
 
