@@ -6,23 +6,26 @@
     
 <div class="small-form">
     <h3 class="mb-4">Add user</h3>
-    <form class="mt-4">
+
+    <form class="mt-4" method="post" action="{{ action('Backend\UsersController@create') }}" data-xhr-post="add-user">
+        {{ csrf_field() }}
+
         <div class="form-group row">
-            <label for="inputEmail3" class="col-sm-2 col-form-label">Firstname</label>
+            <label class="col-sm-2 col-form-label">Firstname</label>
             <div class="col-sm-10">
-                <input type="email" class="form-control" id="inputEmail3" placeholder="Firstname">
+                <input type="text" name="firstname" class="form-control" placeholder="Firstname">
             </div>
         </div>
         <div class="form-group row">
-            <label for="inputEmail3" class="col-sm-2 col-form-label">Lastname</label>
+            <label class="col-sm-2 col-form-label">Lastname</label>
             <div class="col-sm-10">
-                <input type="email" class="form-control" id="inputEmail3" placeholder="Lastname">
+                <input type="text" name="lastname" class="form-control" placeholder="Lastname">
             </div>
         </div>
         <div class="form-group row">
-            <label for="inputEmail3" class="col-sm-2 col-form-label">E-mail</label>
+            <label class="col-sm-2 col-form-label">E-mail</label>
             <div class="col-sm-10">
-                <input type="email" class="form-control" id="inputEmail3" placeholder="E-mail">
+                <input type="email" name="email "class="form-control" placeholder="E-mail">
             </div>
         </div>
 
@@ -33,7 +36,7 @@
         <div class="form-group row">
             <label for="inputEmail3" class="col-sm-2 col-form-label">Role</label>
             <div class="col-sm-10">
-                <select class="form-control">
+                <select class="form-control" name="role">
                     @foreach($roles as $key => $value)
                         @if($key == "admin" && Auth::user()->role != "admin")
                             @php continue; @endphp
@@ -46,10 +49,16 @@
 
         <div class="form-group row">
             <div class="col-sm-12">
-                <button type="submit" class="btn btn-primary float-right">Add user&nbsp;&nbsp;<i class="fa fa-plus"></i></button>
+                <button type="submit" class="btn btn-primary btn-loader float-right">Add user</button>
             </div>
         </div>
     </form>
 </div>
 @endsection
+
+@if(!$isXhr) 
+    @section('javascript')
+        <script type="text/javascript" id="users" src="{{ asset('js/modules/user-add.js') }}" data-module="true"></script>
+    @endsection
+@endif
 

@@ -35,6 +35,10 @@ Route::group(['middleware' => ['auth']], function() {
 			Route::get('/add', ['as' => 'owl/users/add', 'uses' => 'Backend\UsersController@userAdd'])->middleware("role:admin,manager");
 			Route::get('/edit/{id}', ['as' => 'owl/users/edit', 'uses' => 'Backend\UsersController@userEdit'])->middleware("role:admin,manager");
 			Route::get('/delete/{id}', ['as' => 'owl/users/delete', 'uses' => 'Backend\UsersController@userDelete'])->middleware("role:admin,manager");
+
+			Route::post('/create', 'Backend\UsersController@create');
+			Route::post('/update', 'Backend\UsersController@update');
+			Route::post('/delete', 'Backend\UsersController@delete');
 		});
 
 		// posts routes

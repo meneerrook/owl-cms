@@ -7,6 +7,11 @@ function init() {
             window.owl.getPage.register();
         }
 
+        // register post data
+        if(window.owl.postData && typeof window.owl.postData.register == "function") {
+            window.owl.postData.register();
+        }
+
         // register skeleton
         if(window.owl.skeleton && typeof window.owl.skeleton.register == "function") {
             window.owl.skeleton.register();

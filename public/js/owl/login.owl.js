@@ -35,8 +35,7 @@
                 },
                 error: function (xhr, ajaxOptions, thrownError) {
                     alert(thrownError);
-                    var button = document.querySelector("#loginButton");
-                    window.owl.buttonLoader.undo(button);
+                    window.owl.buttonLoader.undo();
                 }
             });
         },

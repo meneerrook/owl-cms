@@ -19,6 +19,7 @@
 
 		<!-- JS Owl -->
 		<script src="{{ asset('js/owl/getPage.owl.js') }}"></script>
+		<script src="{{ asset('js/owl/postData.owl.js') }}"></script>
 		<script src="{{ asset('js/owl/skeleton.owl.js') }}"></script>
 		<script src="{{ asset('js/owl/buttonLoader.owl.js') }}"></script>
 		<script src="{{ asset('js/owl/placeholder.owl.js') }}"></script>

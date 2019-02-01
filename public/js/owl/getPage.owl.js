@@ -34,9 +34,7 @@
             return new Promise( (resolve, reject) => {
                 e.preventDefault();
                 
-                
                 var rightMenu = document.querySelector("#right-menu");
-
 
                 var toSubMenu_Statement = !rightMenu.classList.contains("submenu") && e.currentTarget.classList.contains("has-sub-menu");
                 var toMainMenu_Statement = rightMenu.classList.contains("submenu") && !e.currentTarget.classList.contains("has-sub-menu");
@@ -95,6 +93,10 @@
             document.querySelector(".content-loader").classList.remove("toFullWidth");
 
             window.owl.getPage._loadModule(response.module);
+
+            if(window.owl.postData && typeof window.owl.postData.register == "function") {
+                window.owl.postData.register();
+            }
         },
         _loadModule(response) {
             

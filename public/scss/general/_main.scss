@@ -39,12 +39,13 @@ body {
 button.btn-loader {
     position: relative;
     overflow: hidden;
-    
+
     &:before {
         content: "";
         position: absolute;
-        right:10px;
-        margin-top:-10px;
+        right:0;
+        left: 0;
+        margin: -10px auto 0 auto;
         top:50%;
         width:20px;
         height: 20px;
@@ -55,7 +56,7 @@ button.btn-loader {
         z-index:2;
         @include border-radius(100%);
         @include opacity(0);
-        @include transition(opacity 150ms ease-in-out);
+        @include transition(opacity 100ms ease-in-out);
         @include animation('spin 300ms infinite linear');
     }
     &:after {
@@ -64,12 +65,16 @@ button.btn-loader {
         right: 0;
         top: 0;
         bottom: 0;
-        width: 50px;
+        left: 0;
         z-index:1;
         background-color: $color--primary;
         @include opacity(0);
-        @include transition(opacity 150ms ease-in-out);
+        @include transition(opacity 100ms ease-in-out);
         @include box-shadow(-10px 0 15px $color--primary);
+    }
+    &.disabled {
+        pointer-events: none;
+        @include opacity(.7);
     }
     &.loading {
         &:before,
@@ -191,14 +196,6 @@ button.btn-loader {
         }
     }
 }
-
-
-  
-  
-
-
-
-  
 
 // placeholder styling
 .grouped-input {

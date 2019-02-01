@@ -25,6 +25,9 @@ function _findUser(value, condition) {
 function init() {
     console.log("Users module loaded.");
     _prepareSearch();
+
+    // load other modules:
+    window.owl.postData.register();
 }
 
 init();

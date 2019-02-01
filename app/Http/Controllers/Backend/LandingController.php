@@ -42,15 +42,11 @@ class LandingController extends Controller
             $navigation = view('backend.navigation.index')->with('menuItems', config('navigation.main.default'))->render();
             $content = view('backend.dashboard.index')->with('isXhr', true)->render();
             
-
             return Response::json([
                 'type' => 'page',
                 'html' => [
                     'navigation' => $navigation,
                     'content' => $content,
-                ],
-                'config' => [
-                    'activePage' => 'dashboard'
                 ]
             ]);
         }
@@ -64,40 +60,4 @@ class LandingController extends Controller
             ]);
         }
     }
-
-    /*public function getDashboardData() {
-
-        $content = [];
-
-        $posts_active = Post::all()->where('active', 1)->count();
-        $posts_inactive = Post::all()->where('active', 0)->count();
-        $posts_total = Post::all()->count();
-        
-        $dataTypes = ['posts', 'pages', 'media', 'comments'];
-
-        for ($i=0; $i < $dataTypes->count(); $i++) { 
-            
-            $type = $dataTypes[$i];
-
-            if($type == "posts") {
-                $active = Post::all()->where('status', 'active')->count();
-                $inactive = Post::all()->where('status', 'inactive')->count();
-                $total = Post::all()->count();
-            } elseif($type == "pages") {
-                $active = Post::all()->where('status', 'active')->count();
-                $inactive = Post::all()->where('status', 'inactive')->count();
-                $total = Post::all()->count();
-            } elseif($type == "media") {
-                $active = Post::all()->where('status', 'active')->count();
-                $inactive = Post::all()->where('status', 'inactive')->count();
-                $total = Post::all()->count();
-            } elseif($type == "comments") {
-                $active = Post::all()->where('status', 'active')->count();
-                $inactive = Post::all()->where('status', 'inactive')->count();
-                $total = Post::all()->count();
-            } else {
-                return false;
-            }
-        }
-    }*/
 }

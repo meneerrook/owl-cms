@@ -99,8 +99,9 @@ button.btn-loader {
 button.btn-loader:before {
   content: "";
   position: absolute;
-  right: 10px;
-  margin-top: -10px;
+  right: 0;
+  left: 0;
+  margin: -10px auto 0 auto;
   top: 50%;
   width: 20px;
   height: 20px;
@@ -113,8 +114,8 @@ button.btn-loader:before {
   background-clip: padding-box;
   opacity: 0;
   filter: alpha(opacity=0);
-  -webkit-transition: opacity 150ms ease-in-out;
-  transition: opacity 150ms ease-in-out;
+  -webkit-transition: opacity 100ms ease-in-out;
+  transition: opacity 100ms ease-in-out;
   -webkit-animation: spin 300ms infinite linear;
   animation: spin 300ms infinite linear;
 }
@@ -125,15 +126,21 @@ button.btn-loader:after {
   right: 0;
   top: 0;
   bottom: 0;
-  width: 50px;
+  left: 0;
   z-index: 1;
   background-color: #007bff;
   opacity: 0;
   filter: alpha(opacity=0);
-  -webkit-transition: opacity 150ms ease-in-out;
-  transition: opacity 150ms ease-in-out;
+  -webkit-transition: opacity 100ms ease-in-out;
+  transition: opacity 100ms ease-in-out;
   -webkit-box-shadow: -10px 0 15px #007bff;
   box-shadow: -10px 0 15px #007bff;
+}
+
+button.btn-loader.disabled {
+  pointer-events: none;
+  opacity: 0.7;
+  filter: alpha(opacity=70);
 }
 
 button.btn-loader.loading:before, button.btn-loader.loading:after {

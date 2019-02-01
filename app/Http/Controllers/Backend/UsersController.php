@@ -5,12 +5,15 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\User;
+use Request;
 use View;
 use Auth;
 use ViewHelper;
 
 class UsersController extends Controller
 {
+    // get:
+
     public function index(){
         $users = User::all();
         return ViewHelper::resolve("backend.users.index", "navigation.users.users", "modules.users.index", $users);
@@ -22,7 +25,7 @@ class UsersController extends Controller
     }
 
     public function userAdd() {
-        return ViewHelper::resolve("backend.users.user-add", "navigation.users.user-add");
+        return ViewHelper::resolve("backend.users.user-add", "navigation.users.user-add", "modules.users.user-add");
     }
 
     public function userEdit($id) {
@@ -33,5 +36,17 @@ class UsersController extends Controller
     public function userDelete($id) {
         $user = User::find($id);
         return ViewHelper::resolve("backend.users.user-delete", "navigation.users.user-delete", null, $user);
+    }
+
+    // post:
+
+    public function create(Request $request) {
+
+    }
+    public function update(Request $request) {
+
+    }
+    public function delete(Request $request) {
+        
     }
 }
