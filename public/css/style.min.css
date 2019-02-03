@@ -117,6 +117,99 @@ form[data-xhr-post].invisible.hide {
   display: none;
 }
 
+.grouped-input {
+  float: left;
+  width: 100%;
+  position: relative;
+  height: 60px;
+  margin-bottom: 15px;
+  background-color: #ffffff;
+}
+
+.grouped-input span {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  padding-left: 15px;
+  top: 18px;
+  text-align: left;
+  z-index: 10;
+  color: grey;
+  font-size: 16px;
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
+
+.grouped-input input,
+.grouped-input select {
+  float: left;
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  height: 60px;
+  background-color: transparent;
+  position: relative;
+  z-index: 20;
+}
+
+.grouped-input input:focus, .grouped-input input.val-exists,
+.grouped-input select:focus,
+.grouped-input select.val-exists {
+  background-color: transparent;
+}
+
+.grouped-input input:focus + span, .grouped-input input.val-exists + span,
+.grouped-input select:focus + span,
+.grouped-input select.val-exists + span {
+  top: 5px;
+  padding-left: 13px;
+  font-size: 10px;
+  z-index: 30;
+}
+
+.grouped-input[data-validation] {
+  -webkit-transition: all 100ms ease-in-out;
+  transition: all 100ms ease-in-out;
+}
+
+.grouped-input[data-validation]:before {
+  content: attr(data-validation-msg);
+  position: absolute;
+  top: 5px;
+  padding-right: 5px;
+  font-size: 10px;
+  z-index: 30;
+  right: 0;
+  padding-left: 15px;
+  text-align: right;
+  color: white;
+}
+
+.grouped-input[data-validation].danger input, .grouped-input[data-validation].danger select {
+  border-color: #ff5d5a;
+}
+
+.grouped-input[data-validation].danger:before {
+  color: #ff5d5a;
+}
+
+.grouped-input[data-validation].warning input, .grouped-input[data-validation].warning select {
+  border-color: #ff8400;
+}
+
+.grouped-input[data-validation].warning:before {
+  color: #ff8400;
+}
+
+.grouped-input[data-validation].success input, .grouped-input[data-validation].success select {
+  border-color: #48c566;
+}
+
+.grouped-input[data-validation].success:before {
+  color: #48c566;
+}
+
 * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -373,82 +466,6 @@ button.btn-loader.loading:before, button.btn-loader.loading:after {
 
 .form-section:last-child {
   margin-bottom: 15px;
-}
-
-.grouped-input {
-  float: left;
-  width: 100%;
-  position: relative;
-  height: 60px;
-  margin-bottom: 15px;
-  background-color: #ffffff;
-}
-
-.grouped-input span {
-  position: absolute;
-  left: 0;
-  right: 0;
-  width: 100%;
-  padding-left: 15px;
-  top: 18px;
-  text-align: left;
-  z-index: 10;
-  color: grey;
-  font-size: 16px;
-  -webkit-transition: all 0.1s ease;
-  transition: all 0.1s ease;
-}
-
-.grouped-input input,
-.grouped-input select {
-  float: left;
-  width: 100%;
-  padding-top: 20px;
-  padding-bottom: 10px;
-  height: 60px;
-  background-color: transparent;
-  position: relative;
-  z-index: 20;
-}
-
-.grouped-input input:focus, .grouped-input input.val-exists,
-.grouped-input select:focus,
-.grouped-input select.val-exists {
-  background-color: transparent;
-}
-
-.grouped-input input:focus + span, .grouped-input input.val-exists + span,
-.grouped-input select:focus + span,
-.grouped-input select.val-exists + span {
-  top: 5px;
-  padding-left: 13px;
-  font-size: 10px;
-  z-index: 30;
-}
-
-.grouped-input[data-validation]:before {
-  content: attr(data-validation-msg);
-  position: absolute;
-  top: 5px;
-  padding-right: 5px;
-  font-size: 10px;
-  z-index: 30;
-  right: 0;
-  padding-left: 15px;
-  text-align: right;
-  color: grey;
-}
-
-.grouped-input[data-validation].danger:before {
-  color: #ff5d5a;
-}
-
-.grouped-input[data-validation].warning:before {
-  color: #ff8400;
-}
-
-.grouped-input[data-validation].success:before {
-  color: #48c566;
 }
 
 .content {

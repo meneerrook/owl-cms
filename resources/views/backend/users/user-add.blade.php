@@ -1,7 +1,5 @@
 @extends($isXhr ? 'backend/content' : 'backend/layout')
 
-@section('bodyClass', 'user-add')
-
 @section('content')
     
 <div class="small-form">
