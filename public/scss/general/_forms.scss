@@ -1,0 +1,14 @@
+form {
+    &[data-xhr-post] {
+        @include opacity(1);
+        @include transition(opacity 1000ms ease-in-out);
+
+        &.invisible {
+            @include opacity(0);
+
+            &.hide {
+                display: none;
+            }
+        }
+    }
+}

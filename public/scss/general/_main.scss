@@ -197,6 +197,20 @@ button.btn-loader {
     }
 }
 
+.form-section {
+    float: left;
+    width: 100%;
+    margin-bottom: #{$margin*3};
+    
+    .grouped-input:last-child {
+        margin-bottom: 0;
+    }
+
+    &:last-child {
+        margin-bottom: $margin;
+    }
+}
+
 // placeholder styling
 .grouped-input {
     float:left;
@@ -220,7 +234,8 @@ button.btn-loader {
         @include transition(all 0.1s ease);
     }
 
-    input {
+    input,
+    select {
         float:left;
         width:100%;
         padding-top:20px;
@@ -241,6 +256,36 @@ button.btn-loader {
                 z-index:30;
             }
         } 
+    }
+
+    &[data-validation] {
+        &:before {
+            content: attr(data-validation-msg);
+            position: absolute;
+            top:5px;
+            padding-right:5px;
+            font-size:10px;
+            z-index:30;
+            right:0;
+            padding-left:15px;
+            text-align: right;
+            color:grey;
+        }
+        &.danger {
+            &:before {
+                color: $color--danger;
+            }
+        }
+        &.warning {
+            &:before {
+                color: $color--warning;
+            }
+        }
+        &.success {
+            &:before {
+                color: $color--success;
+            }
+        }
     }
 }
 

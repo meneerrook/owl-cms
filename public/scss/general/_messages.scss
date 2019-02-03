@@ -1,0 +1,42 @@
+
+
+[data-message] {
+
+    > div,
+    > ul,
+    > p {
+        overflow:hidden;
+        max-height: 0;
+        @include opacity(0);
+        @include transition(opacity 100ms ease-in);
+        
+        &.show {
+            max-height: 100px;
+            @include opacity(1);
+        }
+        
+    }
+}
+
+.alert {
+    
+    color: $color--white;
+    line-height: 35px;
+    border: none;
+    @include border-radius(0);
+@include opacity(1);
+@include transition(opacity 100ms ease-in-out);
+    &.alert-danger {
+        background-color: $color--danger;
+    }
+    &.alert-warning {
+        background-color: $color--warning;
+    }
+    &.alert-success {
+        background-color: $color--success;
+    }
+
+    &.invisible {
+        @include opacity(0);
+    }
+} 
