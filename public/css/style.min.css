@@ -121,7 +121,7 @@ form[data-xhr-post].invisible.hide {
   float: left;
   width: 100%;
   position: relative;
-  height: 60px;
+  min-height: 60px;
   margin-bottom: 15px;
   background-color: #ffffff;
 }
@@ -166,6 +166,31 @@ form[data-xhr-post].invisible.hide {
   padding-left: 13px;
   font-size: 10px;
   z-index: 30;
+}
+
+.grouped-input.owldtr-success input, .grouped-input.owldtr-success select {
+  border-color: #48c566;
+}
+
+.grouped-input.owldtr-success .owldtr-msg {
+  color: #48c566;
+}
+
+.grouped-input.owldtr-danger input, .grouped-input.owldtr-danger select {
+  border-color: #ff5d5a;
+}
+
+.grouped-input.owldtr-danger .owldtr-msg {
+  color: #ff5d5a;
+}
+
+.grouped-input .owldtr-msg {
+  position: absolute;
+  top: 5px;
+  font-size: 10px;
+  z-index: 30;
+  right: 5px;
+  text-align: right;
 }
 
 .grouped-input[data-validation] {
@@ -1313,7 +1338,7 @@ nav.main-menu .right.submenu {
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 33, 70, 0.4);
   display: none;
   z-index: 300;
   opacity: 0;

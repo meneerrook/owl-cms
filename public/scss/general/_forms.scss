@@ -17,7 +17,7 @@ form {
     float:left;
     width: 100%;
     position: relative;
-    height:60px;
+    min-height:60px;
     margin-bottom:$margin;
     background-color: $color--white;
 
@@ -57,6 +57,33 @@ form {
                 z-index:30;
             }
         } 
+    }
+
+    
+    &.owldtr-success {
+        input, select {
+            border-color: $color--success;
+        }
+        .owldtr-msg {
+            color: $color--success;
+        }
+    }
+    &.owldtr-danger {
+        input, select {
+            border-color: $color--danger;
+        }
+        .owldtr-msg {
+            color: $color--danger
+        }
+    }
+
+    .owldtr-msg {
+        position: absolute;
+        top:5px;
+        font-size:10px;
+        z-index:30;
+        right:5px;
+        text-align: right;
     }
 
     &[data-validation] {

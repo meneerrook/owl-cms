@@ -10,12 +10,13 @@
 		<link rel="stylesheet" href="{{ asset('css/plugins/bootstrap.min.css') }}"/>
 		<link rel="stylesheet" href="{{ asset('css/plugins/font-awesome.min.css') }}"/>
 		<link rel="stylesheet" href="{{ asset('css/style.min.css') }}"/>
-		<!-- JS plugins -->
 		
+		<!-- JS plugins -->
         <script src="{{ asset('js/plugins/jquery.min.js') }}"></script>
 		<script src="{{ asset('js/plugins/popper.min.js') }}"></script>
 		<script src="{{ asset('js/plugins/bootstrap.min.js') }}"></script>
 		<script src="{{ asset('js/plugins/trader.js') }}"></script>
+		<script src="{{ asset('js/plugins/owlidator.js') }}"></script>
 
 		<!-- JS Owl -->
 		<script src="{{ asset('js/owl/getPage.owl.js') }}"></script>
