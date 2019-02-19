@@ -1,0 +1,5 @@
+Owl engine to-do list:
+
+- Generic getdata function that will return data through a xhr request.
+- Form builder function that will create a html form based on data given that works seemlessly with owlidator.js
+- 

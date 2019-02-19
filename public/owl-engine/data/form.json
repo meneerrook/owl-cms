@@ -1,0 +1,201 @@
+[
+    {
+        "node": "element",
+        "tag": "h2",
+        "attributes": {
+        },
+        "children": [
+            {
+                "node": "text",
+                "value": "Add new user"
+            }
+        ]
+    }, {
+        "node": "element",
+        "tag": "form",
+        "attributes": {
+            "id": "user-add-form" 
+        },
+        "children" : [ 
+            {
+                "node": "element",
+                "tag": "div",
+                "attributes": {
+                    "class": "grouped-input", 
+                    "data-owldtr": "firstname", 
+                    "data-owldtr-rules": "min_char:2|alpha",
+                    "style": "margin-bottom: 15px;"
+                },
+                "children": [
+                    {
+                        "node": "element",
+                        "tag": "label",
+                        "attributes": {
+                            "for": "firstname",
+                            "style": "display: block;"
+                        },
+                        "children": [
+                            {
+                                "node": "text",
+                                "value": "Firstname:"
+                            }
+                        ]
+                    }, {
+                        "node": "element",
+                        "tag": "input",
+                        "attributes": {
+                            "type": "text",
+                            "id": "firstname",
+                            "name": "firstname",
+                            "placeholder": "Firstname"
+                        }
+                    }
+                ]
+            }, {
+                "node": "element",
+                "tag": "div",
+                "attributes": {
+                    "class": "grouped-input", 
+                    "data-owldtr": "lastname", 
+                    "data-owldtr-rules": "min_char:2|alpha",
+                    "style": "margin-bottom: 15px;"
+                },
+                "children": [
+                    {
+                        "node": "element",
+                        "tag": "label",
+                        "attributes": {
+                            "for": "lastname",
+                            "style": "display: block;"
+                        },
+                        "children": [
+                            {
+                                "node": "text",
+                                "value": "Lastname:"
+                            }
+                        ]
+                    }, {
+                        "node": "element",
+                        "tag": "input",
+                        "attributes": {
+                            "type": "text",
+                            "id": "lastname",
+                            "name": "lastname",
+                            "placeholder": "Lastname"
+                        }
+                    }
+                ]
+            }, {
+                "node": "element",
+                "tag": "div",
+                "attributes": {
+                    "class": "grouped-input", 
+                    "data-owldtr": "email", 
+                    "data-owldtr-rules": "email",
+                    "style": "margin-bottom: 15px;"
+                },
+                "children": [
+                    {
+                        "node": "element",
+                        "tag": "label",
+                        "attributes": {
+                            "for": "email",
+                            "style": "display: block;"
+                        },
+                        "children": [
+                            {
+                                "node": "text",
+                                "value": "Email:"
+                            }
+                        ]
+                    }, {
+                        "node": "element",
+                        "tag": "input",
+                        "attributes": {
+                            "type": "text",
+                            "id": "email",
+                            "name": "email",
+                            "placeholder": "Email"
+                        }
+                    }
+                ]
+            }, {
+                "node": "element",
+                "tag": "div",
+                "attributes": {
+                    "class": "grouped-input", 
+                    "data-owldtr": "password", 
+                    "data-owldtr-rules": "min_char:5",
+                    "style": "margin-bottom: 15px;"
+                },
+                "children": [
+                    {
+                        "node": "element",
+                        "tag": "label",
+                        "attributes": {
+                            "for": "password",
+                            "style": "display: block;"
+                        },
+                        "children": [
+                            {
+                                "node": "text",
+                                "value": "Password:"
+                            }
+                        ]
+                    }, {
+                        "node": "element",
+                        "tag": "input",
+                        "attributes": {
+                            "type": "password",
+                            "id": "password",
+                            "name": "password",
+                            "placeholder": "Password"
+                        }
+                    }
+                ]
+            }, {
+                "node": "element",
+                "tag": "div",
+                "attributes": {
+                    "class": "grouped-input", 
+                    "data-owldtr": "password_confirmation", 
+                    "data-owldtr-rules": "equal:password",
+                    "style": "margin-bottom: 15px;"
+                },
+                "children": [
+                    {
+                        "node": "element",
+                        "tag": "label",
+                        "attributes": {
+                            "for": "password_confirmation",
+                            "style": "display: block;"
+                        },
+                        "children": [
+                            {
+                                "node": "text",
+                                "value": "Password confirmation:"
+                            }
+                        ]
+                    }, {
+                        "node": "element",
+                        "tag": "input",
+                        "attributes": {
+                            "type": "password",
+                            "id": "password_confirmation",
+                            "name": "password_confirmation",
+                            "placeholder": "Password confirmation"
+                        }
+                    }
+                ]
+            }, {
+                "node": "element",
+                "tag": "input",
+                "attributes": {
+                    "type": "submit", 
+                    "value": "Add user" 
+                },
+                "children": []
+            }
+        ]
+    }
+]

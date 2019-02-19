@@ -1,5 +1,4 @@
-const _private = {
-    // #region - extend (f)
+const _validator = {
     extend: (source, properties) => {
         let property;
 
@@ -18,10 +17,10 @@ const _private = {
 
             if (eventType instanceof Array) {
                 for(e = 0; e < eventType.length; e++) {
-                    wrappers[w].addEventListener(eventType[e], event => { _private.prepare(options, event.currentTarget) });
+                    wrappers[w].addEventListener(eventType[e], event => { _validator.prepare(options, event.currentTarget) });
                 }
             } else {
-                wrappers[w].addEventListener(eventType, event => { _private.prepare(options, event.currentTarget) });
+                wrappers[w].addEventListener(eventType, event => { _validator.prepare(options, event.currentTarget) });
             }
         }
     },
@@ -29,7 +28,7 @@ const _private = {
         let field = wrapper.querySelector("input, select, textarea");
         let rules = wrapper.dataset.owldtrRules || options.rules;
         
-        _private.specify(options, rules, field, wrapper);
+        _validator.specify(options, rules, field, wrapper);
     },
     specify: (options, rules, field, wrapper) => {
         var details = [];
@@ -45,55 +44,55 @@ const _private = {
 
             switch(ruleData.name) {
                 case "required":
-                    ruleData.valid  = _private.validate.required(rule, field);
+                    ruleData.valid  = _validator.validate.required(rule, field);
                     ruleData.msg    = (ruleData.valid ? ruleData.msg : options.msg.danger.required);
                     break;
                 case "alpha":
-                    ruleData.valid  = _private.validate.alpha(rule, field);
+                    ruleData.valid  = _validator.validate.alpha(rule, field);
                     ruleData.msg    = (ruleData.valid ? ruleData.msg : options.msg.danger.alpha);
                     break;
                 case "alpha_num":
-                    ruleData.valid  = _private.validate.alpha_num(rule, field);
+                    ruleData.valid  = _validator.validate.alpha_num(rule, field);
                     ruleData.msg    = (ruleData.valid ? ruleData.msg : options.msg.danger.alpha_num);
                     break;
                 case "alpha_dash":
-                    ruleData.valid  = _private.validate.alpha_dash(rule, field);
+                    ruleData.valid  = _validator.validate.alpha_dash(rule, field);
                     ruleData.msg    = (ruleData.valid ? ruleData.msg : options.msg.danger.alpha_dash);
                     break;
                 case "email":
-                    ruleData.valid  = _private.validate.email(rule, field);
+                    ruleData.valid  = _validator.validate.email(rule, field);
                     ruleData.msg    = (ruleData.valid ? ruleData.msg : options.msg.danger.email);
                     break;
                 case "min_char":
-                    ruleData.valid  = _private.validate.min_char(rule, field);
+                    ruleData.valid  = _validator.validate.min_char(rule, field);
                     ruleData.msg    = (ruleData.valid ? ruleData.msg : options.msg.danger.min_char);
                     break;
                 case "max_char":
-                    ruleData.valid  = _private.validate.max_char(rule, field);
+                    ruleData.valid  = _validator.validate.max_char(rule, field);
                     ruleData.msg    = (ruleData.valid ? ruleData.msg : options.msg.danger.max_char);
                     break;
                 case "size":
-                    ruleData.valid  = _private.validate.size(rule, field);
+                    ruleData.valid  = _validator.validate.size(rule, field);
                     ruleData.msg    = (ruleData.valid ? ruleData.msg : options.msg.danger.size);
                     break;
                 case "equal":
-                    ruleData.valid  = _private.validate.equal(rule, field);
+                    ruleData.valid  = _validator.validate.equal(rule, field);
                     ruleData.msg    = (ruleData.valid ? ruleData.msg : options.msg.danger.equal);
                     break;
                 case "is_num":
-                    ruleData.valid  = _private.validate.is_num(rule, field);
+                    ruleData.valid  = _validator.validate.is_num(rule, field);
                     ruleData.msg    = (ruleData.valid ? ruleData.msg : options.msg.danger.is_num);
                     break;
                 case "min_num":
-                    ruleData.valid  = _private.validate.min_num(rule, field);
+                    ruleData.valid  = _validator.validate.min_num(rule, field);
                     ruleData.msg    = (ruleData.valid ? ruleData.msg : options.msg.danger.min_num);
                     break;
                 case "max_num":
-                    ruleData.valid  = _private.validate.max_num(rule, field);
+                    ruleData.valid  = _validator.validate.max_num(rule, field);
                     ruleData.msg    = (ruleData.valid ? ruleData.msg : options.msg.danger.max_num);
                     break;
                 case "one_of":
-                    ruleData.valid  = _private.validate.one_of(rule, field);
+                    ruleData.valid  = _validator.validate.one_of(rule, field);
                     ruleData.msg    = (ruleData.valid ? ruleData.msg : options.msg.danger.one_of);
                     break;
             }
@@ -102,7 +101,7 @@ const _private = {
             details.push(ruleData);
         }
 
-        _private.respond(options, wrapper, details);
+        _validator.respond(options, wrapper, details);
     },
     validate: {
         required: (rule, field) => {
@@ -228,14 +227,14 @@ const _private = {
     }
 }
 
-class Owlidator {
+class OwlValidator {
     constructor (options) {
         // Define option defaults
 
         this.options = {
             event: ["keyup", "change", "focusout"],
             rules: "required",
-            msg: _private.msg,
+            msg: _validator.msg,
             msgWrapperClass: {
                 danger: "owldtr-danger",
                 success: "owldtr-success" 
@@ -247,11 +246,12 @@ class Owlidator {
         
         // Create options by extending defaults with the passed in arugments
         if (arguments[0] && typeof arguments[0] === "object") {
-            this.options = _private.extend(this.options, arguments[0]);
+            this.options = _validator.extend(this.options, arguments[0]);
         }
     }
-    validate() {
-        _private.set(this.options);
+    initialize() {
+        console.log("test");
+        _validator.set(this.options);
     }
 }
 

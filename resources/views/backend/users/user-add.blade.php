@@ -10,15 +10,15 @@
 
         <div class="form-section">
             <h6>Details</h6>
-            <div class="grouped-input" autocomplete="fuckoff" data-validation="firstname" data-validation-msg="" data-owldtr="user-add" data-owldtr-rules="min_char:2|alpha">
+            <div class="grouped-input" autocomplete="fuckoff" data-validation="firstname" data-validation-msg="" data-owldtr data-owldtr-rules="min_char:2|alpha">
                 <input type="text" name="firstname" class="form-control">
                 <span>Firstname</span>
             </div>
-            <div class="grouped-input" data-validation="lastname" data-validation-msg="" data-owldtr="user-add" data-owldtr-rules="min_char:2|alpha">
+            <div class="grouped-input" data-validation="lastname" data-validation-msg="" data-owldtr data-owldtr-rules="min_char:2|alpha">
                 <input type="text" name="lastname" class="form-control">
                 <span>Lastname</span>
             </div>
-            <div class="grouped-input" data-validation="email" data-validation-msg=""  data-owldtr="user-add" data-owldtr-rules="email">
+            <div class="grouped-input" data-validation="email" data-validation-msg=""  data-owldtr data-owldtr-rules="email">
                 <input type="text" name="email" class="form-control">
                 <span>E-mail</span>
             </div>
@@ -28,7 +28,7 @@
             @php
                 $roles = config('roles');
             @endphp
-            <div class="grouped-input" data-validation="role" data-validation-msg="" data-owldtr="user-add" data-owldtr-rules="one_of:admin,manager,editor,user">
+            <div class="grouped-input" data-validation="role" data-validation-msg="" data-owldtr data-owldtr-rules="one_of:admin,manager,editor,user">
                 <select class="form-control" name="role">
                     <option value=""></option>
                     @foreach($roles as $key => $value)
@@ -40,7 +40,7 @@
                 </select>
                 <span>Role</span>
             </div>
-            <div class="grouped-input" data-validation="status" data-validation-msg="" data-owldtr="user-add" data-owldtr-rules="one_of:active,inactive">
+            <div class="grouped-input" data-validation="status" data-validation-msg="" data-owldtr data-owldtr-rules="one_of:active,inactive">
                 <select class="form-control" name="status">
                     <option value=""></option>
                     <option value="active">active</option>
@@ -51,11 +51,11 @@
         </div>
         <div class="form-section">
             <h6>Security</h6>
-            <div class="grouped-input" data-validation="password" data-validation-msg="" data-owldtr="user-add" data-owldtr-rules="min_char:5">
+            <div class="grouped-input" data-validation="password" data-validation-msg="" data-owldtr data-owldtr-rules="min_char:5">
                 <input type="password" name="password" class="form-control">
                 <span>Password</span>
             </div>
-            <div class="grouped-input" data-validation="password_confirmation" data-validation-msg=""  data-owldtr="user-add" data-owldtr-rules="equal:password|min_char:5">
+            <div class="grouped-input" data-validation="password_confirmation" data-validation-msg="" data-owldtr data-owldtr-rules="equal:password|min_char:5">
                 <input type="password" name="password_confirmation" class="form-control">
                 <span>Password confirmation</span>
             </div>
