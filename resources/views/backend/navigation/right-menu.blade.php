@@ -11,6 +11,19 @@
                     $hasRights = true;
                 } 
             }
+            
+            //ALSO USE THIS IN THE BOTTOM HALF:
+                /* Instead of foreaching the roles array: */
+                // $hasRights = in_array(Auth::user()->role, $menuItem['roles']);
+            
+                /* Use this for clear code: */
+                // $pageClass = str_replace(' ', '-', strtolower($menuItem['page']));
+            
+                /* Use this for clear code: */
+                // $activeClass = ( Request::path() == $menuItem['route'] ? 'active' : '' );
+            
+                /* use this for clear code: */
+                // $itemRoute = ( $menuItem['hasid'] ? route($menuItem['route'], ['id' => $id]) : route($menuItem['route']) )
         @endphp
 
         @if ($hasRights)
