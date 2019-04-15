@@ -16,7 +16,7 @@
 		<script src="{{ asset('js/plugins/popper.min.js') }}"></script>
 		<script src="{{ asset('js/plugins/bootstrap.min.js') }}"></script>
 		<script src="{{ asset('js/plugins/trader.js') }}"></script>
-		<script src="{{ asset('js/plugins/owlidator.js') }}"></script>
+		<script src="{{ asset('js/plugins/OwlValidator.js') }}"></script>
 
 		<!-- JS Owl -->
 		<script src="{{ asset('js/owl/getPage.owl.js') }}"></script>

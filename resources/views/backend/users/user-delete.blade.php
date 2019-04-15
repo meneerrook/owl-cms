@@ -6,7 +6,7 @@
 
     @if($data->role == 'admin' && Auth::user()->role != "admin")
         <h3>Delete user</h3>
-        <p>You do not have permission to delete this specific user.</p>
+        <p>You do not have permission to delete this user.</p>
     @else
         <h3>Delete user</h3>
         <p>
